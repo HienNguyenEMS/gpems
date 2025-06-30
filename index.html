@@ -54,7 +54,7 @@
         
         section { padding: 80px 0; }
         #courses, #software { padding: 60px 0; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; font-weight: 700; position: relative; }
+        .section-title { text-align: center; font-size: 2.0rem; margin-bottom: 60px; font-weight: 700; position: relative; }
         .section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: var(--accent); border-radius: 2px; }
 
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 0.9rem; }
@@ -196,7 +196,7 @@
         
         .section-view-more { text-align: center; margin-top: 50px; }
         .card { background-color: var(--white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; display: flex; flex-direction: column; border: 2px solid transparent; }
-        .card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
+        .card:hover { transform: translateY(-10px) scale(1.1); box-shadow: var(--shadow-hover); border-color: var(--accent); }
         
         .card-image { position: relative; width: 100%; height: 160px; }
         .card-image img { width: 100%; height: 100%; object-fit: cover; }
@@ -227,10 +227,16 @@
         
         #faq { background-color: var(--white); }
         .faq-item { border-bottom: 1px solid #e0e0e0; }
-        .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.2rem; font-weight: 600; padding: 20px 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.2rem; font-weight: 600; padding: 20px 15px; transition: background-color 0.3s ease, color 0.3s ease; }
         .faq-question i { transition: transform 0.3s ease; }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
-        .faq-answer p { padding: 0 0 20px 0; margin: 0; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background-color: var(--white);}
+        .faq-answer p { padding: 20px 15px; margin: 0; }
+        
+        .faq-item.active .faq-question {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+        
         .faq-item.active .faq-question i { transform: rotate(45deg); }
 
         #register-cta { background-color: var(--primary); }
@@ -258,7 +264,6 @@
         .footer-socials { margin-top: 20px; display: flex; align-items: center; gap: 20px; }
         .footer-socials a { color: var(--white); font-size: 1.6rem; margin-right: 0; opacity: 0.8; transition: color 0.3s, transform 0.3s; line-height: 1; }
         .footer-socials a:hover { opacity: 1; color: var(--accent); transform: translateY(-3px); }
-        /* MODIFIED: Updated Zalo icon styles */
         .zalo-icon {
             height: 1.6rem;
             width: 1.6rem;
@@ -346,7 +351,6 @@
                 <ul>
                     <li><a href="#home">Trang chủ</a></li>
                     <li><a href="#about">Giới thiệu</a></li>
-                    <!-- UPDATED: Khóa học with dropdown -->
                     <li class="has-dropdown">
                         <a href="#courses">Khóa học <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
@@ -359,7 +363,6 @@
                             <li><a href="#">AI Agent</a></li>
                         </ul>
                     </li>
-                    <!-- UPDATED: Phần mềm with dropdown -->
                     <li class="has-dropdown">
                         <a href="#software">Phần mềm <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
@@ -373,7 +376,17 @@
                     </li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#team">Chuyên gia</a></li>
-                    <li><a href="#blog">Tài liệu</a></li>
+                    <!-- START: MODIFIED Community Menu -->
+                    <li class="has-dropdown">
+                        <a href="#">Cộng Đồng <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="https://www.facebook.com/groups/emssolution" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                            <li><a href="https://zalo.me/g/rgssea245" target="_blank" rel="noopener noreferrer">Zalo</a></li>
+                            <li><a href="https://www.youtube.com/@emssolution" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+                            <li><a href="https://www.linkedin.com/company/107340505/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        </ul>
+                    </li>
+                    <!-- END: MODIFIED Community Menu -->
                     <li><a href="#contact">Liên hệ</a></li>
                 </ul>
             </nav>
@@ -462,40 +475,38 @@
             <div class="container-wide">
                 <h2 class="section-title fade-in-element">Giải Pháp Tích Hợp</h2>
                 <div class="grid-4">
-<div class="card fade-in-element">
-  <div class="card-content" style="text-align:center;">
-    <div class="icon"><i class="fas fa-file-invoice-dollar"></i></div>
-    <h3>Số Hóa Quy Trình Với Google Workspace</h3>
-    <p>Khai thác tối đa Gmail, Drive, Sheets, Chat… để tự động hóa công việc và quản lý doanh nghiệp thông minh.</p>
-  </div>
-</div>
+                    <div class="card fade-in-element">
+                      <div class="card-content" style="text-align:center;">
+                        <div class="icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3>Số Hóa Quy Trình Với Google Workspace</h3>
+                        <p>Khai thác tối đa Gmail, Drive, Sheets, Chat… để tự động hóa công việc và quản lý doanh nghiệp thông minh.</p>
+                      </div>
+                    </div>
 
-<div class="card fade-in-element">
-  <div class="card-content" style="text-align:center;">
-    <div class="icon"><i class="fas fa-warehouse"></i></div>
-    <h3>Xây Dựng Hệ Thống Quản Trị Với AppSheet</h3>
-    <p>Phát triển ứng dụng doanh nghiệp không cần lập trình, kết nối chặt chẽ với Google Workspace, linh hoạt và nhanh chóng.</p>
-  </div>
-</div>
+                    <div class="card fade-in-element">
+                      <div class="card-content" style="text-align:center;">
+                        <div class="icon"><i class="fas fa-warehouse"></i></div>
+                        <h3>Xây Dựng Hệ Thống Quản Trị Với AppSheet</h3>
+                        <p>Phát triển ứng dụng doanh nghiệp không cần lập trình, kết nối chặt chẽ với Google Workspace, linh hoạt và nhanh chóng.</p>
+                      </div>
+                    </div>
 
-<div class="card fade-in-element">
-  <div class="card-content" style="text-align:center;">
-    <div class="icon"><i class="fas fa-users-cog"></i></div>
-    <h3>Mini-ERP Cho Mọi Doanh Nghiệp</h3>
-    <p>Thiết kế giải pháp quản trị tổng thể: nhân sự, tài chính, kho vận, công việc… trong một hệ thống duy nhất, dễ triển khai.</p>
-  </div>
-</div>
+                    <div class="card fade-in-element">
+                      <div class="card-content" style="text-align:center;">
+                        <div class="icon"><i class="fas fa-users-cog"></i></div>
+                        <h3>Mini-ERP Cho Mọi Doanh Nghiệp</h3>
+                        <p>Thiết kế giải pháp quản trị tổng thể: nhân sự, tài chính, kho vận, công việc… trong một hệ thống duy nhất, dễ triển khai.</p>
+                      </div>
+                    </div>
 
-<div class="card fade-in-element">
-  <div class="card-content" style="text-align:center;">
-    <div class="icon"><i class="fas fa-robot"></i></div>
-    <h3>Tự Động Hóa Với AI Agent</h3>
-    <p>Ứng dụng trí tuệ nhân tạo để tạo trợ lý ảo, tự động hóa chăm sóc khách hàng, xử lý dữ liệu và hỗ trợ ra quyết định.</p>
-  </div>
-</div>
-                    
-
-                     </div>
+                    <div class="card fade-in-element">
+                      <div class="card-content" style="text-align:center;">
+                        <div class="icon"><i class="fas fa-robot"></i></div>
+                        <h3>Tự Động Hóa Với AI Agent</h3>
+                        <p>Ứng dụng trí tuệ nhân tạo để tạo trợ lý ảo, tự động hóa chăm sóc khách hàng, xử lý dữ liệu và hỗ trợ ra quyết định.</p>
+                      </div>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -592,62 +603,61 @@
         <section id="faq">
             <div class="container fade-in-element">
                 <h2 class="section-title">Câu Hỏi Thường Gặp (FAQ)</h2>
-<div class="faq-item">
-  <div class="faq-question">Chi phí để xây dựng một giải pháp là bao nhiêu?<i class="fas fa-plus"></i></div>
-  <div class="faq-answer">
-    <p>Chi phí phụ thuộc vào độ phức tạp của quy trình và các tính năng yêu cầu. Chúng tôi sẽ khảo sát và gửi báo giá chi tiết, minh bạch cho từng trường hợp cụ thể. Vui lòng liên hệ để nhận tư vấn miễn phí.</p>
-  </div>
-</div>
+                <div class="faq-item">
+                  <div class="faq-question">Chi phí để xây dựng một giải pháp là bao nhiêu?<i class="fas fa-plus"></i></div>
+                  <div class="faq-answer">
+                    <p>Chi phí phụ thuộc vào độ phức tạp của quy trình và các tính năng yêu cầu. Chúng tôi sẽ khảo sát và gửi báo giá chi tiết, minh bạch cho từng trường hợp cụ thể. Vui lòng liên hệ để nhận tư vấn miễn phí.</p>
+                  </div>
+                </div>
 
-<div class="faq-item">
-  <div class="faq-question">Thời gian triển khai một dự án mất bao lâu?<i class="fas fa-plus"></i></div>
-  <div class="faq-answer">
-    <p>Thời gian triển khai dao động từ 1 tuần đối với các giải pháp đơn giản đến 1–2 tháng cho các hệ thống phức tạp hơn. Chúng tôi luôn cam kết hoàn thành đúng tiến độ đã thống nhất với khách hàng.</p>
-  </div>
-</div>
+                <div class="faq-item">
+                  <div class="faq-question">Thời gian triển khai một dự án mất bao lâu?<i class="fas fa-plus"></i></div>
+                  <div class="faq-answer">
+                    <p>Thời gian triển khai dao động từ 1 tuần đối với các giải pháp đơn giản đến 1–2 tháng cho các hệ thống phức tạp hơn. Chúng tôi luôn cam kết hoàn thành đúng tiến độ đã thống nhất với khách hàng.</p>
+                  </div>
+                </div>
 
-<div class="faq-item">
-  <div class="faq-question">Tôi có cần kiến thức về lập trình không?<i class="fas fa-plus"></i></div>
-  <div class="faq-answer">
-    <p>Hoàn toàn không. Sứ mệnh của chúng tôi là "Số hóa quy trình không cần code". Bạn chỉ cần cung cấp quy trình nghiệp vụ, đội ngũ EMS sẽ lo toàn bộ phần kỹ thuật.</p>
-  </div>
-</div>
+                <div class="faq-item">
+                  <div class="faq-question">Tôi có cần kiến thức về lập trình không?<i class="fas fa-plus"></i></div>
+                  <div class="faq-answer">
+                    <p>Hoàn toàn không. Sứ mệnh của chúng tôi là "Số hóa quy trình không cần code". Bạn chỉ cần cung cấp quy trình nghiệp vụ, đội ngũ EMS sẽ lo toàn bộ phần kỹ thuật.</p>
+                  </div>
+                </div>
 
-<div class="faq-item">
-  <div class="faq-question">Chính sách hỗ trợ và bảo trì sau khi bàn giao như thế nào?<i class="fas fa-plus"></i></div>
-  <div class="faq-answer">
-    <p>Chúng tôi cung cấp gói hỗ trợ kỹ thuật miễn phí trong 3–6 tháng đầu tiên sau khi bàn giao. Sau đó, bạn có thể lựa chọn các gói bảo trì linh hoạt theo tháng hoặc theo năm để đảm bảo hệ thống luôn hoạt động ổn định.</p>
-  </div>
-</div>
+                <div class="faq-item">
+                  <div class="faq-question">Chính sách hỗ trợ và bảo trì sau khi bàn giao như thế nào?<i class="fas fa-plus"></i></div>
+                  <div class="faq-answer">
+                    <p>Chúng tôi cung cấp gói hỗ trợ kỹ thuật miễn phí trong 3–6 tháng đầu tiên sau khi bàn giao. Sau đó, bạn có thể lựa chọn các gói bảo trì linh hoạt theo tháng hoặc theo năm để đảm bảo hệ thống luôn hoạt động ổn định.</p>
+                  </div>
+                </div>
 
-<div class="faq-item">
-  <div class="faq-question">Ứng dụng có thể dùng được trên điện thoại không?<i class="fas fa-plus"></i></div>
-  <div class="faq-answer">
-    <p>Hoàn toàn có thể. Các ứng dụng được xây dựng bằng AppSheet hoạt động mượt mà trên cả điện thoại, máy tính bảng và desktop, phù hợp cho cả nhân viên văn phòng và hiện trường.</p>
-  </div>
-</div>
+                <div class="faq-item">
+                  <div class="faq-question">Ứng dụng có thể dùng được trên điện thoại không?<i class="fas fa-plus"></i></div>
+                  <div class="faq-answer">
+                    <p>Hoàn toàn có thể. Các ứng dụng được xây dựng bằng AppSheet hoạt động mượt mà trên cả điện thoại, máy tính bảng và desktop, phù hợp cho cả nhân viên văn phòng và hiện trường.</p>
+                  </div>
+                </div>
 
-<div class="faq-item">
-  <div class="faq-question">Tôi muốn tự quản lý và cập nhật ứng dụng sau khi bàn giao thì sao?<i class="fas fa-plus"></i></div>
-  <div class="faq-answer">
-    <p>Chúng tôi cung cấp đào tạo trực tiếp hoặc qua video để bạn có thể tự cập nhật nội dung, thêm tính năng mới hoặc quản trị người dùng. EMS hướng tới giải pháp độc lập và chủ động cho doanh nghiệp.</p>
-  </div>
-</div>
+                <div class="faq-item">
+                  <div class="faq-question">Tôi muốn tự quản lý và cập nhật ứng dụng sau khi bàn giao thì sao?<i class="fas fa-plus"></i></div>
+                  <div class="faq-answer">
+                    <p>Chúng tôi cung cấp đào tạo trực tiếp hoặc qua video để bạn có thể tự cập nhật nội dung, thêm tính năng mới hoặc quản trị người dùng. EMS hướng tới giải pháp độc lập và chủ động cho doanh nghiệp.</p>
+                  </div>
+                </div>
 
-<div class="faq-item">
-  <div class="faq-question">EMS có hỗ trợ tích hợp với phần mềm sẵn có của tôi không?<i class="fas fa-plus"></i></div>
-  <div class="faq-answer">
-    <p>Có. Chúng tôi hỗ trợ tích hợp với các phần mềm có API hoặc hệ thống nội bộ thông qua Google Apps Script, webhook hoặc giải pháp trung gian. Việc kết nối dữ liệu được triển khai an toàn và linh hoạt.</p>
-  </div>
-</div>
+                <div class="faq-item">
+                  <div class="faq-question">EMS có hỗ trợ tích hợp với phần mềm sẵn có của tôi không?<i class="fas fa-plus"></i></div>
+                  <div class="faq-answer">
+                    <p>Có. Chúng tôi hỗ trợ tích hợp với các phần mềm có API hoặc hệ thống nội bộ thông qua Google Apps Script, webhook hoặc giải pháp trung gian. Việc kết nối dữ liệu được triển khai an toàn và linh hoạt.</p>
+                  </div>
+                </div>
 
-<div class="faq-item">
-  <div class="faq-question">Doanh nghiệp của tôi có cần mua thêm gì ngoài gói EMS không?<i class="fas fa-plus"></i></div>
-  <div class="faq-answer">
-    <p>Thông thường, bạn chỉ cần có tài khoản Google Workspace phù hợp. Các chi phí thêm như AppSheet bản Pro hoặc Core sẽ được tư vấn rõ ràng trước khi triển khai, tùy theo tính năng mong muốn.</p>
-  </div>
-</div>
-
+                <div class="faq-item">
+                  <div class="faq-question">Doanh nghiệp của tôi có cần mua thêm gì ngoài gói EMS không?<i class="fas fa-plus"></i></div>
+                  <div class="faq-answer">
+                    <p>Thông thường, bạn chỉ cần có tài khoản Google Workspace phù hợp. Các chi phí thêm như AppSheet bản Pro hoặc Core sẽ được tư vấn rõ ràng trước khi triển khai, tùy theo tính năng mong muốn.</p>
+                  </div>
+                </div>
             </div>
         </section>
 
@@ -737,7 +747,6 @@
                     mainNav.classList.toggle('is-open');
                 });
                 mainNav.querySelectorAll('a').forEach(link => {
-                    // Only close menu if it's not a dropdown toggle on mobile
                     if (!link.parentElement.classList.contains('has-dropdown')) {
                         link.addEventListener('click', () => {
                             mainNav.classList.remove('is-open');
@@ -746,7 +755,6 @@
                 });
             }
             
-            // --- START: JS for Mobile Dropdown ---
             const dropdownToggles = document.querySelectorAll('.main-nav .has-dropdown > a');
             dropdownToggles.forEach(toggle => {
                 toggle.addEventListener('click', function(e) {
@@ -757,7 +765,6 @@
                     }
                 });
             });
-            // --- END: JS for Mobile Dropdown ---
 
 
             const faqItems = document.querySelectorAll('.faq-item');
