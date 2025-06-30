@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -193,10 +192,14 @@
         .register-item h3 { color: var(--white); }
         .register-item p { opacity: 0.8; flex-grow: 1; margin-bottom: 30px; }
         .register-item .btn { margin-top: auto; }
-
+        
+        /* --- [MODIFIED] CONTACT ITEM LAYOUT --- */
         #contact { background-color: var(--light-background); }
-        .contact-item { background-color: var(--white); padding: 25px 15px; border-radius: 12px; box-shadow: var(--shadow); }
-        .contact-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+        .contact-item { background-color: var(--white); padding: 20px; border-radius: 12px; box-shadow: var(--shadow); text-align: left; }
+        .contact-item-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .contact-item-header i { font-size: 1.8rem; color: var(--accent); margin-bottom: 0; flex-shrink: 0; width: 30px; text-align: center; }
+        .contact-item-header h3 { font-size: 1.2rem; }
+        .contact-item p { padding-left: 47px; opacity: 0.9; } /* 32px (icon width) + 15px (gap) */
 
         .main-footer { background-color: var(--primary); color: var(--white); padding: 70px 0 20px 0; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 40px; margin-bottom: 50px; }
@@ -251,7 +254,7 @@
             #mobile-menu-toggle { display: block; z-index: 1002; background: none; border: none; color: var(--white); font-size: 1.5rem; }
             .header-actions .login-btn span { display: none; }
             .about-grid, .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-socials { justify-content: center; }
             .footer-col.footer-logo img { margin-left: auto; margin-right: auto; }
 
@@ -651,9 +654,30 @@
              <div class="container">
                 <h2 class="section-title zoom-in-element">Liên Hệ Với Chúng Tôi</h2>
                 <div class="grid-3">
-                    <div class="contact-item fade-in-element"><i class="fas fa-phone-volume"></i><h3>Hotline</h3><p>0903375265 (Mr. Hiền)</p><p>0963322110 (Mr. Hòa)</p></div>
-                    <div class="contact-item fade-in-element"><i class="fas fa-envelope-open-text"></i><h3>Email</h3><p>admin@gpems.net</p><p>admin@giaiphapsoems.vn</p></div>
-                    <div class="contact-item fade-in-element"><i class="fas fa-map-marker-alt"></i><h3>Địa chỉ</h3><p>93/4 Liên Khu 5-6, Bình Hưng Hòa B, Bình Tân, TP.HCM</p></div>
+                    <!-- [MODIFIED] CONTACT ITEM HTML STRUCTURE -->
+                    <div class="contact-item fade-in-element">
+                        <div class="contact-item-header">
+                            <i class="fas fa-phone-volume"></i>
+                            <h3>Hotline</h3>
+                        </div>
+                        <p>0903375265 (Mr. Hiền)</p>
+                        <p>0963322110 (Mr. Hòa)</p>
+                    </div>
+                    <div class="contact-item fade-in-element">
+                         <div class="contact-item-header">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <h3>Email</h3>
+                        </div>
+                        <p>admin@gpems.net</p>
+                        <p>admin@giaiphapsoems.vn</p>
+                    </div>
+                    <div class="contact-item fade-in-element">
+                         <div class="contact-item-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Địa chỉ</h3>
+                        </div>
+                        <p>93/4 Liên Khu 5-6, Bình Hưng Hòa B, Bình Tân, TP.HCM</p>
+                    </div>
                 </div>
              </div>
         </section>
@@ -677,13 +701,16 @@
                     <p><strong>Địa chỉ:</strong> 93/4 Liên Khu 5-6, Phường Bình Hưng Hòa B, Quận Bình Tân, TP. Hồ Chí Minh</p>
                     <p><strong>MST:</strong> 0316870151</p>
                     <p><strong>Email:</strong> admin@gpems.net</p>
+                    <!-- [ADDED] HOTLINE IN FOOTER -->
+                    <p><strong>Hotline:</strong> 0903375265 (Mr.Hiền)</p>
                 </div>
             </div>
             <div class="footer-bottom"><p>© 2024 Gpems.net by EMS Solution. All Rights Reserved. | <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản dịch vụ</a></p></div>
         </div>
     </footer>
-
-    <a href="https://zalo.me/0903375265" class="zalo-chat-widget" target="_blank" rel="noopener noreferrer" aria-label="Chat Zalo">
+    
+    <!-- [MODIFIED] ZALO WIDGET LINK -->
+    <a href="https://zalo.me/giaiphapsoems" class="zalo-chat-widget" target="_blank" rel="noopener noreferrer" aria-label="Chat Zalo">
         <svg viewBox="0 0 24 24"><path d="M16.6,15.2l-1.4-0.3c-0.4-0.1-0.7,0-1,0.2l-0.8,0.7c-1.3-0.6-2.5-1.4-3.6-2.5C9.1,12.7,8.3,11.5,7.6,10.2l0.8-0.7 c0.2-0.2,0.3-0.6,0.2-1l-0.3-1.4c-0.1-0.4-0.4-0.7-0.8-0.7H6c-0.4,0-0.7,0.3-0.8,0.6C5.1,7.2,5,7.5,5.1,7.8C5.2,8.8,5.5,10,6.2,11.1 c1.4,2.4,3.5,4.4,6.1,5.6c1,0.5,2,0.8,3,1c0.3,0.1,0.6,0,0.8-0.1c0.3-0.1,0.5-0.4,0.6-0.8V16C17.3,15.6,17,15.2,16.6,15.2z M12,0 C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,21.6c-5.3,0-9.6-4.3-9.6-9.6S6.7,2.4,12,2.4s9.6,4.3,9.6,9.6 S17.3,21.6,12,21.6z"></path></svg>
     </a>
     <a href="#home" id="back-to-top" aria-label="Lên đầu trang"><i class="fas fa-arrow-up"></i></a>
@@ -778,7 +805,6 @@
                 });
             });
 
-            // --- [MODIFIED] CORRECTED FAQ JAVASCRIPT ---
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
@@ -792,7 +818,7 @@
                             otherItem.querySelector('.faq-answer').style.maxHeight = null;
                         }
                     });
-
+                    
                     if (isOpen) {
                         item.classList.remove('active');
                         answer.style.maxHeight = null;
