@@ -110,7 +110,6 @@
         
         #hero-stats { padding: 40px 0 0 0; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
-        /* MODIFIED: Added styles for stats link */
         a.stats-link { text-decoration: none; color: inherit; }
         .stats-item { border: 2px solid rgba(255,255,255,0.3); padding: 25px; border-radius: 12px; transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; }
         .stats-item:hover { border-color: var(--accent); transform: translateY(-5px); background-color: rgba(255,255,255,0.1); }
@@ -168,12 +167,12 @@
         .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
         
         #faq { background-color: var(--white); }
-        .faq-item { border-bottom: 1px solid #e0e0e0; padding: 20px 0; }
-        .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.2rem; font-weight: 600; }
+        .faq-item { border-bottom: 1px solid #e0e0e0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.2rem; font-weight: 600; padding: 20px 0; }
         .faq-question i { transition: transform 0.3s ease; }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding-top 0.4s ease-out; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .faq-answer p { padding: 0 0 20px 0; margin: 0; }
         .faq-item.active .faq-question i { transform: rotate(45deg); }
-        .faq-item.active .faq-answer { padding-top: 15px; }
 
         #register-cta { background-color: var(--primary); }
         #register-cta .section-title { color: var(--white); }
@@ -200,8 +199,14 @@
         .footer-socials { margin-top: 20px; display: flex; align-items: center; gap: 20px; }
         .footer-socials a { color: var(--white); font-size: 1.6rem; margin-right: 0; opacity: 0.8; transition: color 0.3s, transform 0.3s; line-height: 1; }
         .footer-socials a:hover { opacity: 1; color: var(--accent); transform: translateY(-3px); }
-        /* MODIFIED: Added style for Zalo icon */
-        .zalo-icon { height: 1.4rem; vertical-align: middle; filter: brightness(0) invert(1); }
+        /* MODIFIED: Updated Zalo icon styles */
+        .zalo-icon {
+            height: 1.6rem;
+            width: 1.6rem;
+            vertical-align: middle;
+            border-radius: 50%;
+            object-fit: cover;
+        }
         .footer-bottom { border-top: 1px solid #3a4b68; padding-top: 25px; text-align: center; opacity: 0.8; }
         
         .fade-in-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -274,7 +279,6 @@
                 </div>
                 <div id="hero-stats">
                     <div class="stats-grid">
-                        <!-- MODIFIED: Wrapped stats items in anchor tags -->
                         <a href="#testimonials" class="stats-link fade-in-element"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-users icon"></i><div class="number" data-target="200">0</div></div><div class="label">Khách Hàng</div></div></a>
                         <a href="#software" class="stats-link fade-in-element"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-briefcase icon"></i><div class="number" data-target="250">0</div></div><div class="label">Dự Án</div></div></a>
                         <a href="#courses" class="stats-link fade-in-element"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-book icon"></i><div class="number" data-target="120">0</div></div><div class="label">Khóa Học</div></div></a>
@@ -349,8 +353,8 @@
                 <div class="grid-4">
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1887&auto=format&fit=crop" alt="Chuyên gia Nguyễn Tấn Hiền"></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Tấn Hiền</h3><p>Founder & CEO</p></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1770&auto=format&fit=crop" alt="Chuyên gia Nguyễn Văn Hòa"></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Hòa</h3><p>Co-Founder & CTO</p></div></div>
-                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?q=80&w=1887&auto=format&fit=crop" alt="Chuyên gia Nguyễn Văn Tráng"></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Tráng</h3><p>Google Sheets Expert</p></div></div>
-                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1573496542394-15229c578844?q=80&w=1887&auto=format&fit=crop" alt="Chuyên gia Lê Anh Tuấn"></div><div class="card-content" style="text-align:center;"><h3>Lê Anh Tuấn</h3><p>Analytics Expert</p></div></div>
+                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1887&auto=format&fit=crop" alt="Chuyên gia Nguyễn Văn Tráng"></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Tráng</h3><p>Google Sheets Expert</p></div></div>
+                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1887&auto=format&fit=crop" alt="Chuyên gia Lê Anh Tuấn"></div><div class="card-content" style="text-align:center;"><h3>Lê Anh Tuấn</h3><p>Analytics Expert</p></div></div>
                 </div>
                 <div class="section-view-more fade-in-element"><a href="#register-cta" class="btn btn-outline">Gia nhập đội ngũ</a></div>
             </div>
@@ -381,7 +385,7 @@
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1632516643720-e7f5d7d6086f?q=80&w=1770&auto=format&fit=crop" alt="Mini ERP"></div><div class="card-content"><h3>Mini ERP Sản xuất (AppSheet)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 350+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1587573089734-0943de163453?q=80&w=1770&auto=format&fit=crop" alt="Web App quản lý tài liệu"></div><div class="card-content"><h3>Web App quản lý tài liệu</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 500+</span></div><div class="product-price"><span class="current-price">2.999.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1611775434683-4a6a7b73a35d?q=80&w=1770&auto=format&fit=crop" alt="Google Sheets tài chính"><span class="discount-badge">-33%</span></div><div class="card-content"><h3>Google Sheets quản lý tài chính</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 2,500+</span></div><div class="product-price"><span class="old-price">600.000đ</span><span class="current-price">399.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1770&auto=format&fit=crop" alt="App Quản lý nhân sự"></div><div class="card-content"><h3>App Quản lý Nhân sự & KPI (HRM)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 320+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
+                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?q=80&w=1770&auto=format&fit=crop" alt="App Quản lý nhân sự"></div><div class="card-content"><h3>App Quản lý Nhân sự & KPI (HRM)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 320+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1556742212-0b284afb757c?q=80&w=1770&auto=format&fit=crop" alt="Hệ thống CRM"></div><div class="card-content"><h3>Hệ thống CRM Chăm sóc Khách hàng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 480+</span></div><div class="product-price"><span class="current-price">4.999.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1696208641155-321480742b43?q=80&w=1887&auto=format&fit=crop" alt="AI Chatbot"></div><div class="card-content"><h3>AI Chatbot Tích hợp Website/Fanpage</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 180+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1770&auto=format&fit=crop" alt="App Quản lý dự án"></div><div class="card-content"><h3>App Quản lý Dự án & Công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 950+</span></div><div class="product-price"><span class="current-price">1.499.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
@@ -394,10 +398,10 @@
             <div class="container-wide">
                 <h2 class="section-title fade-in-element">Blog Chia Sẻ Kiến Thức</h2>
                 <div class="grid-4">
-                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1678835689437-c823d047385f?q=80&w=1770&auto=format&fit=crop" alt="AI Automation"></div><div class="card-content"><h3>5 bước tự động hóa công việc với AI</h3><p>Khám phá cách sử dụng các công cụ AI để giảm thiểu công việc lặp đi lặp lại và tăng hiệu suất đột phá.</p><a href="#" class="btn btn-outline" style="margin-top: auto;">Đọc thêm</a></div></div>
+                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1770&auto=format&fit=crop" alt="AI Automation"></div><div class="card-content"><h3>5 bước tự động hóa công việc với AI</h3><p>Khám phá cách sử dụng các công cụ AI để giảm thiểu công việc lặp đi lặp lại và tăng hiệu suất đột phá.</p><a href="#" class="btn btn-outline" style="margin-top: auto;">Đọc thêm</a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1770&auto=format&fit=crop" alt="Dashboard"></div><div class="card-content"><h3>Bí quyết xây dựng Dashboard hiệu quả</h3><p>Học cách trực quan hóa dữ liệu kinh doanh một cách hiệu quả để đưa ra quyết định nhanh chóng và chính xác.</p><a href="#" class="btn btn-outline" style="margin-top: auto;">Đọc thêm</a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1770&auto=format&fit=crop" alt="AppSheet vs PowerApps"></div><div class="card-content"><h3>AppSheet vs PowerApps: Cái nào cho bạn?</h3><p>Một bài so sánh chi tiết giữa hai nền tảng no-code hàng đầu để giúp bạn lựa chọn công cụ phù hợp nhất.</p><a href="#" class="btn btn-outline" style="margin-top: auto;">Đọc thêm</a></div></div>
-                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1516131206008-dd95a84345e8?q=80&w=1770&auto=format&fit=crop" alt="Content Creation"></div><div class="card-content"><h3>Sáng tạo nội dung hàng loạt với AI</h3><p>Làm thế nào để tạo ra hàng trăm bài viết, email marketing chỉ với vài cú nhấp chuột nhờ sức mạnh của AI.</p><a href="#" class="btn btn-outline" style="margin-top: auto;">Đọc thêm</a></div></div>
+                    <div class="card fade-in-element"><div class="card-image"><img src="https://phala.network/illustrations/ai-agents/features.png?q=80&w=1770&auto=format&fit=crop" alt="Content Creation"></div><div class="card-content"><h3>Sáng tạo nội dung hàng loạt với AI</h3><p>Làm thế nào để tạo ra hàng trăm bài viết, email marketing chỉ với vài cú nhấp chuột nhờ sức mạnh của AI.</p><a href="#" class="btn btn-outline" style="margin-top: auto;">Đọc thêm</a></div></div>
                 </div>
                 <div class="section-view-more fade-in-element"><a href="#" class="btn btn-outline">Truy cập Blog</a></div>
             </div>
@@ -486,10 +490,7 @@
                     <div class="footer-socials">
                         <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                        <!-- MODIFIED: Added Zalo Icon -->
-                        <a href="https://zalo.me/giaiphapsoems" aria-label="Zalo" target="_blank" rel="noopener noreferrer">
-                            <img src="https://stc-zaui.zdn.vn/zmp-zaui/images/zalo-logo.svg" alt="Zalo Logo" class="zalo-icon">
-                        </a>
+                        <a href="#" aria-label="Zalo" target="_blank" rel="noopener noreferrer"><i class="fab fa-zalo-in"></i></a>
                         <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -553,19 +554,27 @@
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
                 question.addEventListener('click', () => {
                     const isOpen = item.classList.contains('active');
-                    faqItems.forEach(i => {
-                        i.classList.remove('active');
-                        i.querySelector('.faq-answer').style.maxHeight = null;
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                        }
                     });
-                    if (!isOpen) {
+
+                    if (isOpen) {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = null;
+                    } else {
                         item.classList.add('active');
-                        const answer = item.querySelector('.faq-answer');
-                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
                     }
                 });
             });
+
 
             const fadeElements = document.querySelectorAll('.fade-in-element');
             const fadeObserver = new IntersectionObserver((entries, observer) => {
