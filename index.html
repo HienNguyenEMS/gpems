@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -92,36 +91,27 @@
         .hero h1 { 
             font-size: 3.5rem; 
             font-weight: 700; 
-            color: var(--white); 
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            color: var(--accent); 
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
-        /* MODIFIED: Slogan color and style */
-        .hero .hero-slogan { 
+        .hero p { 
             font-size: 1.2rem; 
             max-width: 750px; 
             margin: 25px auto 15px; 
             opacity: 0.9; 
-            color: var(--accent);
-            font-weight: 600;
         }
         .hero-benefits { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 35px; color: var(--accent); font-weight: 600; }
         .hero-benefits span { display: flex; align-items: center; gap: 8px; }
 
-        .hero-search-container {
-            display: flex;
-            max-width: 700px;
-            margin: 40px auto;
-            background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
+        .hero-search-container { display: flex; max-width: 700px; margin: 40px auto; background-color: var(--white); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; }
         .hero-search-container input { flex-grow: 1; border: none; outline: none; padding: 20px 25px; font-size: 1.1rem; font-family: 'Open Sans', sans-serif; color: var(--text); }
         .hero-search-container button { background-color: var(--accent); color: var(--primary); border: none; padding: 0 30px; font-size: 1.4rem; cursor: pointer; transition: background-color 0.3s ease; }
         .hero-search-container button:hover { background-color: #00b2d1; }
         
         #hero-stats { padding: 40px 0 0 0; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        /* MODIFIED: Added styles for stats link */
+        a.stats-link { text-decoration: none; color: inherit; }
         .stats-item { border: 2px solid rgba(255,255,255,0.3); padding: 25px; border-radius: 12px; transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; }
         .stats-item:hover { border-color: var(--accent); transform: translateY(-5px); background-color: rgba(255,255,255,0.1); }
         .stats-item .stats-top-line { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -150,14 +140,12 @@
         .card { background-color: var(--white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; display: flex; flex-direction: column; border: 2px solid transparent; }
         .card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
         
-        /* MODIFIED: Reduced card image height for compactness */
         .card-image { position: relative; width: 100%; height: 160px; }
         .card-image img { width: 100%; height: 100%; object-fit: cover; }
         .discount-badge { position: absolute; top: 15px; right: 15px; background-color: #ff4d4f; color: var(--white); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; font-weight: 700; z-index: 2; }
         
-        /* MODIFIED: Reduced padding for compactness */
         .card-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-content h3 { font-size: 1.05rem; margin-bottom: 8px; flex-grow: 1; line-height: 1.4; }
+        .card-content h3 { font-size: 1.1rem; margin-bottom: 8px; flex-grow: 1; line-height: 1.4; }
         .card-content .icon { font-size: 3rem; color: var(--accent); margin-bottom: 20px; transition: transform 0.3s ease, color 0.3s ease; } 
         .card:hover .icon { transform: scale(1.1); color: var(--secondary); }
         
@@ -209,9 +197,11 @@
         .footer-col li { margin-bottom: 10px; }
         .footer-col a, .footer-bottom a { text-decoration: none; color: var(--white); transition: color 0.3s, opacity 0.3s; opacity: 0.8; }
         .footer-col a:hover, .footer-bottom a:hover { color: var(--accent); opacity: 1; text-decoration: underline; }
-        .footer-socials { margin-top: 20px; display: flex; gap: 20px; }
-        .footer-socials a { color: var(--white); font-size: 1.6rem; margin-right: 0; opacity: 0.8; transition: color 0.3s, transform 0.3s; }
+        .footer-socials { margin-top: 20px; display: flex; align-items: center; gap: 20px; }
+        .footer-socials a { color: var(--white); font-size: 1.6rem; margin-right: 0; opacity: 0.8; transition: color 0.3s, transform 0.3s; line-height: 1; }
         .footer-socials a:hover { opacity: 1; color: var(--accent); transform: translateY(-3px); }
+        /* MODIFIED: Added style for Zalo icon */
+        .zalo-icon { height: 1.4rem; vertical-align: middle; filter: brightness(0) invert(1); }
         .footer-bottom { border-top: 1px solid #3a4b68; padding-top: 25px; text-align: center; opacity: 0.8; }
         
         .fade-in-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -272,8 +262,7 @@
         <section id="home" class="hero">
             <div class="container">
                 <h1 class="fade-in-element">SỐ HÓA QUY TRÌNH KHÔNG CẦN CODE</h1>
-                <!-- MODIFIED: Added class for styling -->
-                <p class="hero-slogan fade-in-element">Tư vấn, đào tạo, thiết kế ứng dụng Số hóa quy trình quản lý doanh nghiệp dựa trên nền tảng Google Workspace và AI Agent.</p>
+                <p class="fade-in-element">Tư vấn, đào tạo, thiết kế ứng dụng Số hóa quy trình quản lý doanh nghiệp dựa trên nền tảng Google Workspace và AI Agent.</p>
                 <div class="hero-benefits fade-in-element">
                     <span><i class="fas fa-check-circle"></i> Tiết kiệm thời gian</span>
                     <span><i class="fas fa-check-circle"></i> Giảm thiểu sai sót</span>
@@ -285,10 +274,11 @@
                 </div>
                 <div id="hero-stats">
                     <div class="stats-grid">
-                        <div class="stats-item fade-in-element"><div class="stats-top-line"><i class="fas fa-users icon"></i><div class="number" data-target="200">0</div></div><div class="label">Khách Hàng</div></div>
-                        <div class="stats-item fade-in-element"><div class="stats-top-line"><i class="fas fa-briefcase icon"></i><div class="number" data-target="250">0</div></div><div class="label">Dự Án</div></div>
-                        <div class="stats-item fade-in-element"><div class="stats-top-line"><i class="fas fa-book icon"></i><div class="number" data-target="120">0</div></div><div class="label">Khóa Học</div></div>
-                        <div class="stats-item fade-in-element"><div class="stats-top-line"><i class="fas fa-graduation-cap icon"></i><div class="number" data-target="10000">0</div></div><div class="label">Học Viên</div></div>
+                        <!-- MODIFIED: Wrapped stats items in anchor tags -->
+                        <a href="#testimonials" class="stats-link fade-in-element"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-users icon"></i><div class="number" data-target="200">0</div></div><div class="label">Khách Hàng</div></div></a>
+                        <a href="#software" class="stats-link fade-in-element"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-briefcase icon"></i><div class="number" data-target="250">0</div></div><div class="label">Dự Án</div></div></a>
+                        <a href="#courses" class="stats-link fade-in-element"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-book icon"></i><div class="number" data-target="120">0</div></div><div class="label">Khóa Học</div></div></a>
+                        <a href="#testimonials" class="stats-link fade-in-element"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-graduation-cap icon"></i><div class="number" data-target="10000">0</div></div><div class="label">Học Viên</div></div></a>
                     </div>
                 </div>
             </div>
@@ -331,10 +321,10 @@
                         <h3>Đối tác tin cậy trên hành trình chuyển đổi số</h3>
                         <p>Được thành lập từ năm 2021, EMS Solution ra đời với sứ mệnh giúp các doanh nghiệp Việt Nam tối ưu hóa vận hành, tăng hiệu suất làm việc thông qua việc số hóa quy trình mà không yêu cầu kiến thức lập trình phức tạp.</p>
                         <ul class="timeline">
-                            <li data-icon="&#xf024;"><h4>2021</h4><p>Thành lập công ty, triển khai các dự án đầu tiên về Google Sheets.</p></li>
-                            <li data-icon="&#xf19d;"><h4>2022</h4><p>Mở rộng sang lĩnh vực đào tạo AppSheet, ra mắt các khóa học đầu tiên.</p></li>
-                            <li data-icon="&#xf005;"><h4>2023</h4><p>Đạt mốc 10,000+ học viên và 200+ khách hàng doanh nghiệp.</p></li>
-                            <li data-icon="&#xf1b6;"><h4>2024</h4><p>Tích hợp giải pháp AI Agent, trở thành đơn vị tiên phong tại Việt Nam.</p></li>
+                            <li data-icon=""><h4>2021</h4><p>Thành lập công ty, triển khai các dự án đầu tiên về Google Sheets.</p></li>
+                            <li data-icon=""><h4>2022</h4><p>Mở rộng sang lĩnh vực đào tạo AppSheet, ra mắt các khóa học đầu tiên.</p></li>
+                            <li data-icon=""><h4>2023</h4><p>Đạt mốc 10,000+ học viên và 200+ khách hàng doanh nghiệp.</p></li>
+                            <li data-icon=""><h4>2024</h4><p>Tích hợp giải pháp AI Agent, trở thành đơn vị tiên phong tại Việt Nam.</p></li>
                         </ul>
                     </div>
                 </div>
@@ -370,7 +360,6 @@
             <div class="container-wide">
                 <h2 class="section-title fade-in-element">Khóa Học Nổi Bật</h2>
                 <div class="grid-4">
-                    <!-- MODIFIED: Unique content for all cards -->
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=1769&auto=format&fit=crop" alt="Khóa học Google Sheets"><span class="discount-badge">-47%</span></div><div class="card-content"><h3>Làm chủ Google Sheets A-Z</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 15,320+</span></div><div class="product-price"><span class="old-price">1.500.000đ</span><span class="current-price">799.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1629654857513-3c23b5d5d83c?q=80&w=1770&auto=format&fit=crop" alt="Khóa học AppSheet"><span class="discount-badge">-48%</span></div><div class="card-content"><h3>Xây dựng App với AppSheet</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 9,850+</span></div><div class="product-price"><span class="old-price">2.500.000đ</span><span class="current-price">1.299.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1684369176394-297132296993?q=80&w=1770&auto=format&fit=crop" alt="Khóa học AI"><span class="discount-badge">-50%</span></div><div class="card-content"><h3>AI Agent & ChatGPT cho công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 21,100+</span></div><div class="product-price"><span class="old-price">2.000.000đ</span><span class="current-price">999.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
@@ -388,9 +377,8 @@
              <div class="container-wide">
                 <h2 class="section-title fade-in-element">Phần Mềm & Công Cụ</h2>
                 <div class="grid-4">
-                     <!-- MODIFIED: Unique content for all cards -->
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1518939029243-2ce611025750?q=80&w=1887&auto=format&fit=crop" alt="Tool Excel tính giá xây dựng"></div><div class="card-content"><h3>Tool Excel tính giá xây dựng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 1,200+</span></div><div class="product-price"><span class="current-price">499.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1632516643720-e7f5d7d6086f?q=80&w=1770&auto=format&fit=crop" alt="Mini-ERP Quản lý sản Xuất "></div><div class="card-content"><h3>Mini ERP Sản xuất (AppSheet)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 350+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
+                    <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1632516643720-e7f5d7d6086f?q=80&w=1770&auto=format&fit=crop" alt="Mini ERP"></div><div class="card-content"><h3>Mini ERP Sản xuất (AppSheet)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 350+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1587573089734-0943de163453?q=80&w=1770&auto=format&fit=crop" alt="Web App quản lý tài liệu"></div><div class="card-content"><h3>Web App quản lý tài liệu</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 500+</span></div><div class="product-price"><span class="current-price">2.999.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1611775434683-4a6a7b73a35d?q=80&w=1770&auto=format&fit=crop" alt="Google Sheets tài chính"><span class="discount-badge">-33%</span></div><div class="card-content"><h3>Google Sheets quản lý tài chính</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 2,500+</span></div><div class="product-price"><span class="old-price">600.000đ</span><span class="current-price">399.000đ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
                     <div class="card fade-in-element"><div class="card-image"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1770&auto=format&fit=crop" alt="App Quản lý nhân sự"></div><div class="card-content"><h3>App Quản lý Nhân sự & KPI (HRM)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 320+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a href="#" class="btn btn-accent"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
@@ -494,11 +482,15 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col footer-logo">
-                    <img src="https://giaiphapsoems.vn/wp-content/uploads/2024/04/LOGO-EMS-White.png" alt="EMS Solution Logo">
+                    <img src="https://gpems.net/metaImage.png" alt="EMS Solution Logo">
                     <div class="footer-socials">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                        <!-- MODIFIED: Added Zalo Icon -->
+                        <a href="https://zalo.me/giaiphapsoems" aria-label="Zalo" target="_blank" rel="noopener noreferrer">
+                            <img src="https://stc-zaui.zdn.vn/zmp-zaui/images/zalo-logo.svg" alt="Zalo Logo" class="zalo-icon">
+                        </a>
+                        <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col"><h4>Điều hướng</h4><ul><li><a href="#about">Giới thiệu</a></li><li><a href="#courses">Khóa học</a></li><li><a href="#software">Phần mềm</a></li><li><a href="#blog">Blog</a></li></ul></div>
@@ -509,7 +501,7 @@
                     <p><strong>Email:</strong> admin@gpems.net</p>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2024 Gpems.net by EMS Solution. All Rights Reserved. | <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản dịch vụ</a></p></div>
+            <div class="footer-bottom"><p>© 2024 Gpems.net by EMS Solution. All Rights Reserved. | <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản dịch vụ</a></p></div>
         </div>
     </footer>
 
