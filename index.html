@@ -115,7 +115,8 @@
         .hero-search-container .desktop-search-button { display: none; }
         
         #hero-stats { padding-top: 0; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; text-align: center; }
+        /* [UPDATED] Adjusted stats-grid for 6 items */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; text-align: center; }
         a.stats-link { text-decoration: none; color: inherit; }
         .stats-item { border: 2px solid rgba(255,255,255,0.3); padding: 15px; border-radius: 12px; transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; }
         .stats-item:hover { border-color: var(--accent); transform: translateY(-5px); background-color: rgba(255,255,255,0.1); }
@@ -178,7 +179,6 @@
         .benefit-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
         .benefit-item h4 { font-size: 1rem; color: var(--primary); margin: 0; font-weight: 600; line-height: 1.4; }
         
-        /* [NEW SOFTWARE BENEFITS SECTION] Styling for software benefit items */
         .benefit-item-soft {
             background-color: var(--white); padding: 25px 20px; text-align: center; border-radius: 12px;
             border: 2px solid transparent; transition: all 0.3s ease; display: flex; flex-direction: column;
@@ -296,6 +296,7 @@
             
             .partners-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
             .grid-5 { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 767px) { 
@@ -324,7 +325,6 @@
                 color: var(--white); width: 40px; height: 40px; border-radius: 50%;
             }
             
-            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .stats-item { padding: 15px; }
             .stats-item .number { font-size: 2rem; }
             .stats-item .icon { font-size: 1.5rem; }
@@ -424,8 +424,12 @@
                     <div class="stats-grid">
                         <a href="#testimonials" class="stats-link slide-in-from-left"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-users icon"></i><div class="number" data-target="200">0</div></div><div class="label">Khách Hàng</div></div></a>
                         <a href="#software" class="stats-link slide-in-from-right"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-briefcase icon"></i><div class="number" data-target="250">0</div></div><div class="label">Dự Án</div></div></a>
-                        <a href="#courses" class="stats-link slide-in-from-left"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-book icon"></i><div class="number" data-target="120">0</div></div><div class="label">Khóa Học</div></div></a>
-                        <a href="#testimonials" class="stats-link slide-in-from-right"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-graduation-cap icon"></i><div class="number" data-target="10000">0</div></div><div class="label">Học Viên</div></div></a>
+                        <!-- NEW STAT ITEM -->
+                        <a href="#software" class="stats-link slide-in-from-left"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-layer-group icon"></i><div class="number" data-target="300">0</div></div><div class="label">Phần Mềm</div></div></a>
+                        <a href="#courses" class="stats-link slide-in-from-right"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-book icon"></i><div class="number" data-target="120">0</div></div><div class="label">Khóa Học</div></div></a>
+                        <a href="#testimonials" class="stats-link slide-in-from-left"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-graduation-cap icon"></i><div class="number" data-target="10000">0</div></div><div class="label">Học Viên</div></div></a>
+                        <!-- NEW STAT ITEM -->
+                        <a href="#register-cta" class="stats-link slide-in-from-right"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-user-friends icon"></i><div class="number" data-target="35000">0</div></div><div class="label">Thành Viên</div></div></a>
                     </div>
                 </div>
             </div>
@@ -592,7 +596,6 @@
             </div>
         </section>
         
-        <!-- NEW SECTION: Software Purchase Benefits -->
         <section id="software-benefits" style="background-color: var(--light-background);">
             <div class="container">
                 <h2 class="section-title zoom-in-element">Lợi Ích Khi Mua Phần Mềm Tại EMS</h2>
@@ -616,7 +619,6 @@
                 </div>
             </div>
         </section>
-        <!-- End of NEW SECTION -->
 
         <section id="blog" style="background-color: var(--white);">
             <div class="container-wide">
