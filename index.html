@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -142,7 +143,6 @@
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
         .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 25px; }
-        /* [NEW LAYOUT CLASS] */
         .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 25px; }
         
         .section-view-more { text-align: center; margin-top: 40px; }
@@ -307,7 +307,8 @@
             .section-title::after { width: 60px; height: 3px; bottom: -10px; }
 
             .hero { padding-top: 40px; padding-bottom: 25px; }
-            .hero h1 { font-size: 2.3rem; line-height: 1.25; margin-bottom: 15px;}
+            /* [MOBILE H1 FIT FIX] Reduced font-size and adjusted line-height */
+            .hero h1 { font-size: 2.0rem; line-height: 1.3; margin-bottom: 15px;}
             .hero p { font-size: 1rem; margin-bottom: 20px; }
             .hero-benefits { margin-bottom: 20px; }
             .hero-search-container { margin-bottom: 25px; }
@@ -340,7 +341,6 @@
                 gap: 20px; 
             }
             
-            /* [MOBILE RESPONSE FIX] */
             #student-benefits .grid-6,
             #software-benefits .grid-4,
             #process .grid-4 {
@@ -572,7 +572,6 @@
             </div>
         </section>
 
-        <!-- [UPDATED CONTENT & LAYOUT] -->
         <section id="student-benefits" style="background-color: var(--white);">
             <div class="container">
                 <h2 class="section-title zoom-in-element">QUYỀN LỢI CỦA HỌC VIÊN</h2>
