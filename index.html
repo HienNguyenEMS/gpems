@@ -115,7 +115,6 @@
         .hero-search-container .desktop-search-button { display: none; }
         
         #hero-stats { padding-top: 0; }
-        /* [UPDATED] Adjusted stats-grid for 6 items */
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; text-align: center; }
         a.stats-link { text-decoration: none; color: inherit; }
         .stats-item { border: 2px solid rgba(255,255,255,0.3); padding: 15px; border-radius: 12px; transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; }
@@ -294,9 +293,10 @@
             .main-nav .submenu li a { padding: 8px 0; }
             .main-nav .submenu li a:hover { background-color: transparent; color: var(--accent); }
             
+            /* [MOBILE RESPONSE FIX] Partners set to 3 columns on tablet */
             .partners-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
             .grid-5 { grid-template-columns: repeat(2, 1fr); }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (max-width: 767px) { 
@@ -325,11 +325,28 @@
                 color: var(--white); width: 40px; height: 40px; border-radius: 50%;
             }
             
-            .stats-item { padding: 15px; }
-            .stats-item .number { font-size: 2rem; }
+            /* [MOBILE RESPONSE FIX] Forcing 2 columns for hero stats and reducing font size */
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .stats-item { padding: 10px; }
+            .stats-item .number { font-size: 1.8rem; }
+            .stats-item .label { font-size: 0.85rem; }
             .stats-item .icon { font-size: 1.5rem; }
 
-            .grid-3, .grid-4, .grid-5, .about-grid, .partners-grid { grid-template-columns: 1fr; gap: 20px; }
+            /* [MOBILE RESPONSE FIX] Set general grids to 1 column, except specific ones */
+            .grid-3, .about-grid, #solutions .grid-4, #team .grid-4, #courses .grid-4, #blog .grid-4 { 
+                grid-template-columns: 1fr; 
+                gap: 20px; 
+            }
+            
+            /* [MOBILE RESPONSE FIX] Set student/software benefits to 2 columns and partners to 3 */
+            #student-benefits .grid-5,
+            #software-benefits .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
             .about-image { order: -1; margin-bottom: 30px; }
             .card:hover, .testimonial-card:hover { transform: translateY(-5px); }
             .faq-question { font-size: 1rem; padding: 15px; }
@@ -346,6 +363,7 @@
     <div class="page-overlay"></div>
 
     <header class="main-header">
+        <!-- Header content remains the same -->
         <div class="container">
             <button id="mobile-menu-toggle" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
             <a href="#home" class="logo">
@@ -424,17 +442,17 @@
                     <div class="stats-grid">
                         <a href="#testimonials" class="stats-link slide-in-from-left"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-users icon"></i><div class="number" data-target="200">0</div></div><div class="label">Khách Hàng</div></div></a>
                         <a href="#software" class="stats-link slide-in-from-right"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-briefcase icon"></i><div class="number" data-target="250">0</div></div><div class="label">Dự Án</div></div></a>
-                        <!-- NEW STAT ITEM -->
                         <a href="#software" class="stats-link slide-in-from-left"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-layer-group icon"></i><div class="number" data-target="300">0</div></div><div class="label">Phần Mềm</div></div></a>
                         <a href="#courses" class="stats-link slide-in-from-right"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-book icon"></i><div class="number" data-target="120">0</div></div><div class="label">Khóa Học</div></div></a>
                         <a href="#testimonials" class="stats-link slide-in-from-left"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-graduation-cap icon"></i><div class="number" data-target="10000">0</div></div><div class="label">Học Viên</div></div></a>
-                        <!-- NEW STAT ITEM -->
                         <a href="#register-cta" class="stats-link slide-in-from-right"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-user-friends icon"></i><div class="number" data-target="35000">0</div></div><div class="label">Thành Viên</div></div></a>
                     </div>
                 </div>
             </div>
         </section>
         
+        <!-- The rest of the page remains the same, only the CSS media queries have been updated -->
+        <!-- ... all other sections ... -->
         <section id="process">
             <div class="container">
                 <h2 class="section-title zoom-in-element">QUY TRÌNH TƯ VẤN & PHÁT TRIỂN ỨNG DỤNG</h2>
