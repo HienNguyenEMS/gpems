@@ -293,21 +293,24 @@
             .main-nav .submenu li a { padding: 8px 0; }
             .main-nav .submenu li a:hover { background-color: transparent; color: var(--accent); }
             
-            /* [MOBILE RESPONSE FIX] Partners set to 3 columns on tablet */
             .partners-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
             .grid-5 { grid-template-columns: repeat(2, 1fr); }
             .stats-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (max-width: 767px) { 
-            section { padding: 50px 0; }
+            section { padding: 40px 0; }
             #courses, #software, #student-benefits, #software-benefits { padding: 40px 0; }
             .section-title { font-size: 1.8rem; margin-bottom: 40px; }
             .section-title::after { width: 60px; height: 3px; bottom: -10px; }
 
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            
+            /* [MOBILE DENSITY OPTIMIZATION] */
+            .hero { padding-top: 40px; padding-bottom: 25px; }
+            .hero h1 { font-size: 2.3rem; line-height: 1.25; margin-bottom: 15px;}
+            .hero p { font-size: 1rem; margin-bottom: 20px; }
+            .hero-benefits { margin-bottom: 20px; }
+            .hero-search-container { margin-bottom: 25px; }
+
             .mobile-only { display: block; }
 
             .hero-search-container {
@@ -325,22 +328,22 @@
                 color: var(--white); width: 40px; height: 40px; border-radius: 50%;
             }
             
-            /* [MOBILE RESPONSE FIX] Forcing 2 columns for hero stats and reducing font size */
+            /* [MOBILE RESPONSE FIX] */
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .stats-item { padding: 10px; }
             .stats-item .number { font-size: 1.8rem; }
-            .stats-item .label { font-size: 0.85rem; }
+            .stats-item .label { font-size: 0.8rem; line-height: 1.2;}
             .stats-item .icon { font-size: 1.5rem; }
 
-            /* [MOBILE RESPONSE FIX] Set general grids to 1 column, except specific ones */
-            .grid-3, .about-grid, #solutions .grid-4, #team .grid-4, #courses .grid-4, #blog .grid-4 { 
+            .grid-3, .about-grid, #solutions .grid-4, #team .grid-4, #courses .grid-4, #blog .grid-4, #testimonials .grid-4 { 
                 grid-template-columns: 1fr; 
                 gap: 20px; 
             }
             
-            /* [MOBILE RESPONSE FIX] Set student/software benefits to 2 columns and partners to 3 */
+            /* [MOBILE RESPONSE FIX] */
             #student-benefits .grid-5,
-            #software-benefits .grid-4 {
+            #software-benefits .grid-4,
+            #process .grid-4 {
                 grid-template-columns: repeat(2, 1fr);
             }
             .partners-grid {
@@ -355,15 +358,17 @@
 
         @media (max-width: 380px) {
             .logo span { display: none; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
+    <!-- The Body of the HTML remains the same as the previous version -->
+    <!-- It already contains all the sections, including the new stat items -->
     <div class="page-overlay"></div>
 
     <header class="main-header">
-        <!-- Header content remains the same -->
         <div class="container">
             <button id="mobile-menu-toggle" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
             <a href="#home" class="logo">
@@ -451,8 +456,6 @@
             </div>
         </section>
         
-        <!-- The rest of the page remains the same, only the CSS media queries have been updated -->
-        <!-- ... all other sections ... -->
         <section id="process">
             <div class="container">
                 <h2 class="section-title zoom-in-element">QUY TRÌNH TƯ VẤN & PHÁT TRIỂN ỨNG DỤNG</h2>
