@@ -46,16 +46,14 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Open Sans', sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; } /* Adjusted line-height */
+        body { font-family: 'Open Sans', sans-serif; background-color: var(--background); color: var(--text); line-height: 1.6; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: var(--primary); font-weight: 600; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .container-wide { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
         
-        /* [GLOBAL OPTIMIZATION] Reduced default vertical padding for all sections */
         section { padding: 60px 0; }
-        #courses, #software { padding: 50px 0; }
+        #courses, #software, #student-benefits, #software-benefits { padding: 60px 0; }
         
-        /* [GLOBAL OPTIMIZATION] Reduced margin below section titles */
         .section-title { text-align: center; font-size: 2.0rem; margin-bottom: 50px; font-weight: 700; position: relative; }
         .section-title::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: var(--accent); border-radius: 2px; }
 
@@ -117,35 +115,34 @@
         .hero-search-container .desktop-search-button { display: none; }
         
         #hero-stats { padding-top: 0; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; text-align: center; } /* Reduced gap */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; text-align: center; }
         a.stats-link { text-decoration: none; color: inherit; }
-        .stats-item { border: 2px solid rgba(255,255,255,0.3); padding: 15px; border-radius: 12px; transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; } /* Reduced padding */
+        .stats-item { border: 2px solid rgba(255,255,255,0.3); padding: 15px; border-radius: 12px; transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; }
         .stats-item:hover { border-color: var(--accent); transform: translateY(-5px); background-color: rgba(255,255,255,0.1); }
-        .stats-item .stats-top-line { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px; } /* Reduced margin */
+        .stats-item .stats-top-line { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px; }
         .stats-item .icon { font-size: 1.8rem; }
         .stats-item .number, .stats-item .label, .stats-item .icon { color: var(--white); }
         .stats-item .number { font-size: 2.2rem; font-weight: 700; }
         .stats-item .label { font-size: 0.95rem; opacity: 0.9; }
 
-        #process { background-color: var(--light-background); } /* Padding handled by global section rule */
+        #process { background-color: var(--light-background); }
         .process-step { background-color: var(--white); padding: 20px 15px; text-align: center; border-radius: 15px; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 2px solid transparent; }
         .process-step:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
-        .process-step .icon-wrapper { width: 50px; height: 50px; line-height: 50px; margin: 0 auto 15px; background-color: var(--accent); color: var(--primary); border-radius: 50%; font-size: 1.4rem; font-weight: 700; font-family: 'Poppins', sans-serif; } /* Reduced size and margin */
+        .process-step .icon-wrapper { width: 50px; height: 50px; line-height: 50px; margin: 0 auto 15px; background-color: var(--accent); color: var(--primary); border-radius: 50%; font-size: 1.4rem; font-weight: 700; font-family: 'Poppins', sans-serif; }
         .process-step h3 { font-size: 1.15rem; margin-bottom: 8px; }
         .process-step p { font-size: 0.95rem; }
 
         #about { background-color: var(--white); }
-        /* [SECTION OPTIMIZATION] Reduced gap in about grid */
         .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; }
         .about-image img { width: 100%; border-radius: 15px; box-shadow: var(--shadow); }
-        .timeline { list-style: none; margin-top: 25px; border-left: 3px solid var(--accent); padding-left: 40px; position: relative; } /* Reduced margin and padding */
-        .timeline li { position: relative; margin-bottom: 15px; } /* Reduced margin */
-        .timeline li::before { font-family: "Font Awesome 6 Free"; font-weight: 900; content: attr(data-icon); position: absolute; left: -20px; top: 5px; width: 36px; height: 36px; line-height: 36px; text-align: center; font-size: 1.1rem; color: var(--accent); background-color: var(--white); border: 2px solid var(--accent); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(23, 209, 245, 0.5); } /* Reduced size */
+        .timeline { list-style: none; margin-top: 25px; border-left: 3px solid var(--accent); padding-left: 40px; position: relative; }
+        .timeline li { position: relative; margin-bottom: 15px; }
+        .timeline li::before { font-family: "Font Awesome 6 Free"; font-weight: 900; content: attr(data-icon); position: absolute; left: -20px; top: 5px; width: 36px; height: 36px; line-height: 36px; text-align: center; font-size: 1.1rem; color: var(--accent); background-color: var(--white); border: 2px solid var(--accent); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(23, 209, 245, 0.5); }
 
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; } /* Reduced gap */
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; } /* Reduced gap */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 25px; }
         
-        /* [GLOBAL OPTIMIZATION] Reduced margin for "view more" button */
         .section-view-more { text-align: center; margin-top: 40px; }
         .card { background-color: var(--white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; display: flex; flex-direction: column; border: 2px solid transparent; }
         .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
@@ -160,7 +157,7 @@
         
         .card-content { padding: 10px 15px; flex-grow: 1; display: flex; flex-direction: column; }
         .card-content h3 { font-size: 1.1rem; margin-bottom: 8px; flex-grow: 1; line-height: 1.4; }
-        .card-content .icon { font-size: 2.8rem; color: var(--accent); margin-bottom: 15px; transition: transform 0.3s ease, color 0.3s ease; } /* Reduced size and margin */
+        .card-content .icon { font-size: 2.8rem; color: var(--accent); margin-bottom: 15px; transition: transform 0.3s ease, color 0.3s ease; }
         .card:hover .icon { transform: scale(1.1); color: var(--button-primary); }
         
         .product-details { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 15px; }
@@ -168,6 +165,28 @@
         .product-price { text-align: right; }
         .product-price .current-price { font-size: 1.5rem; font-weight: 700; color: var(--price-color); display: block; }
         .product-price .old-price { text-decoration: line-through; color: #999; font-size: 0.9rem; }
+        
+        .benefit-item {
+            background-color: var(--light-background); padding: 25px 15px; text-align: center; border-radius: 12px;
+            border: 2px solid transparent; transition: all 0.3s ease; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+        }
+        .benefit-item:hover {
+            transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--accent);
+            background-color: var(--white);
+        }
+        .benefit-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        .benefit-item h4 { font-size: 1rem; color: var(--primary); margin: 0; font-weight: 600; line-height: 1.4; }
+        
+        /* [NEW SOFTWARE BENEFITS SECTION] Styling for software benefit items */
+        .benefit-item-soft {
+            background-color: var(--white); padding: 25px 20px; text-align: center; border-radius: 12px;
+            border: 2px solid transparent; transition: all 0.3s ease; display: flex; flex-direction: column;
+            align-items: center; justify-content: flex-start; min-height: 160px;
+        }
+        .benefit-item-soft:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--button-primary); }
+        .benefit-item-soft i { font-size: 2.5rem; color: var(--button-primary); margin-bottom: 20px; }
+        .benefit-item-soft h4 { font-size: 1rem; color: var(--primary); margin: 0; font-weight: 600; line-height: 1.4; }
         
         #partners { background-color: var(--white); }
         .partners-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 30px; align-items: center; }
@@ -178,12 +197,11 @@
         .testimonial-card { background-color: var(--white); border-radius: 12px; padding: 20px; position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 2px solid transparent; }
         .testimonial-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
         .testimonial-card .quote-icon { font-size: 2.5rem; color: var(--accent); opacity: 0.3; position: absolute; top: 15px; left: 20px; }
-        .testimonial-author { display: flex; align-items: center; gap: 15px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; } /* Reduced margin/padding */
+        .testimonial-author { display: flex; align-items: center; gap: 15px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
         .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
         
         #faq { background-color: var(--white); }
         .faq-item { border-bottom: 1px solid #e0e0e0; }
-        /* [SECTION OPTIMIZATION] Reduced FAQ item padding */
         .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.1rem; font-weight: 600; padding: 18px 15px; transition: background-color 0.3s ease, color 0.3s ease; }
         .faq-question i { transition: transform 0.3s ease; }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background-color: var(--white);}
@@ -191,6 +209,7 @@
         
         .faq-item.active .faq-question { background-color: var(--primary); color: var(--white); }
         .faq-item.active .faq-question i { transform: rotate(45deg); color: var(--accent) !important; }
+        .faq-item.active .faq-answer p { padding-top: 18px; }
 
         #register-cta { background-color: var(--primary); }
         #register-cta .section-title { color: var(--white); }
@@ -207,7 +226,6 @@
         .contact-item-header h3 { font-size: 1.2rem; margin: 0; }
         .contact-item p { padding-left: 45px; opacity: 0.9; margin: 0; }
 
-        /* [GLOBAL OPTIMIZATION] Reduced footer padding */
         .main-footer { background-color: var(--primary); color: var(--white); padding: 60px 0 20px 0; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
         .footer-col.footer-logo { flex-shrink: 0; }
@@ -245,6 +263,7 @@
 
         @media (max-width: 1200px) { 
             .grid-4 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } 
+            .grid-5 { grid-template-columns: repeat(3, 1fr); }
         }
         
         @media (min-width: 992px) {
@@ -276,11 +295,12 @@
             .main-nav .submenu li a:hover { background-color: transparent; color: var(--accent); }
             
             .partners-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .grid-5 { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 767px) { 
             section { padding: 50px 0; }
-            #courses, #software { padding: 40px 0; }
+            #courses, #software, #student-benefits, #software-benefits { padding: 40px 0; }
             .section-title { font-size: 1.8rem; margin-bottom: 40px; }
             .section-title::after { width: 60px; height: 3px; bottom: -10px; }
 
@@ -309,7 +329,7 @@
             .stats-item .number { font-size: 2rem; }
             .stats-item .icon { font-size: 1.5rem; }
 
-            .grid-4, .about-grid, .partners-grid, .grid-3 { grid-template-columns: 1fr; gap: 25px; }
+            .grid-3, .grid-4, .grid-5, .about-grid, .partners-grid { grid-template-columns: 1fr; gap: 20px; }
             .about-image { order: -1; margin-bottom: 30px; }
             .card:hover, .testimonial-card:hover { transform: translateY(-5px); }
             .faq-question { font-size: 1rem; padding: 15px; }
@@ -527,6 +547,34 @@
             </div>
         </section>
 
+        <section id="student-benefits" style="background-color: var(--white);">
+            <div class="container">
+                <h2 class="section-title zoom-in-element">QUYỀN LỢI CỦA HỌC VIÊN</h2>
+                <div class="grid-5">
+                    <div class="benefit-item fade-in-element">
+                        <i class="fas fa-tasks"></i>
+                        <h4>Lộ trình bài bản và thực chiến</h4>
+                    </div>
+                    <div class="benefit-item fade-in-element">
+                        <i class="fas fa-rocket"></i>
+                        <h4>App mẫu ứng dụng ngay</h4>
+                    </div>
+                    <div class="benefit-item fade-in-element">
+                        <i class="fas fa-book-open"></i>
+                        <h4>Tài liệu & Video chi tiết</h4>
+                    </div>
+                    <div class="benefit-item fade-in-element">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Cập nhật kiến thức mới nhất</h4>
+                    </div>
+                    <div class="benefit-item fade-in-element">
+                        <i class="fas fa-headset"></i>
+                        <h4>Hỗ trợ giải đáp 24/7</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="software">
              <div class="container-wide">
                 <h2 class="section-title zoom-in-element">Phần Mềm & Công Cụ</h2>
@@ -543,8 +591,34 @@
                 <div class="section-view-more fade-in-element"><a href="#" class="btn btn-outline">Xem tất cả phần mềm</a></div>
             </div>
         </section>
+        
+        <!-- NEW SECTION: Software Purchase Benefits -->
+        <section id="software-benefits" style="background-color: var(--light-background);">
+            <div class="container">
+                <h2 class="section-title zoom-in-element">Lợi Ích Khi Mua Phần Mềm Tại EMS</h2>
+                <div class="grid-4">
+                    <div class="benefit-item-soft fade-in-element">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Ứng dụng thực chiến sử dụng ngay</h4>
+                    </div>
+                    <div class="benefit-item-soft fade-in-element">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h4>Hỗ trợ tùy chỉnh & hướng dẫn trực tiếp</h4>
+                    </div>
+                    <div class="benefit-item-soft fade-in-element">
+                        <i class="fas fa-headset"></i>
+                        <h4>Miễn phí tùy biến & hỗ trợ 24/7</h4>
+                    </div>
+                    <div class="benefit-item-soft fade-in-element">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Update phiên bản mới miễn phí</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of NEW SECTION -->
 
-        <section id="blog" style="background-color: var(--light-background);">
+        <section id="blog" style="background-color: var(--white);">
             <div class="container-wide">
                 <h2 class="section-title zoom-in-element">Blog Chia Sẻ Kiến Thức</h2>
                 <div class="grid-4">
@@ -833,7 +907,6 @@
                     } else {
                         item.classList.add('active');
                         answer.style.maxHeight = answer.scrollHeight + 'px';
-                        answer.querySelector('p').style.paddingTop = '18px'; // Add padding when opening
                     }
                 });
             });
