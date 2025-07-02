@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -19,9 +20,9 @@
 <meta content="https://gpems.net/metaImage.png" property="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet">
-<link href="https://giaiphapsoems.vn/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="https://giaiphapsoems.vn/favicon.ico" rel="icon" type="image/x-icon">
 <style>
         :root {
             --primary: #011627;
@@ -623,7 +624,42 @@
         }
         /* --- END: SEARCH MODAL STYLES --- */
     </style>
-</link></head>
+</link><style>
+    .user-avatar-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .avatar-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .dropdown-menu {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        background: white;
+        color: black;
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        display: none;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        min-width: 180px;
+        z-index: 1000;
+    }
+    .dropdown-menu li {
+        padding: 8px 20px;
+    }
+    .dropdown-menu li:hover {
+        background-color: #f0f0f0;
+    }
+    .user-avatar-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    </style></head>
 <body>
 <div class="page-overlay"></div>
 <header class="main-header">
@@ -632,7 +668,7 @@
 <div class="burger-icon"><span></span><span></span><span></span></div>
 </button>
 <a class="logo" href="#home">
-<img alt="EMS Logo Icon" src="https://gpems.net/_next/image?url=%2Flogo-ico.png&w=64&q=75"/>
+<img alt="EMS Logo Icon" src="https://gpems.net/_next/image?url=%2Flogo-ico.png&amp;w=64&amp;q=75"/>
 <span>GPEMS</span>
 </a>
 <nav class="main-nav">
@@ -677,6 +713,15 @@
 </ul>
 </nav>
 <div class="header-actions">
+<div class="user-avatar-dropdown" style="display: none;">
+<img alt="User Avatar" class="avatar-icon" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2FdwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png&w=3840&q=75"/>
+<ul class="dropdown-menu">
+<li><a href="#">Thông tin cá nhân</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="#">Đăng xuất</a></li>
+</ul>
+</div>
+
 <button aria-label="Tìm kiếm" class="icon-btn" id="sticky-search-icon"><i class="fas fa-search"></i></button>
 <a class="login-btn" href="#"><img alt="Google Icon" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" width="18"/><span>Đăng nhập</span></a>
 <div class="cart-widget">
@@ -718,26 +763,26 @@
 <!-- The rest of the main content remains the same -->
 <section id="process">
 <div class="container">
-<h2 class="section-title zoom-in-element">QUY TRÌNH TƯ VẤN & PHÁT TRIỂN ỨNG DỤNG</h2>
+<h2 class="section-title zoom-in-element">QUY TRÌNH TƯ VẤN &amp; PHÁT TRIỂN ỨNG DỤNG</h2>
 <div class="grid-4">
 <div class="process-step slide-in-from-left">
 <div class="icon-wrapper">1</div>
-<h3>Tư vấn & Khảo sát</h3>
+<h3>Tư vấn &amp; Khảo sát</h3>
 <p>Lắng nghe, phân tích nhu cầu và các vấn đề doanh nghiệp đang gặp phải.</p>
 </div>
 <div class="process-step slide-in-from-right">
 <div class="icon-wrapper">2</div>
-<h3>Thiết kế & Báo giá</h3>
+<h3>Thiết kế &amp; Báo giá</h3>
 <p>Đề xuất giải pháp, lộ trình triển khai và chi phí tối ưu nhất cho bạn.</p>
 </div>
 <div class="process-step slide-in-from-left">
 <div class="icon-wrapper">3</div>
-<h3>Phát triển & Triển khai</h3>
+<h3>Phát triển &amp; Triển khai</h3>
 <p>Xây dựng, kiểm thử và bàn giao sản phẩm theo đúng cam kết.</p>
 </div>
 <div class="process-step slide-in-from-right">
 <div class="icon-wrapper">4</div>
-<h3>Hỗ trợ & Bảo trì</h3>
+<h3>Hỗ trợ &amp; Bảo trì</h3>
 <p>Đồng hành cùng doanh nghiệp trong suốt quá trình vận hành và sử dụng.</p>
 </div>
 </div>
@@ -746,7 +791,7 @@
 <section id="about" style="background-color: var(--white);">
 <div class="container">
 <div class="about-grid">
-<div class="about-image slide-in-from-left"><img alt="Infographic về giải pháp của EMS Solution" loading="lazy" src="https://gpems.net/metaImage.png?q=80&w=1770&auto=format&fit=crop"/></div>
+<div class="about-image slide-in-from-left"><img alt="Infographic về giải pháp của EMS Solution" loading="lazy" src="https://gpems.net/metaImage.png?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div>
 <div class="about-content slide-in-from-right">
 <h2 class="section-title" style="text-align: left; margin-bottom: 25px;">Về EMS Solution</h2>
 <h3>Đối tác tin cậy trên hành trình chuyển đổi số của doanh nghiệp</h3>
@@ -800,10 +845,10 @@
 <div class="container">
 <h2 class="section-title zoom-in-element">Đội Ngũ Chuyên Gia</h2>
 <div class="grid-4">
-<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Tấn Hiền" loading="lazy" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Tấn Hiền</h3><p>Founder & CEO</p></div></div>
-<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Hòa" loading="lazy" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Hòa</h3><p>Co-Founder & CTO</p></div></div>
-<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Tráng" loading="lazy" src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Tráng</h3><p>Google Sheets Expert</p></div></div>
-<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Lê Anh Tuấn" loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content" style="text-align:center;"><h3>Lê Anh Tuấn</h3><p>Analytics Expert</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Tấn Hiền" loading="lazy" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Tấn Hiền</h3><p>Founder &amp; CEO</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Hòa" loading="lazy" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Hòa</h3><p>Co-Founder &amp; CTO</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Tráng" loading="lazy" src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Tráng</h3><p>Google Sheets Expert</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Lê Anh Tuấn" loading="lazy" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/></div><div class="card-content" style="text-align:center;"><h3>Lê Anh Tuấn</h3><p>Analytics Expert</p></div></div>
 </div>
 <div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#register-cta">Gia nhập đội ngũ</a></div>
 </div>
@@ -812,14 +857,14 @@
 <div class="container-wide">
 <h2 class="section-title zoom-in-element">Khóa Học Nổi Bật</h2>
 <div class="grid-4">
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học Google Sheets" loading="lazy" src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=1769&auto=format&fit=crop"/><span class="discount-badge">-47%</span></div><div class="card-content"><h3>Làm chủ Google Sheets A-Z</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 15,320+</span></div><div class="product-price"><span class="old-price">1.500.000đ</span><span class="current-price">799.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học AppSheet" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720551256879-92e5b13285be?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-48%</span></div><div class="card-content"><h3>Xây dựng App với AppSheet</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 9,850+</span></div><div class="product-price"><span class="old-price">2.500.000đ</span><span class="current-price">1.299.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học AI" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720503242835-b537741c9736?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>AI Agent & ChatGPT cho công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 21,100+</span></div><div class="product-price"><span class="old-price">2.000.000đ</span><span class="current-price">999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học BI" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>Dashboard Reporting & BI</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 5,500+</span></div><div class="product-price"><span class="old-price">3.000.000đ</span><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Google Workspace" loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1771&auto=format&fit=crop"/></div><div class="card-content"><h3>Quản trị & Tối ưu Google Workspace</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 4,100+</span></div><div class="product-price"><span class="current-price">899.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Excel nâng cao" loading="lazy" src="https://images.unsplash.com/photo-1649433391420-542fcd3835ea?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-42%</span></div><div class="card-content"><h3>Excel Nâng cao cho Chuyên gia</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 8,250+</span></div><div class="product-price"><span class="old-price">1.200.000đ</span><span class="current-price">699.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Tự động hóa Marketing" loading="lazy" src="https://plus.unsplash.com/premium_photo-1684179641331-e89c6320b6a9?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Tự động hóa Marketing (Zalo & Messenger)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 3,500+</span></div><div class="product-price"><span class="current-price">1.199.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Lập trình Apps Script" loading="lazy" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1806&auto=format&fit=crop"/><span class="discount-badge">-43%</span></div><div class="card-content"><h3>Lập trình Google Apps Script từ Zero</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 2,900+</span></div><div class="product-price"><span class="old-price">3.500.000đ</span><span class="current-price">1.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học Google Sheets" loading="lazy" src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&amp;w=1769&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-47%</span></div><div class="card-content"><h3>Làm chủ Google Sheets A-Z</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 15,320+</span></div><div class="product-price"><span class="old-price">1.500.000đ</span><span class="current-price">799.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học AppSheet" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720551256879-92e5b13285be?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-48%</span></div><div class="card-content"><h3>Xây dựng App với AppSheet</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 9,850+</span></div><div class="product-price"><span class="old-price">2.500.000đ</span><span class="current-price">1.299.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học AI" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720503242835-b537741c9736?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>AI Agent &amp; ChatGPT cho công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 21,100+</span></div><div class="product-price"><span class="old-price">2.000.000đ</span><span class="current-price">999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học BI" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>Dashboard Reporting &amp; BI</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 5,500+</span></div><div class="product-price"><span class="old-price">3.000.000đ</span><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Google Workspace" loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&amp;w=1771&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Quản trị &amp; Tối ưu Google Workspace</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 4,100+</span></div><div class="product-price"><span class="current-price">899.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Excel nâng cao" loading="lazy" src="https://images.unsplash.com/photo-1649433391420-542fcd3835ea?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-42%</span></div><div class="card-content"><h3>Excel Nâng cao cho Chuyên gia</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 8,250+</span></div><div class="product-price"><span class="old-price">1.200.000đ</span><span class="current-price">699.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Tự động hóa Marketing" loading="lazy" src="https://plus.unsplash.com/premium_photo-1684179641331-e89c6320b6a9?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Tự động hóa Marketing (Zalo &amp; Messenger)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 3,500+</span></div><div class="product-price"><span class="current-price">1.199.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Lập trình Apps Script" loading="lazy" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&amp;w=1806&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-43%</span></div><div class="card-content"><h3>Lập trình Google Apps Script từ Zero</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 2,900+</span></div><div class="product-price"><span class="old-price">3.500.000đ</span><span class="current-price">1.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
 </div>
 <div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Xem tất cả khóa học</a></div>
 </div>
@@ -838,7 +883,7 @@
 </div>
 <div class="benefit-item fade-in-element">
 <i class="fas fa-book-open"></i>
-<h4>Tài liệu & video hướng dẫn chi tiết, dễ hiểu</h4>
+<h4>Tài liệu &amp; video hướng dẫn chi tiết, dễ hiểu</h4>
 </div>
 <div class="benefit-item fade-in-element">
 <i class="fas fa-sync-alt"></i>
@@ -850,23 +895,23 @@
 </div>
 <div class="benefit-item fade-in-element">
 <i class="fas fa-users-cog"></i>
-<h4>Tham gia cộng đồng học viên đông đảo & nhiệt huyết</h4>
+<h4>Tham gia cộng đồng học viên đông đảo &amp; nhiệt huyết</h4>
 </div>
 </div>
 </div>
 </section>
 <section id="software">
 <div class="container-wide">
-<h2 class="section-title zoom-in-element">Phần Mềm & Công Cụ</h2>
+<h2 class="section-title zoom-in-element">Phần Mềm &amp; Công Cụ</h2>
 <div class="grid-4">
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Tool Excel tính giá xây dựng" loading="lazy" src="https://images.unsplash.com/photo-1707902665498-a202981fb5ac?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content"><h3>Tool Excel tính giá xây dựng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 1,200+</span></div><div class="product-price"><span class="current-price">499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Mini ERP" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661400407813-c21af2b2c111?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Mini ERP Sản xuất (AppSheet)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 350+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Web App quản lý tài liệu" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661313626999-90d230cabf8d??q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Web App quản lý tài liệu</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 500+</span></div><div class="product-price"><span class="current-price">2.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Google Sheets tài chính" loading="lazy" src="https://plus.unsplash.com/premium_photo-1681487803114-637de228039c?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-33%</span></div><div class="card-content"><h3>Google Sheets quản lý tài chính</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 2,500+</span></div><div class="product-price"><span class="old-price">600.000đ</span><span class="current-price">399.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="App Quản lý nhân sự" loading="lazy" src="https://plus.unsplash.com/premium_photo-1663100794696-6b7afa02016c?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>App Quản lý Nhân sự & KPI (HRM)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 320+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Hệ thống CRM" loading="lazy" src="https://plus.unsplash.com/premium_photo-1733306696471-807493ff845b?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Hệ thống CRM Chăm sóc Khách hàng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 480+</span></div><div class="product-price"><span class="current-price">4.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="AI Chatbot" loading="lazy" src="https://plus.unsplash.com/premium_photo-1725985758251-b49c6b581d17?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content"><h3>AI Chatbot Tích hợp Website/Fanpage</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 180+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="App Quản lý dự án" loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>App Quản lý Dự án & Công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 950+</span></div><div class="product-price"><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Tool Excel tính giá xây dựng" loading="lazy" src="https://images.unsplash.com/photo-1707902665498-a202981fb5ac?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Tool Excel tính giá xây dựng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 1,200+</span></div><div class="product-price"><span class="current-price">499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Mini ERP" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661400407813-c21af2b2c111?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Mini ERP Sản xuất (AppSheet)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 350+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Web App quản lý tài liệu" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661313626999-90d230cabf8d??q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Web App quản lý tài liệu</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 500+</span></div><div class="product-price"><span class="current-price">2.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Google Sheets tài chính" loading="lazy" src="https://plus.unsplash.com/premium_photo-1681487803114-637de228039c?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-33%</span></div><div class="card-content"><h3>Google Sheets quản lý tài chính</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 2,500+</span></div><div class="product-price"><span class="old-price">600.000đ</span><span class="current-price">399.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="App Quản lý nhân sự" loading="lazy" src="https://plus.unsplash.com/premium_photo-1663100794696-6b7afa02016c?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>App Quản lý Nhân sự &amp; KPI (HRM)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 320+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Hệ thống CRM" loading="lazy" src="https://plus.unsplash.com/premium_photo-1733306696471-807493ff845b?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Hệ thống CRM Chăm sóc Khách hàng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 480+</span></div><div class="product-price"><span class="current-price">4.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="AI Chatbot" loading="lazy" src="https://plus.unsplash.com/premium_photo-1725985758251-b49c6b581d17?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>AI Chatbot Tích hợp Website/Fanpage</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 180+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="App Quản lý dự án" loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>App Quản lý Dự án &amp; Công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 950+</span></div><div class="product-price"><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
 </div>
 <div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Xem tất cả phần mềm</a></div>
 </div>
@@ -881,11 +926,11 @@
 </div>
 <div class="benefit-item-soft fade-in-element">
 <i class="fas fa-chalkboard-teacher"></i>
-<h4>Hỗ trợ tùy chỉnh & hướng dẫn trực tiếp</h4>
+<h4>Hỗ trợ tùy chỉnh &amp; hướng dẫn trực tiếp</h4>
 </div>
 <div class="benefit-item-soft fade-in-element">
 <i class="fas fa-headset"></i>
-<h4>Miễn phí tùy biến & hỗ trợ 24/7</h4>
+<h4>Miễn phí tùy biến &amp; hỗ trợ 24/7</h4>
 </div>
 <div class="benefit-item-soft fade-in-element">
 <i class="fas fa-sync-alt"></i>
@@ -898,28 +943,28 @@
 <div class="container-wide">
 <h2 class="section-title zoom-in-element">Blog Chia Sẻ Kiến Thức</h2>
 <div class="grid-4">
-<div class="card slide-in-from-left"><div class="card-image"><img alt="AI Automation" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>5 bước tự động hóa công việc với AI</h3><p>Khám phá cách sử dụng các công cụ AI để giảm thiểu công việc lặp đi lặp lại và tăng hiệu suất đột phá.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
-<div class="card slide-in-from-right"><div class="card-image"><img alt="Dashboard" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Bí quyết xây dựng Dashboard hiệu quả</h3><p>Học cách trực quan hóa dữ liệu kinh doanh một cách hiệu quả để đưa ra quyết định nhanh chóng và chính xác.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
-<div class="card slide-in-from-left"><div class="card-image"><img alt="AppSheet vs PowerApps" loading="lazy" src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>AppSheet vs PowerApps: Cái nào cho bạn?</h3><p>Một bài so sánh chi tiết giữa hai nền tảng no-code hàng đầu để giúp bạn lựa chọn công cụ phù hợp nhất.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
-<div class="card slide-in-from-right"><div class="card-image"><img alt="Content Creation" loading="lazy" src="https://phala.network/illustrations/ai-agents/features.png?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Sáng tạo nội dung hàng loạt với AI</h3><p>Làm thế nào để tạo ra hàng trăm bài viết, email marketing chỉ với vài cú nhấp chuột nhờ sức mạnh của AI.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
+<div class="card slide-in-from-left"><div class="card-image"><img alt="AI Automation" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>5 bước tự động hóa công việc với AI</h3><p>Khám phá cách sử dụng các công cụ AI để giảm thiểu công việc lặp đi lặp lại và tăng hiệu suất đột phá.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
+<div class="card slide-in-from-right"><div class="card-image"><img alt="Dashboard" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Bí quyết xây dựng Dashboard hiệu quả</h3><p>Học cách trực quan hóa dữ liệu kinh doanh một cách hiệu quả để đưa ra quyết định nhanh chóng và chính xác.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
+<div class="card slide-in-from-left"><div class="card-image"><img alt="AppSheet vs PowerApps" loading="lazy" src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>AppSheet vs PowerApps: Cái nào cho bạn?</h3><p>Một bài so sánh chi tiết giữa hai nền tảng no-code hàng đầu để giúp bạn lựa chọn công cụ phù hợp nhất.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
+<div class="card slide-in-from-right"><div class="card-image"><img alt="Content Creation" loading="lazy" src="https://phala.network/illustrations/ai-agents/features.png?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Sáng tạo nội dung hàng loạt với AI</h3><p>Làm thế nào để tạo ra hàng trăm bài viết, email marketing chỉ với vài cú nhấp chuột nhờ sức mạnh của AI.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
 </div>
 <div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Truy cập Blog</a></div>
 </div>
 </section>
 <section id="partners">
 <div class="container">
-<h2 class="section-title zoom-in-element">Khách Hàng & Đối Tác Tiêu Biểu</h2>
+<h2 class="section-title zoom-in-element">Khách Hàng &amp; Đối Tác Tiêu Biểu</h2>
 <div class="partners-grid fade-in-element">
 <div class="partner-logo"><img alt="Logo Vietnam Airlines" loading="lazy" src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/vietnam-airlines-logo-2.png"/></div>
 <div class="partner-logo"><img alt="Logo EVN" loading="lazy" src="https://www.evn.com.vn//userfile/User/tcdl/images/2023/4/14042023_LogoEVN_Ngang_FULL.jpg"/></div>
 <div class="partner-logo"><img alt="Logo Jollibee" loading="lazy" src="https://brandlogos.net/wp-content/uploads/2025/05/jollibee_horizontal-logo_brandlogos.net_lrab6.png"/></div>
-<div class="partner-logo"><img alt="Logo Bảo Việt" loading="lazy" src="https://i0.wp.com/www.globalsafe.vn/noidung/uploads/2017/10/thiet-ke-logo-baoviet.png?fit=438%2C388&ssl=1"/></div>
+<div class="partner-logo"><img alt="Logo Bảo Việt" loading="lazy" src="https://i0.wp.com/www.globalsafe.vn/noidung/uploads/2017/10/thiet-ke-logo-baoviet.png?fit=438%2C388&amp;ssl=1"/></div>
 <div class="partner-logo"><img alt="Logo Vingroup" loading="lazy" src="https://upload.wikimedia.org/wikipedia/vi/thumb/9/98/Vingroup_logo.svg/1200px-Vingroup_logo.svg.png"/></div>
 <div class="partner-logo"><img alt="HCDC" loading="lazy" src="https://hcdc.vn/public/img/images/news/2019/11/news-1569819039115.png"/></div>
 <div class="partner-logo"><img alt="Logo Tiki" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Logo_Tiki.png/1200px-Logo_Tiki.png"/></div>
 <div class="partner-logo"><img alt="Logo Vietcombank" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Vietcombank_logo_fixed.svg/2560px-Vietcombank_logo_fixed.svg.png"/></div>
 <div class="partner-logo"><img alt="Logo Bizbooks" loading="lazy" src="https://bizbooks.vn/uploads/images/2022/thang-9/logo-biz-moi.png"/></div>
-<div class="partner-logo"><img alt="Logo Grab" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAY1NIiI_FKkp6GaIXj1_pYNgJfb0n4AU0Ug&s"/></div>
+<div class="partner-logo"><img alt="Logo Grab" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAY1NIiI_FKkp6GaIXj1_pYNgJfb0n4AU0Ug&amp;s"/></div>
 <div class="partner-logo"><img alt="Logo Viettel" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Viettel_Telecom_banner.jpg/1200px-Viettel_Telecom_banner.jpg"/></div>
 <div class="partner-logo"><img alt="Logo Shopee" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg"/></div>
 </div>
@@ -927,12 +972,12 @@
 </section>
 <section id="testimonials" style="background-color: var(--light-background);">
 <div class="container">
-<h2 class="section-title zoom-in-element">Phản Hồi Từ Khách Hàng & Học Viên</h2>
+<h2 class="section-title zoom-in-element">Phản Hồi Từ Khách Hàng &amp; Học Viên</h2>
 <div class="grid-4">
-<div class="testimonial-card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><p>"Giải pháp của EMS đã giúp chúng tôi tiết kiệm 30% thời gian báo cáo. Rất chuyên nghiệp và hiệu quả!"</p><div class="testimonial-author"><img alt="Anh Trần Văn A" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"/><div><h4>Anh Trần Văn A</h4><span>Giám đốc, Công ty ABC</span></div></div></div>
-<div class="testimonial-card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><p>"Khóa học AppSheet rất dễ hiểu và thực tế. Tôi đã tự xây dựng được ứng dụng quản lý kho chỉ sau 2 tuần."</p><div class="testimonial-author"><img alt="Chị Nguyễn Thị B" loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop"/><div><h4>Chị Nguyễn Thị B</h4><span>Trưởng phòng, Doanh nghiệp XYZ</span></div></div></div>
-<div class="testimonial-card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><p>"Đội ngũ hỗ trợ rất nhiệt tình. Mọi thắc mắc của tôi đều được giải đáp nhanh chóng. Hoàn toàn tin tưởng."</p><div class="testimonial-author"><img alt="Anh Lê Văn C" loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto=format&fit=crop"/><div><h4>Anh Lê Văn C</h4><span>Chủ cửa hàng</span></div></div></div>
-<div class="testimonial-card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><p>"Các giải pháp AI Agent đã giúp chúng tôi tự động hóa quy trình chăm sóc khách hàng một cách bất ngờ."</p><div class="testimonial-author"><img alt="Chị Phạm Thu D" loading="lazy" src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1923&auto=format&fit=crop"/><div><h4>Chị Phạm Thu D</h4><span>CEO, Startup Công nghệ</span></div></div></div>
+<div class="testimonial-card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><p>"Giải pháp của EMS đã giúp chúng tôi tiết kiệm 30% thời gian báo cáo. Rất chuyên nghiệp và hiệu quả!"</p><div class="testimonial-author"><img alt="Anh Trần Văn A" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/><div><h4>Anh Trần Văn A</h4><span>Giám đốc, Công ty ABC</span></div></div></div>
+<div class="testimonial-card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><p>"Khóa học AppSheet rất dễ hiểu và thực tế. Tôi đã tự xây dựng được ứng dụng quản lý kho chỉ sau 2 tuần."</p><div class="testimonial-author"><img alt="Chị Nguyễn Thị B" loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/><div><h4>Chị Nguyễn Thị B</h4><span>Trưởng phòng, Doanh nghiệp XYZ</span></div></div></div>
+<div class="testimonial-card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><p>"Đội ngũ hỗ trợ rất nhiệt tình. Mọi thắc mắc của tôi đều được giải đáp nhanh chóng. Hoàn toàn tin tưởng."</p><div class="testimonial-author"><img alt="Anh Lê Văn C" loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/><div><h4>Anh Lê Văn C</h4><span>Chủ cửa hàng</span></div></div></div>
+<div class="testimonial-card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><p>"Các giải pháp AI Agent đã giúp chúng tôi tự động hóa quy trình chăm sóc khách hàng một cách bất ngờ."</p><div class="testimonial-author"><img alt="Chị Phạm Thu D" loading="lazy" src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&amp;w=1923&amp;auto=format&amp;fit=crop"/><div><h4>Chị Phạm Thu D</h4><span>CEO, Startup Công nghệ</span></div></div></div>
 </div>
 </div>
 </section>
@@ -1338,5 +1383,40 @@
             });
         });
     </script>
-</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const loginBtn = document.querySelector(".login-btn");
+        const avatar = document.querySelector(".user-avatar-dropdown");
+
+        let loggedIn = false;
+
+        window.toggleLoginState = function() {
+            loggedIn = !loggedIn;
+            if (loggedIn) {
+                loginBtn.style.display = "none";
+                avatar.style.display = "inline-block";
+            } else {
+                loginBtn.style.display = "flex";
+                avatar.style.display = "none";
+            }
+        };
+
+        // Create test button
+        const testBtn = document.createElement("button");
+        testBtn.innerText = "Chuyển trạng thái đăng nhập";
+        testBtn.style.position = "fixed";
+        testBtn.style.bottom = "20px";
+        testBtn.style.left = "20px";
+        testBtn.style.zIndex = "9999";
+        testBtn.style.padding = "10px 15px";
+        testBtn.style.background = "#007BFF";
+        testBtn.style.color = "#fff";
+        testBtn.style.border = "none";
+        testBtn.style.borderRadius = "8px";
+        testBtn.style.cursor = "pointer";
+        testBtn.onclick = () => toggleLoginState();
+
+        document.body.appendChild(testBtn);
+    });
+    </script></body>
 </html>
