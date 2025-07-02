@@ -70,7 +70,8 @@
         .main-nav li.has-dropdown:hover > .submenu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
         .main-nav .submenu li a { padding: 10px 20px; display: block; text-align: left; }
         .header-actions { display: flex; align-items: center; gap: 20px; color: var(--white); }
-        .header-actions .icon-btn { color: var(--white); background: none; border: none; font-size: 1.3rem; cursor: pointer; }
+        .header-actions .icon-btn, .header-actions .cart-btn { color: var(--white); background: none; border: none; font-size: 1.3rem; cursor: pointer; text-decoration: none; position: relative; }
+        .cart-count { position: absolute; top: -5px; right: -8px; background-color: var(--price-color); color: var(--white); width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; }
         .header-actions .login-btn { display: flex; align-items: center; gap: 8px; padding: 8px 15px; background-color: rgba(255,255,255,0.1); border-radius: 20px; text-decoration: none; color: var(--white); }
         #mobile-menu-toggle { display: none; }
         .main-footer { background-color: var(--primary); color: var(--white); padding: 70px 0 20px 0; }
@@ -159,13 +160,14 @@
         .card-content .product-price { font-size: 1.2rem; font-weight: 700; color: var(--price-color); margin-bottom: 15px; }
         
         /* ===== ADDED/MODIFIED CSS ===== */
-        #student-benefits, #faq, #reviews-section { padding: 70px 0; }
+        #student-benefits, #reviews-section, #faq-and-review-form { padding: 70px 0; }
         .grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 25px; }
         .benefit-item { background-color: var(--light-background); padding: 25px 15px; text-align: center; border-radius: 12px; }
         .benefit-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
         .benefit-item h4 { font-size: 1rem; color: var(--primary); font-weight: 600; line-height: 1.4; }
 
-        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-review-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: start; }
+        .faq-container { max-width: 100%; }
         .faq-item { border-bottom: 1px solid #e0e0e0; }
         .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.1rem; font-weight: 600; padding: 16px 0; }
         .faq-question i { transition: transform 0.3s ease; }
@@ -179,10 +181,11 @@
         .review-header img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
         .review-author h5 { margin: 0; font-size: 1rem; }
         
-        .review-form-container { max-width: 800px; margin: 0 auto; padding: 20px; background: var(--light-background); border-radius: 12px; }
-        .review-form { position: relative; }
-        .review-form textarea { width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #ddd; font-family: 'Open Sans', sans-serif; min-height: 140px; padding-bottom: 60px; resize: vertical; }
-        .review-form .btn { position: absolute; bottom: 15px; right: 15px; width: auto; padding: 8px 18px; font-size: 0.9rem; background-color: var(--secondary); color: var(--white); }
+        .review-form-container { background: var(--light-background); padding: 25px; border-radius: 12px; }
+        .review-form-container h3 { text-align: left; margin-bottom: 20px; font-size: 1.5rem; }
+        .review-form input, .review-form textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-family: 'Open Sans', sans-serif; margin-bottom: 15px; }
+        .review-form textarea { min-height: 120px; resize: vertical; }
+        .review-form .btn { width: 100%; background-color: var(--secondary); color: var(--white); }
 
         .course-description p { margin-bottom: 15px; }
         .support-group-cta { background-color: #e8f5e9; border-left: 4px solid var(--secondary); padding: 20px; margin-top: 25px; border-radius: 8px; }
@@ -202,11 +205,12 @@
             .grid-6 { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
             .instructor-profile { flex-direction: column; text-align: center; gap: 20px; }
             .instructor-profile img { width: 100px; height: 100px; }
+            .faq-review-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 767px) { 
             .section-title { margin-bottom: 40px; }
             .course-hero { padding-top: calc(var(--header-height) + 30px); padding-bottom: 40px; }
-            .detail-section, #student-benefits, #faq, #reviews-section, #related-courses { padding: 50px 0; }
+            .detail-section, #student-benefits, #reviews-section, #faq-and-review-form, #related-courses { padding: 50px 0; }
             .related-grid { grid-template-columns: 1fr; } 
             .course-hero .hero-title { font-size: 2.2rem; } 
             .reviews-grid { grid-template-columns: 1fr; }
@@ -220,7 +224,6 @@
 <body>
     <div class="page-overlay"></div>
     <header class="main-header">
-        <!-- EXACT HEADER FROM HOMEPAGE -->
         <div class="container">
             <button id="mobile-menu-toggle" aria-label="Open Menu"><div class="burger-icon"><span></span><span></span><span></span></div></button>
             <a href="index.html" class="logo"><img src="https://gpems.net/_next/image?url=%2Flogo-ico.png&w=64&q=75" alt="EMS Logo Icon"><span>GPEMS</span></a>
@@ -236,6 +239,10 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                <a href="#" class="cart-btn" aria-label="Giỏ hàng">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">1</span>
+                </a>
                 <button class="icon-btn" id="sticky-search-icon" aria-label="Tìm kiếm"><i class="fas fa-search"></i></button>
                 <a href="#" class="login-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Icon" width="18"><span>Đăng nhập</span></a>
             </div>
@@ -418,7 +425,7 @@
             </div>
         </section>
 
-        <!-- ===== REVIEWS SECTION (Moved up) ===== -->
+        <!-- ===== REVIEWS SECTION ===== -->
         <section id="reviews-section">
             <div class="container">
                 <h2 class="section-title">Đánh giá từ học viên</h2>
@@ -454,48 +461,55 @@
                         <p>"Mình là dân trái ngành nhưng học vẫn hiểu. Video dễ theo dõi, tài liệu đầy đủ. Đã tự làm được hệ thống báo cáo tự động cho team. Highly recommended!"</p>
                     </div>
                 </div>
-                <div class="review-form-container">
-                    <form class="review-form">
-                        <textarea placeholder="Chia sẻ cảm nhận của bạn về khóa học..."></textarea>
-                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Gửi</button>
-                    </form>
-                </div>
             </div>
         </section>
 
-        <!-- ===== FAQ SECTION (Moved down) ===== -->
-        <section id="faq" style="background-color: var(--light-background);">
-            <div class="faq-container container">
-                <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
-                <div class="faq-item">
-                  <div class="faq-question">Khóa học này có phù hợp cho người mới bắt đầu không?<i class="fas fa-plus"></i></div>
-                  <div class="faq-answer">
-                    <p>Hoàn toàn có thể. Khóa học được thiết kế với lộ trình từ cơ bản đến nâng cao, không yêu cầu kiến thức lập trình đầu vào, phù hợp cho cả những người lần đầu tiếp xúc với Google Sheets.</p>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <div class="faq-question">Tôi nhận được gì sau khi thanh toán khóa học?<i class="fas fa-plus"></i></div>
-                  <div class="faq-answer">
-                    <p>Sau khi thanh toán thành công, bạn sẽ nhận được quyền truy cập trọn đời vào toàn bộ video bài giảng, tài liệu, file thực hành đính kèm và được mời vào nhóm hỗ trợ riêng của khóa học.</p>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <div class="faq-question">Hình thức học của khóa học là gì?<i class="fas fa-plus"></i></div>
-                  <div class="faq-answer">
-                    <p>Đây là khóa học online qua video đã được quay sẵn. Bạn có thể học mọi lúc, mọi nơi trên mọi thiết bị có kết nối internet và chủ động hoàn toàn về thời gian học tập của mình.</p>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <div class="faq-question">Nếu có thắc mắc trong quá trình học, tôi sẽ được hỗ trợ như thế nào?<i class="fas fa-plus"></i></div>
-                  <div class="faq-answer">
-                    <p>Bạn sẽ được hỗ trợ trực tiếp từ giảng viên và đội ngũ trợ giảng qua nhóm Zalo/Facebook độc quyền dành cho học viên. Mọi thắc mắc của bạn sẽ được giải đáp nhanh chóng và chi tiết.</p>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <div class="faq-question">Hoàn thành khóa học có được cấp chứng chỉ không?<i class="fas fa-plus"></i></div>
-                  <div class="faq-answer">
-                    <p>Có. Sau khi hoàn thành tất cả các bài học và bài tập cuối khóa, bạn sẽ được cấp chứng chỉ hoàn thành khóa học từ EMS Solution để ghi nhận nỗ lực của mình.</p>
-                  </div>
+        <!-- ===== FAQ & REVIEW FORM SECTION ===== -->
+        <section id="faq-and-review-form" style="background-color: var(--light-background);">
+            <div class="container">
+                <div class="faq-review-grid">
+                    <div class="faq-container">
+                        <h2 class="section-title" style="text-align: left; font-size: 1.8rem;">Câu Hỏi Thường Gặp</h2>
+                        <div class="faq-item">
+                          <div class="faq-question">Khóa học này có phù hợp cho người mới bắt đầu không?<i class="fas fa-plus"></i></div>
+                          <div class="faq-answer">
+                            <p>Hoàn toàn có thể. Khóa học được thiết kế với lộ trình từ cơ bản đến nâng cao, không yêu cầu kiến thức lập trình đầu vào, phù hợp cho cả những người lần đầu tiếp xúc với Google Sheets.</p>
+                          </div>
+                        </div>
+                        <div class="faq-item">
+                          <div class="faq-question">Tôi nhận được gì sau khi thanh toán khóa học?<i class="fas fa-plus"></i></div>
+                          <div class="faq-answer">
+                            <p>Sau khi thanh toán thành công, bạn sẽ nhận được quyền truy cập trọn đời vào toàn bộ video bài giảng, tài liệu, file thực hành đính kèm và được mời vào nhóm hỗ trợ riêng của khóa học.</p>
+                          </div>
+                        </div>
+                        <div class="faq-item">
+                          <div class="faq-question">Hình thức học của khóa học là gì?<i class="fas fa-plus"></i></div>
+                          <div class="faq-answer">
+                            <p>Đây là khóa học online qua video đã được quay sẵn. Bạn có thể học mọi lúc, mọi nơi trên mọi thiết bị có kết nối internet và chủ động hoàn toàn về thời gian học tập của mình.</p>
+                          </div>
+                        </div>
+                        <div class="faq-item">
+                          <div class="faq-question">Nếu có thắc mắc trong quá trình học, tôi sẽ được hỗ trợ như thế nào?<i class="fas fa-plus"></i></div>
+                          <div class="faq-answer">
+                            <p>Bạn sẽ được hỗ trợ trực tiếp từ giảng viên và đội ngũ trợ giảng qua nhóm Zalo/Facebook độc quyền dành cho học viên. Mọi thắc mắc của bạn sẽ được giải đáp nhanh chóng và chi tiết.</p>
+                          </div>
+                        </div>
+                        <div class="faq-item">
+                          <div class="faq-question">Hoàn thành khóa học có được cấp chứng chỉ không?<i class="fas fa-plus"></i></div>
+                          <div class="faq-answer">
+                            <p>Có. Sau khi hoàn thành tất cả các bài học và bài tập cuối khóa, bạn sẽ được cấp chứng chỉ hoàn thành khóa học từ EMS Solution để ghi nhận nỗ lực của mình.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="review-form-container">
+                        <h3>Chia sẻ của bạn</h3>
+                        <form class="review-form">
+                            <input type="text" name="name" placeholder="Họ và tên của bạn" required>
+                            <input type="email" name="email" placeholder="Email của bạn" required>
+                            <textarea name="comment" placeholder="Chia sẻ cảm nhận của bạn về khóa học..." required></textarea>
+                            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Gửi đánh giá</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
