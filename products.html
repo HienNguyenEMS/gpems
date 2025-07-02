@@ -137,24 +137,30 @@
         .discount-badge { background-color: var(--price-color); color: var(--white); padding: 4px 10px; border-radius: 5px; font-size: 0.9rem; font-weight: 700; }
         .current-price { font-size: 2.8rem; font-weight: 700; color: var(--price-color); line-height: 1.1; }
         
-        /* --- NEW: COUNTDOWN TIMER --- */
-        .countdown-timer { background-color: var(--light-background); padding: 10px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+        /* --- COUNTDOWN TIMER & URGENCY --- */
+        .countdown-timer { background-color: var(--light-background); padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: center; }
         .countdown-timer .label { font-size: 0.9rem; font-weight: 600; color: var(--primary); margin-bottom: 5px; }
         .countdown-timer .timer { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--price-color); }
+        .urgency-text { text-align: center; color: var(--price-color); font-weight: 600; margin-bottom: 15px; font-size: 0.95rem; }
         
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-        .sidebar-widget .btn-accent { width: 100%; margin-top: 10px; padding: 15px; font-size: 1.2rem; animation: pulse 2s infinite ease-in-out; }
+        .sidebar-widget .btn-accent { width: 100%; padding: 15px; font-size: 1.2rem; animation: pulse 2s infinite ease-in-out; }
         .sidebar-widget .btn { width: 100%; margin-top: 10px; }
-        .sidebar-widget .package-info { list-style: none; padding: 20px 0 0 0; margin-top: 20px; border-top: 1px solid #eee;}
-        .sidebar-widget .package-info h4 { font-size: 1.1rem; margin-bottom: 15px; text-align: left; }
-        .sidebar-widget .package-info li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-        .sidebar-widget .package-info i { color: var(--secondary); width: 20px; text-align: center; font-size: 1.1rem; }
         
-        /* --- NEW: TRUST SEALS --- */
+        /* --- TRUST & GUARANTEE --- */
+        .guarantee-badge { display: flex; align-items: center; gap: 10px; padding: 12px; background-color: #e8f5e9; border-radius: 8px; margin-top: 20px; border-left: 4px solid var(--secondary); }
+        .guarantee-badge i { font-size: 1.5rem; color: var(--secondary); }
+        .guarantee-badge span { font-size: 0.9rem; font-weight: 600; }
+        
+        .package-info { list-style: none; padding: 20px 0 0 0; margin-top: 20px; border-top: 1px solid #eee;}
+        .package-info h4 { font-size: 1.1rem; margin-bottom: 15px; text-align: left; }
+        .package-info li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .package-info i { color: var(--secondary); width: 20px; text-align: center; font-size: 1.1rem; }
+        
         .trust-seals { text-align: center; margin-top: 20px; }
         .trust-seals .label { font-size: 0.85rem; color: #777; margin-bottom: 10px; }
         .trust-seals .icons { display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 1.8rem; color: #aaa; }
@@ -206,29 +212,43 @@
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; text-align: center; opacity: 0.8; }
         .footer-bottom a { color: var(--accent); }
 
+        /* --- MODAL STYLES --- */
         .modal-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1050; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease; }
         .modal-container.is-visible { opacity: 1; visibility: visible; }
-        .modal-content { background-color: var(--white); border-radius: 15px; padding: 30px; width: 90%; max-width: 500px; position: relative; }
-        .modal-content .close-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #999; }
+        .modal-content { background-color: var(--white); border-radius: 15px; padding: 30px; width: 90%; max-width: 800px; position: relative; }
+        .modal-content .close-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #999; z-index: 10; }
         .modal-content h2 { text-align: center; margin-bottom: 25px; }
+        
+        .order-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .order-form-container { border-right: 1px solid #eee; padding-right: 30px; }
+        .order-form .form-group { margin-bottom: 15px; }
+        .order-form label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9rem;}
+        .order-form input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; }
+        .form-row { display: flex; gap: 15px; }
+        .form-row .form-group { flex: 1; }
+
+        .order-summary { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #ccc; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .summary-row.total { font-weight: 700; font-size: 1.2rem; color: var(--price-color); }
+        
+        .qr-code-container { text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.5s ease; }
+        .qr-code-container.visible { opacity: 1; visibility: visible; }
+        .qr-code-container h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary); }
+        .payment-info { background-color: var(--light-background); padding: 15px; border-radius: 8px; text-align: left; font-size: 0.9rem; }
+        .payment-info p { margin-bottom: 8px; }
+        #qr-code-img { max-width: 250px; width: 100%; margin: 15px auto; border: 1px solid #eee; display: block; }
+        #qr-code-img.loading { height: 250px; background: #eee url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid' width='200' height='200' style='shape-rendering: auto; display: block; background: transparent;' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg%3E%3Ccircle cx='50' cy='50' r='32' stroke-width='8' stroke='%2300caeb' stroke-dasharray='50.26548245743669 50.26548245743669' fill='none' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='1s' keyTimes='0;1' values='0 50 50;360 50 50'%3E%3C/animateTransform%3E%3C/circle%3E%3Cg%3E%3C/g%3E%3C/g%3E%3C!-- [ldio] generated by https://loading.io --%3E%3C/svg%3E") no-repeat center; }
+
         .video-modal-body { position: relative; width: 100%; padding-top: 56.25%; }
         .video-modal-body iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         #video-modal .modal-content { padding: 15px; background: #000; }
-        #order-modal .order-form .form-group { margin-bottom: 15px; }
-        #order-modal .order-form label { display: block; font-weight: 600; margin-bottom: 5px; }
-        #order-modal .order-form input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; }
-        #order-modal .order-summary { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #ccc; }
-        #order-modal .summary-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
-        #order-modal .summary-row.total { font-weight: 700; font-size: 1.2rem; color: var(--price-color); }
-        #qr-code-view { text-align: center; display: none; }
-        #qr-code-img { max-width: 250px; width: 100%; margin: 15px auto; }
-        .payment-info { background-color: var(--light-background); padding: 15px; border-radius: 8px; }
 
-        .call-now-button { position: fixed; bottom: 20px; left: 20px; z-index: 998; background-color: var(--secondary); color: var(--white); display: flex; align-items: center; padding: 10px 15px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+        .call-now-button, .chatbox-container { z-index: 998; }
+        .call-now-button { position: fixed; bottom: 20px; right: 90px; background-color: var(--secondary); color: var(--white); display: flex; align-items: center; padding: 10px 15px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
         .call-now-button:hover { transform: translateY(-3px) scale(1.05); }
         .call-now-button i { font-size: 1.2rem; }
         .call-now-button span { font-weight: 700; margin-left: 8px; }
-        .chatbox-container { position: fixed; bottom: 20px; right: 20px; z-index: 999; }
+        .chatbox-container { position: fixed; bottom: 20px; right: 20px; }
         .chatbox-toggle { width: 60px; height: 60px; background-color: var(--primary); color: var(--white); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.25); transition: transform 0.3s ease; }
         .chatbox-toggle:hover { transform: scale(1.1); }
         .chatbox-toggle .fa-times { display: none; }
@@ -244,6 +264,35 @@
         .chatbox-footer { display: flex; padding: 10px; border-top: 1px solid #eee; }
         .chatbox-footer input { flex-grow: 1; border: none; padding: 10px; outline: none; }
         .chatbox-footer button { background: none; border: none; color: var(--primary); font-size: 1.2rem; cursor: pointer; padding: 10px; }
+
+        /* Social Proof Popup */
+        #recent-purchase-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: var(--white);
+            color: var(--text);
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+            z-index: 1010;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        #recent-purchase-popup.show {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+        #recent-purchase-popup i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
 
         @media (max-width: 991px) { 
             .main-header .container { justify-content: space-between; }
@@ -263,11 +312,18 @@
             .benefits-grid { grid-template-columns: 1fr; }
             .related-section .grid-4 { grid-template-columns: repeat(2, 1fr); }
             .call-now-button span { display: none; }
-            .call-now-button { padding: 12px; width: 50px; height: 50px; justify-content: center; }
+            .call-now-button { padding: 12px; width: 50px; height: 50px; justify-content: center; right: 80px;}
+            #recent-purchase-popup { display: none; } /* Hide social proof on smaller screens */
         }
         @media (max-width: 767px) {
             .product-intro h1 { font-size: 1.8rem; }
             .related-section .grid-4 { grid-template-columns: 1fr; }
+            .order-layout { grid-template-columns: 1fr; }
+            .order-form-container { border-right: none; padding-right: 0; }
+            .qr-code-container { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+            .form-row { flex-direction: column; gap: 0; }
+            .call-now-button { bottom: 15px; right: 75px; }
+            .chatbox-toggle { bottom: 15px; right: 15px; }
         }
     </style>
 </head>
@@ -405,14 +461,20 @@
                                 </div>
                                 <div class="current-price" data-price="499000">499.000đ</div>
                             </div>
-                            <!-- NEW: COUNTDOWN TIMER -->
                             <div class="countdown-timer">
                                 <div class="label">🔥 Ưu đãi kết thúc sau:</div>
                                 <div class="timer" id="sale-countdown">01:23:45</div>
                             </div>
 
+                            <p class="urgency-text">Chỉ còn <span id="slots-left">12</span> suất ưu đãi cuối cùng!</p>
+
                             <button class="btn btn-accent" id="open-order-modal-btn"><i class="fas fa-shopping-cart"></i> Mua ngay</button>
                             <button class="btn btn-outline" id="open-video-modal-btn"><i class="fas fa-play-circle"></i> Xem Video Giới thiệu</button>
+                            
+                            <div class="guarantee-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Đảm bảo hoàn tiền trong 7 ngày nếu không hài lòng</span>
+                            </div>
 
                             <div class="package-info">
                                 <h4>Bạn sẽ nhận được:</h4>
@@ -423,7 +485,6 @@
                                     <li><i class="fas fa-check-circle"></i>Cập nhật miễn phí trong 1 năm</li>
                                 </ul>
                             </div>
-                            <!-- NEW: TRUST SEALS -->
                             <div class="trust-seals">
                                 <div class="label">Thanh toán an toàn & bảo mật</div>
                                 <div class="icons">
@@ -578,27 +639,60 @@
     <div id="order-modal" class="modal-container">
         <div class="modal-content">
             <button id="close-order-modal-btn" class="close-btn">×</button>
-            <div id="order-form-view">
-                <h2>Thông tin đặt hàng</h2>
-                <form id="order-form" class="order-form">
-                    <div class="form-group"><label for="product-name">Sản phẩm:</label><input type="text" id="product-name" readonly></div>
-                    <div class="form-group"><label for="customer-name">Họ và tên</label><input type="text" id="customer-name" required></div>
-                    <div class="form-group"><label for="customer-email">Email</label><input type="email" id="customer-email" required></div>
-                    <div class="form-group"><label for="customer-phone">Số điện thoại</label><input type="tel" id="customer-phone" required></div>
-                    <div class="order-summary">
-                        <div class="summary-row total"><span>Tổng tiền:</span><span id="summary-total"></span></div>
-                    </div>
-                    <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 20px;">Xác nhận & Tạo mã QR</button>
-                </form>
-            </div>
-            <div id="qr-code-view">
-                <h2>Quét mã để thanh toán</h2>
-                <div class="payment-info">
-                    <p>Sử dụng App ngân hàng hoặc Ví điện tử để quét mã VietQR dưới đây.</p>
-                    <p>Số tiền: <strong id="qr-amount" style="color:var(--price-color);"></strong></p>
+            <div class="order-layout">
+                <div class="order-form-container">
+                    <h2>Thông tin đặt hàng</h2>
+                    <form id="order-form" class="order-form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="product-name">Sản phẩm:</label>
+                            <input type="text" id="product-name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-name">Họ và tên</label>
+                            <input type="text" id="customer-name" placeholder="Ví dụ: Nguyễn Văn A" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customer-email">Email</label>
+                                <input type="email" id="customer-email" placeholder="Email để nhận sản phẩm" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-phone">Số điện thoại</label>
+                                <input type="tel" id="customer-phone" placeholder="Số Zalo để hỗ trợ" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group coupon-group" style="display: flex; gap: 10px; align-items: flex-end;">
+                            <div style="flex-grow: 1;">
+                                <label for="coupon-code">Mã giảm giá</label>
+                                <input type="text" id="coupon-code" placeholder="Nhập mã (ví dụ: EMS20)">
+                            </div>
+                            <button type="button" id="apply-coupon-btn" class="btn btn-outline" style="padding: 12px 15px; flex-shrink: 0; line-height: 1.2;">Áp dụng</button>
+                        </div>
+                        <small id="coupon-feedback" style="display: block; margin-top: -10px; margin-bottom: 15px; min-height: 18px;"></small>
+
+                        <div class="order-summary">
+                            <div class="summary-row"><span>Tạm tính:</span><span id="summary-subtotal"></span></div>
+                            <div class="summary-row" id="discount-row" style="display: none; color: var(--secondary);"><span>Giảm giá:</span><span id="summary-discount"></span></div>
+                            <div class="summary-row total"><span>Tổng cộng:</span><span id="summary-total"></span></div>
+                        </div>
+                        <button type="submit" id="submit-order-btn" class="btn btn-accent" style="width: 100%; margin-top: 20px;">Xác nhận & Thanh toán</button>
+                    </form>
                 </div>
-                <img id="qr-code-img" src="" alt="Mã QR thanh toán">
-                <button id="back-to-form-btn" class="btn btn-outline" style="width: 100%; margin-top:15px">Quay lại</button>
+                <div id="qr-code-container" class="qr-code-container">
+                    <h4>Thông tin thanh toán</h4>
+                     <div class="payment-info">
+                        <p>Sử dụng App ngân hàng hoặc Ví điện tử để quét mã VietQR.</p>
+                        <p><strong>Ngân hàng:</strong> Vietcombank (VCB)</p>
+                        <p><strong>Số tài khoản:</strong> 0501000130594</p>
+                        <p><strong>Chủ tài khoản:</strong> NGUYEN TAN HIEN</p>
+                        <hr style="border: none; border-top: 1px solid #ddd; margin: 10px 0;">
+                        <p><strong>Số tiền:</strong> <strong id="qr-amount" style="color:var(--price-color);"></strong></p>
+                        <p><strong>Nội dung:</strong> <strong id="qr-order-id" style="color:var(--primary);"></strong></p>
+                    </div>
+                    <img id="qr-code-img" src="" alt="Mã QR thanh toán">
+                    <p style="margin-top:10px; font-size: 0.9rem; color: #555;">Vui lòng chuyển khoản đúng nội dung để được xác nhận tự động.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -633,9 +727,15 @@
             </div>
         </div>
     </div>
+    
+    <div id="recent-purchase-popup">
+        <i class="fas fa-check-circle"></i>
+        <p id="purchase-text">Ai đó từ Hà Nội vừa mua sản phẩm này!</p>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // All the previous setup code (header, tabs, faq, etc.) remains the same.
             const menuToggle = document.getElementById('mobile-menu-toggle');
             const mainNav = document.querySelector('.main-nav');
             const pageOverlay = document.querySelector('.page-overlay');
@@ -712,61 +812,139 @@
                 });
             });
 
+            // --- Enhanced Order Modal Logic ---
             const orderModal = document.getElementById('order-modal');
             const openModalBtns = document.querySelectorAll('#open-order-modal-btn, #open-order-modal-btn-2');
             const closeModalBtn = document.getElementById('close-order-modal-btn');
             const orderForm = document.getElementById('order-form');
+            const submitOrderBtn = document.getElementById('submit-order-btn');
             const priceEl = document.querySelector('.current-price');
-            let basePrice = priceEl ? parseInt(priceEl.dataset.price, 10) : 0;
+            const basePrice = priceEl ? parseInt(priceEl.dataset.price, 10) : 0;
             const formatCurrency = (amount) => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
 
-            function openOrderPopup() {
-                document.getElementById('product-name').value = document.querySelector('.product-intro h1').textContent;
-                document.getElementById('summary-total').textContent = formatCurrency(basePrice);
-                orderModal.classList.add('is-visible');
-                document.getElementById('order-form-view').style.display = 'block';
-                document.getElementById('qr-code-view').style.display = 'none';
+            const applyCouponBtn = document.getElementById('apply-coupon-btn');
+            const couponCodeInput = document.getElementById('coupon-code');
+            const couponFeedback = document.getElementById('coupon-feedback');
+            const discountRow = document.getElementById('discount-row');
+            const summarySubtotal = document.getElementById('summary-subtotal');
+            const summaryDiscount = document.getElementById('summary-discount');
+            const summaryTotal = document.getElementById('summary-total');
+            
+            const qrContainer = document.getElementById('qr-code-container');
+            const qrCodeImg = document.getElementById('qr-code-img');
+            const qrAmount = document.getElementById('qr-amount');
+            const qrOrderId = document.getElementById('qr-order-id');
+
+            let currentTotalPrice = basePrice;
+            let discountApplied = false;
+
+            function updatePriceSummary() {
+                let discountAmount = 0;
+                if (discountApplied) {
+                    discountAmount = basePrice * 0.20;
+                    summaryDiscount.textContent = `- ${formatCurrency(discountAmount)}`;
+                    discountRow.style.display = 'flex';
+                } else {
+                    discountRow.style.display = 'none';
+                }
+                currentTotalPrice = basePrice - discountAmount;
+                summarySubtotal.textContent = formatCurrency(basePrice);
+                summaryTotal.textContent = formatCurrency(currentTotalPrice);
             }
 
-            openModalBtns.forEach(btn => { if (btn) btn.addEventListener('click', openOrderPopup); });
-            if(closeModalBtn) closeModalBtn.addEventListener('click', () => orderModal.classList.remove('is-visible'));
-            if(orderModal) orderModal.addEventListener('click', (e) => { if (e.target === orderModal) orderModal.classList.remove('is-visible'); });
-            if(orderForm) {
-                orderForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const orderInfo = `Thanh toan don hang ${Math.random().toString(36).substring(2, 8)}`;
-                    const qrPayload = `https://api.vietqr.io/v2/generate?accountNo=0903375265&accountName=NGUYEN TAN HIEN&acqId=970415&amount=${basePrice}&addInfo=${encodeURIComponent(orderInfo)}&template=compact`;
-                    document.getElementById('qr-code-img').src = qrPayload;
-                    document.getElementById('qr-amount').textContent = formatCurrency(basePrice);
-                    document.getElementById('order-form-view').style.display = 'none';
-                    document.getElementById('qr-code-view').style.display = 'block';
-                });
+            function openOrderPopup() {
+                orderForm.reset();
+                couponCodeInput.disabled = false;
+                applyCouponBtn.disabled = false;
+                couponFeedback.textContent = '';
+                discountApplied = false;
+                
+                qrContainer.classList.remove('visible');
+                qrCodeImg.src = "";
+                qrCodeImg.classList.remove('loading');
+
+                document.getElementById('product-name').value = document.querySelector('.product-intro h1').textContent;
+                updatePriceSummary();
+                orderModal.classList.add('is-visible');
             }
-            document.getElementById('back-to-form-btn').addEventListener('click', () => {
-                document.getElementById('order-form-view').style.display = 'block';
-                document.getElementById('qr-code-view').style.display = 'none';
+
+            openModalBtns.forEach(btn => btn.addEventListener('click', openOrderPopup));
+            closeModalBtn.addEventListener('click', () => orderModal.classList.remove('is-visible'));
+            orderModal.addEventListener('click', (e) => { if (e.target === orderModal) orderModal.classList.remove('is-visible'); });
+
+            applyCouponBtn.addEventListener('click', () => {
+                const code = couponCodeInput.value.trim().toUpperCase();
+                if (code === "EMS20") {
+                    if (discountApplied) {
+                        couponFeedback.textContent = 'Mã giảm giá đã được sử dụng.';
+                        couponFeedback.style.color = 'var(--price-color)';
+                        return;
+                    }
+                    discountApplied = true;
+                    couponFeedback.textContent = 'Áp dụng mã giảm giá thành công!';
+                    couponFeedback.style.color = 'var(--secondary)';
+                    couponCodeInput.disabled = true;
+                    applyCouponBtn.disabled = true;
+                } else {
+                    discountApplied = false;
+                    couponFeedback.textContent = code ? 'Mã giảm giá không hợp lệ.' : 'Vui lòng nhập mã giảm giá.';
+                    couponFeedback.style.color = 'var(--price-color)';
+                }
+                updatePriceSummary();
             });
-            
+
+            submitOrderBtn.addEventListener('click', () => {
+                if (!orderForm.checkValidity()) {
+                    orderForm.reportValidity();
+                    return;
+                }
+                
+                qrContainer.classList.add('visible');
+                qrCodeImg.src = ""; // Clear previous image
+                qrCodeImg.classList.add('loading'); // Show spinner
+
+                const orderId = 'EMS' + Math.random().toString(36).substring(2, 7).toUpperCase();
+                const accountNo = '0501000130594';
+                const accountName = 'NGUYEN TAN HIEN';
+                const acqId = '970436'; // Vietcombank (VCB) BIN
+                const amount = currentTotalPrice;
+                const addInfo = encodeURIComponent(orderId);
+
+                const qrApiUrl = `https://api.vietqr.io/v2/generate?accountNo=${accountNo}&accountName=${encodeURIComponent(accountName)}&acqId=${acqId}&amount=${amount}&addInfo=${addInfo}&template=compact`;
+                
+                // Update text immediately
+                qrAmount.textContent = formatCurrency(amount);
+                qrOrderId.textContent = orderId;
+
+                // Load image
+                const img = new Image();
+                img.src = qrApiUrl;
+                img.onload = () => {
+                    qrCodeImg.src = img.src;
+                    qrCodeImg.classList.remove('loading');
+                };
+                img.onerror = () => {
+                    // Handle error if API fails
+                    qrCodeImg.classList.remove('loading');
+                    qrCodeImg.alt = "Lỗi khi tạo mã QR. Vui lòng thử lại.";
+                };
+            });
+
+            // --- Video Modal ---
+            // (This logic remains the same)
             const videoModal = document.getElementById('video-modal');
             const openVideoBtn = document.getElementById('open-video-modal-btn');
             const closeVideoBtn = document.getElementById('close-video-modal-btn');
             const videoIframe = document.getElementById('video-iframe');
             const videoSrc = "https://www.youtube.com/embed/dQw4w9WgXcQ"; 
-
-            if (openVideoBtn) {
-                openVideoBtn.addEventListener('click', () => {
-                    videoIframe.src = videoSrc + "?autoplay=1";
-                    videoModal.classList.add('is-visible');
-                });
-            }
-            const closeVideo = () => {
-                videoIframe.src = "";
-                videoModal.classList.remove('is-visible');
-            }
+            if (openVideoBtn) { openVideoBtn.addEventListener('click', () => { videoIframe.src = videoSrc + "?autoplay=1"; videoModal.classList.add('is-visible'); }); }
+            const closeVideo = () => { videoIframe.src = ""; videoModal.classList.remove('is-visible'); };
             if(closeVideoBtn) closeVideoBtn.addEventListener('click', closeVideo);
             if(videoModal) videoModal.addEventListener('click', (e) => { if(e.target === videoModal) closeVideo(); });
             
-            const commentForm = document.getElementById('new-comment-form');
+            // --- Comment Form ---
+            // (This logic remains the same)
+             const commentForm = document.getElementById('new-comment-form');
             if(commentForm) {
                 commentForm.addEventListener('submit', function(e) {
                     e.preventDefault();
@@ -780,51 +958,62 @@
                 });
             }
             
-            // Chatbox Logic
+            // --- Chatbox Logic ---
+            // (This logic remains the same)
             const chatboxContainer = document.querySelector('.chatbox-container');
             const chatboxToggle = document.getElementById('chatbox-toggle');
             const chatInput = document.getElementById('chat-input');
             const chatSendBtn = document.getElementById('chat-send-btn');
             const chatBody = document.getElementById('chatbox-body');
-
-            if(chatboxToggle) {
-                chatboxToggle.addEventListener('click', () => {
-                    chatboxContainer.classList.toggle('active');
-                });
-            }
-            
-            const sendMessage = () => {
-                const messageText = chatInput.value.trim();
-                if (messageText === "") return;
-                
-                const messageEl = document.createElement('div');
-                messageEl.classList.add('message', 'sent');
-                messageEl.textContent = messageText;
-                chatBody.appendChild(messageEl);
-
-                chatInput.value = "";
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
+            if(chatboxToggle) { chatboxToggle.addEventListener('click', () => chatboxContainer.classList.toggle('active')); }
+            const sendMessage = () => { const messageText = chatInput.value.trim(); if (messageText === "") return; const messageEl = document.createElement('div'); messageEl.classList.add('message', 'sent'); messageEl.textContent = messageText; chatBody.appendChild(messageEl); chatInput.value = ""; chatBody.scrollTop = chatBody.scrollHeight; };
             if(chatSendBtn) chatSendBtn.addEventListener('click', sendMessage);
-            if(chatInput) chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') sendMessage();
-            });
+            if(chatInput) chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
 
-            // NEW: Countdown Timer Logic
+            // --- Urgency, Countdown, and Social Proof ---
             const countdownEl = document.getElementById('sale-countdown');
             if (countdownEl) {
                 let timeLeft = (24 * 60 * 60) - (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
-                setInterval(() => {
+                const updateCountdown = () => {
                     if (timeLeft <= 0) timeLeft = 24 * 60 * 60;
                     timeLeft--;
                     const hours = Math.floor(timeLeft / 3600);
                     const minutes = Math.floor((timeLeft % 3600) / 60);
                     const seconds = timeLeft % 60;
-                    countdownEl.textContent = 
-                        `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-                }, 1000);
+                    countdownEl.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                }
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
             }
+            
+            const slotsLeftEl = document.getElementById('slots-left');
+            if(slotsLeftEl) {
+                setInterval(() => {
+                    let currentSlots = parseInt(slotsLeftEl.textContent);
+                    if (currentSlots > 3) {
+                       slotsLeftEl.textContent = currentSlots - 1;
+                    }
+                }, 20000); // Reduce every 20 seconds
+            }
+
+            const purchasePopup = document.getElementById('recent-purchase-popup');
+            const purchaseText = document.getElementById('purchase-text');
+            const cities = ["Hà Nội", "TP. Hồ Chí Minh", "Đà Nẵng", "Hải Phòng", "Cần Thơ", "Nha Trang", "Bình Dương"];
+            
+            function showRecentPurchase() {
+                const randomCity = cities[Math.floor(Math.random() * cities.length)];
+                purchaseText.textContent = `Ai đó từ ${randomCity} vừa mua sản phẩm này!`;
+                purchasePopup.classList.add('show');
+                
+                setTimeout(() => {
+                    purchasePopup.classList.remove('show');
+                }, 5000); // Show for 5 seconds
+            }
+
+            setTimeout(() => {
+                showRecentPurchase(); // Show first one after 8 seconds
+                setInterval(showRecentPurchase, 25000); // Then repeat every 25 seconds
+            }, 8000);
         });
     </script>
 </body>
