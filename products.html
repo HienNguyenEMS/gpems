@@ -37,7 +37,7 @@
         .section-title { text-align: center; font-size: 2.0rem; margin-bottom: 50px; font-weight: 700; }
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 1rem; }
         .btn-accent { background-color: var(--accent); color: var(--primary); box-shadow: 0 4px 15px rgba(0, 202, 235, 0.2); }
-        .btn-accent:hover { transform: translateY(-3px); }
+        .btn-accent:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 202, 235, 0.3); }
         .btn-outline { background-color: transparent; color: var(--accent); border: 2px solid var(--accent); }
         .btn-outline:hover { background-color: var(--accent); color: var(--primary); }
         .card { background-color: var(--white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; display: flex; flex-direction: column; border: 2px solid transparent; text-decoration: none; color: inherit;}
@@ -48,6 +48,7 @@
         .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
         .card-content h3 { font-size: 1.1rem; margin-bottom: 12px; flex-grow: 1; }
         
+        /* --- HEADER --- */
         .main-header { background-color: transparent; padding: 15px 0; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: background-color 0.4s ease, box-shadow 0.4s ease; }
         .main-header.scrolled { background-color: rgba(3, 35, 60, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; }
@@ -73,40 +74,36 @@
         .page-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.4s ease; }
         .page-overlay.is-visible { opacity: 1; visibility: visible; }
         
-        .main-footer { background-color: var(--primary); color: var(--white); padding: 60px 0 20px 0; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
-        .footer-col.footer-logo img { max-width: 150px; margin-bottom: 20px; }
-        .footer-col h4 { color: var(--white); margin-bottom: 15px; }
-        .footer-col p, .footer-col li { opacity: 0.8; font-size: 0.95rem; margin-bottom: 8px;}
-        .footer-col ul { list-style: none; padding: 0; }
-        .footer-col a { text-decoration: none; color: var(--white); transition: color 0.3s; }
-        .footer-col a:hover { color: var(--accent); opacity: 1; }
-        .footer-socials { margin-top: 20px; display: flex; gap: 20px; }
-        .footer-socials a { font-size: 1.6rem; color: var(--white); opacity: 0.8; transition: all 0.3s ease; }
-        .footer-socials a:hover { color: var(--accent); transform: translateY(-3px); }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; text-align: center; opacity: 0.8; }
-        .footer-bottom a { color: var(--accent); }
-
-        .page-header { padding-top: calc(var(--header-height) + 40px); padding-bottom: 40px; background-color: var(--primary); }
-        .page-header h1, .page-header .breadcrumbs { color: var(--white); }
-        .page-header .breadcrumbs { opacity: 0.8; margin-top: 10px; }
-        .page-header .breadcrumbs a { color: var(--white); text-decoration: none; }
+        /* --- PAGE HEADER & PRODUCT LAYOUT --- */
+        .page-header { padding-top: calc(var(--header-height) + 40px); padding-bottom: 40px; background: linear-gradient(45deg, var(--primary), #0a3a5e); }
+        .page-header .breadcrumbs { color: var(--white); opacity: 0.8; }
+        .page-header .breadcrumbs a { color: var(--white); text-decoration: none; transition: color 0.3s; }
+        .page-header .breadcrumbs a:hover { color: var(--accent); }
         .page-header .breadcrumbs .separator { margin: 0 8px; }
         
         .detail-layout { display: grid; grid-template-columns: 1fr 420px; gap: 50px; align-items: flex-start; }
+        
+        /* --- NEW: PRODUCT INTRO STYLES --- */
+        .product-intro h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+        .product-intro .subtitle { font-size: 1.1rem; color: #555; margin-bottom: 15px; }
+        .product-meta { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap; }
+        .product-meta .star-rating { color: var(--star-color); font-size: 1.1rem; }
+        .product-meta .reviews-link { color: #555; text-decoration: none; border-bottom: 1px dotted #555; }
+        .product-meta .buyers-count { font-size: 1rem; color: var(--secondary); font-weight: 600; }
+        
         .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
         .tag-item { display: inline-block; background-color: var(--light-background); color: var(--text); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; text-decoration: none; transition: all 0.3s ease; border: 1px solid #e0e0e0; }
         .tag-item:hover { background-color: var(--accent); color: var(--primary); border-color: var(--accent); }
         .product-gallery .main-image { border-radius: 15px; overflow: hidden; margin-bottom: 15px; box-shadow: var(--shadow); aspect-ratio: 16 / 10; background-color: #eee; }
         .product-gallery .main-image img { width: 100%; height: 100%; object-fit: cover; }
         .product-gallery .thumbnail-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-        .product-gallery .thumbnail-item { border-radius: 8px; overflow: hidden; cursor: pointer; border: 3px solid transparent; opacity: 0.6; transition: all 0.3s ease; }
+        .product-gallery .thumbnail-item { border-radius: 8px; overflow: hidden; cursor: pointer; border: 3px solid transparent; opacity: 0.7; transition: all 0.3s ease; }
         .product-gallery .thumbnail-item:hover, .product-gallery .thumbnail-item.active { border-color: var(--accent); opacity: 1; transform: scale(1.05); }
         .product-gallery .thumbnail-item img { width: 100%; display: block; aspect-ratio: 16/10; object-fit: cover; background-color: #eee; }
         
         .product-tabs { margin-top: 40px; }
         .product-tabs .tab-nav { display: flex; border-bottom: 2px solid #e0e0e0; margin-bottom: 30px; flex-wrap: wrap; }
-        .product-tabs .tab-nav-item { padding: 15px 20px; cursor: pointer; font-weight: 600; font-size: 1rem; color: #666; border-bottom: 4px solid transparent; margin-bottom: -2px; }
+        .product-tabs .tab-nav-item { padding: 15px 20px; cursor: pointer; font-weight: 600; font-size: 1.1rem; color: #666; border-bottom: 4px solid transparent; margin-bottom: -2px; transition: color 0.3s, border-color 0.3s; }
         .product-tabs .tab-nav-item.active { color: var(--primary); border-bottom-color: var(--accent); }
         .product-tabs .tab-content { display: none; animation: fadeIn 0.5s; padding-top: 10px; }
         .product-tabs .tab-content.active { display: block; }
@@ -116,15 +113,57 @@
         .tab-content ul li { display: flex; gap: 10px; margin-bottom: 10px; }
         .tab-content ul li i { color: var(--secondary); margin-top: 5px; width: 20px; }
         
+        /* --- NEW: FEATURES TAB GRID --- */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .feature-item { display: flex; align-items: flex-start; gap: 15px; background: var(--light-background); padding: 20px; border-radius: 10px; border-left: 4px solid var(--secondary); }
+        .feature-item i { font-size: 1.8rem; color: var(--secondary); margin-top: 3px; }
+        .feature-item h4 { font-size: 1.1rem; margin-bottom: 5px; color: var(--primary); }
+        .feature-item p { line-height: 1.6; font-size: 0.95rem; }
+
         .customer-benefits-section { margin-top: 50px; }
         .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .benefit-item-soft { background-color: var(--light-background); padding: 25px; text-align: center; border-radius: 12px; border-left: 4px solid var(--accent); }
+        .benefit-item-soft { background-color: var(--light-background); padding: 25px; text-align: center; border-radius: 12px; border-left: 4px solid var(--accent); transition: transform 0.3s, box-shadow 0.3s; }
+        .benefit-item-soft:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
         .benefit-item-soft i { font-size: 2rem; color: var(--accent); margin-bottom: 10px; }
         .benefit-item-soft h4 { font-size: 1.1rem; }
 
+        /* --- STICKY SIDEBAR / BUY BOX --- */
+        .sticky-sidebar { position: -webkit-sticky; position: sticky; top: calc(var(--header-height) + 20px); }
+        .sidebar-widget { background-color: var(--white); border-radius: 15px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid #e5e5e5; }
+        
+        .price-box { margin-bottom: 20px; text-align: center; }
+        .price-details { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 5px;}
+        .old-price { font-size: 1.2rem; text-decoration: line-through; color: #888; }
+        .discount-badge { background-color: var(--price-color); color: var(--white); padding: 4px 10px; border-radius: 5px; font-size: 0.9rem; font-weight: 700; }
+        .current-price { font-size: 2.8rem; font-weight: 700; color: var(--price-color); line-height: 1.1; }
+        
+        /* --- NEW: COUNTDOWN TIMER --- */
+        .countdown-timer { background-color: var(--light-background); padding: 10px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+        .countdown-timer .label { font-size: 0.9rem; font-weight: 600; color: var(--primary); margin-bottom: 5px; }
+        .countdown-timer .timer { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--price-color); }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .sidebar-widget .btn-accent { width: 100%; margin-top: 10px; padding: 15px; font-size: 1.2rem; animation: pulse 2s infinite ease-in-out; }
+        .sidebar-widget .btn { width: 100%; margin-top: 10px; }
+        .sidebar-widget .package-info { list-style: none; padding: 20px 0 0 0; margin-top: 20px; border-top: 1px solid #eee;}
+        .sidebar-widget .package-info h4 { font-size: 1.1rem; margin-bottom: 15px; text-align: left; }
+        .sidebar-widget .package-info li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .sidebar-widget .package-info i { color: var(--secondary); width: 20px; text-align: center; font-size: 1.1rem; }
+        
+        /* --- NEW: TRUST SEALS --- */
+        .trust-seals { text-align: center; margin-top: 20px; }
+        .trust-seals .label { font-size: 0.85rem; color: #777; margin-bottom: 10px; }
+        .trust-seals .icons { display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 1.8rem; color: #aaa; }
+        
+        /* --- OTHER SECTIONS --- */
         #customer-reviews { background-color: var(--light-background); }
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .review-card { background-color: var(--white); border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0; }
+        .review-card { background-color: var(--white); border-radius: 12px; padding: 25px; border: 1px solid #e0e0e0; transition: transform 0.3s, box-shadow 0.3s; }
+        .review-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
         .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .star-rating { color: var(--star-color); }
         .review-timestamp { font-size: 0.8rem; color: #888; }
@@ -137,21 +176,6 @@
         #new-comment-form textarea { width: 100%; min-height: 100px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 15px; font-family: 'Open Sans', sans-serif; font-size: 1rem;}
         #new-comment-form button { display: block; margin-left: auto; }
 
-        .sticky-sidebar { position: -webkit-sticky; position: sticky; top: calc(var(--header-height) + 20px); }
-        .sidebar-widget { background-color: var(--white); border: 1px solid #e0e0e0; border-radius: 15px; padding: 25px; box-shadow: var(--shadow); }
-        .price-box { margin-bottom: 15px; }
-        .price-details { display: flex; align-items: baseline; gap: 10px; }
-        .old-price { font-size: 1.1rem; text-decoration: line-through; color: #888; }
-        .discount-badge { background-color: var(--price-color); color: var(--white); padding: 3px 8px; border-radius: 5px; font-size: 0.9rem; font-weight: 700; }
-        .current-price { font-size: 2.5rem; font-weight: 700; color: var(--price-color); }
-        .buyers-count { font-size: 0.9rem; color: #555; margin-top: 5px; }
-        .buyers-count i { color: var(--secondary); }
-        .sidebar-widget .btn { width: 100%; margin-top: 10px; }
-        .sidebar-widget .package-info { list-style: none; padding: 20px 0 0 0; margin-top: 20px; border-top: 1px solid #eee;}
-        .sidebar-widget .package-info h4 { font-size: 1.1rem; margin-bottom: 15px;}
-        .sidebar-widget .package-info li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-        .sidebar-widget .package-info i { color: var(--secondary); width: 20px; text-align: center; }
-        
         .final-cta { text-align: center; padding: 50px 0; background-color: var(--light-background); }
         .final-cta h2 { font-size: 1.8rem; }
         .final-cta p { max-width: 600px; margin: 15px auto 30px; }
@@ -167,6 +191,20 @@
         .faq-answer p { padding: 5px 0 18px 0; margin: 0; color: #555; }
         .faq-item.active .faq-question { color: var(--accent); }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+        .main-footer { background-color: var(--primary); color: var(--white); padding: 60px 0 20px 0; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
+        .footer-col.footer-logo img { max-width: 150px; margin-bottom: 20px; }
+        .footer-col h4 { color: var(--white); margin-bottom: 15px; }
+        .footer-col p, .footer-col li { opacity: 0.8; font-size: 0.95rem; margin-bottom: 8px;}
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col a { text-decoration: none; color: var(--white); transition: color 0.3s; }
+        .footer-col a:hover { color: var(--accent); opacity: 1; }
+        .footer-socials { margin-top: 20px; display: flex; gap: 20px; }
+        .footer-socials a { font-size: 1.6rem; color: var(--white); opacity: 0.8; transition: all 0.3s ease; }
+        .footer-socials a:hover { color: var(--accent); transform: translateY(-3px); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; text-align: center; opacity: 0.8; }
+        .footer-bottom a { color: var(--accent); }
 
         .modal-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1050; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease; }
         .modal-container.is-visible { opacity: 1; visibility: visible; }
@@ -186,12 +224,10 @@
         #qr-code-img { max-width: 250px; width: 100%; margin: 15px auto; }
         .payment-info { background-color: var(--light-background); padding: 15px; border-radius: 8px; }
 
-        /* Floating Widgets CSS */
         .call-now-button { position: fixed; bottom: 20px; left: 20px; z-index: 998; background-color: var(--secondary); color: var(--white); display: flex; align-items: center; padding: 10px 15px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; }
         .call-now-button:hover { transform: translateY(-3px) scale(1.05); }
         .call-now-button i { font-size: 1.2rem; }
         .call-now-button span { font-weight: 700; margin-left: 8px; }
-
         .chatbox-container { position: fixed; bottom: 20px; right: 20px; z-index: 999; }
         .chatbox-toggle { width: 60px; height: 60px; background-color: var(--primary); color: var(--white); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.25); transition: transform 0.3s ease; }
         .chatbox-toggle:hover { transform: scale(1.1); }
@@ -230,6 +266,7 @@
             .call-now-button { padding: 12px; width: 50px; height: 50px; justify-content: center; }
         }
         @media (max-width: 767px) {
+            .product-intro h1 { font-size: 1.8rem; }
             .related-section .grid-4 { grid-template-columns: 1fr; }
         }
     </style>
@@ -271,7 +308,6 @@
     <main>
         <div class="page-header">
             <div class="container">
-                <h1>Tool Excel tính giá xây dựng</h1>
                 <nav class="breadcrumbs">
                     <a href="index.html">Trang chủ</a><span class="separator">/</span>
                     <a href="#">Phần mềm</a><span class="separator">/</span>
@@ -284,18 +320,24 @@
             <div class="container">
                 <div class="detail-layout">
                     <div class="main-content">
+                        <!-- NEW: PRODUCT INTRO SECTION -->
+                        <div class="product-intro">
+                            <h1>Tool Excel tính giá xây dựng chuyên nghiệp</h1>
+                            <p class="subtitle">Giải pháp dự toán tự động, chính xác và nhanh chóng cho kỹ sư, nhà thầu và cá nhân.</p>
+                            <div class="product-meta">
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <a href="#customer-reviews" class="reviews-link">Xem 150+ đánh giá</a>
+                                <div class="buyers-count"><i class="fas fa-users"></i> Hơn 1,200+ người đã mua</div>
+                            </div>
+                        </div>
+
                         <div class="tag-list">
-                            <a href="#" class="tag-item">Excel</a>
-                            <a href="#" class="tag-item">Xây dựng</a>
-                            <a href="#" class="tag-item">Dự toán</a>
-                            <a href="#" class="tag-item">Tài chính</a>
-                            <a href="#" class="tag-item">AppSheet</a>
-                            <a href="#" class="tag-item">Looker Studio</a>
-                            <a href="#" class="tag-item">ERP</a>
-                            <a href="#" class="tag-item">CRM</a>
+                            <a href="#" class="tag-item">Excel</a><a href="#" class="tag-item">Xây dựng</a><a href="#" class="tag-item">Dự toán</a><a href="#" class="tag-item">Tài chính</a><a href="#" class="tag-item">AppSheet</a><a href="#" class="tag-item">Looker Studio</a><a href="#" class="tag-item">ERP</a><a href="#" class="tag-item">CRM</a>
                         </div>
                         <div class="product-gallery">
-                             <div class="main-image"><img id="main-product-image" src="https://plus.unsplash.com/premium_photo-1661700152890-931fb04588e6" alt="Giao diện chính của tool"></div>
+                            <div class="main-image"><img id="main-product-image" src="https://plus.unsplash.com/premium_photo-1661700152890-931fb04588e6" alt="Giao diện chính của tool"></div>
                             <div class="thumbnail-list">
                                 <div class="thumbnail-item active" data-image="https://images.unsplash.com/photo-1649433391420-542fcd3835ea"><img src="https://images.unsplash.com/photo-1649433391420-542fcd3835ea" alt="Giao diện chính"></div>
                                 <div class="thumbnail-item" data-image="https://images.unsplash.com/photo-1605379399642-870262d3d051"><img src="https://images.unsplash.com/photo-1605379399642-870262d3d051" alt="Bảng tính chi tiết"></div>
@@ -306,22 +348,34 @@
                         </div>
                         <div class="product-tabs">
                             <nav class="tab-nav">
-                                <div class="tab-nav-item active" data-tab="desc">Mô tả</div>
-                                <div class="tab-nav-item" data-tab="features">Tính năng</div>
+                                <div class="tab-nav-item active" data-tab="features">Tính năng nổi bật</div>
+                                <div class="tab-nav-item" data-tab="desc">Mô tả chi tiết</div>
                                 <div class="tab-nav-item" data-tab="for">Dành cho ai?</div>
                             </nav>
-                            <div id="desc" class="tab-content active">
+                            <div id="desc" class="tab-content">
                                 <h3>Giải pháp dự toán xây dựng toàn diện</h3>
                                 <p>Bạn mệt mỏi với việc tính toán dự toán thủ công, phức tạp và dễ sai sót? Tool Excel Tính Giá Xây Dựng là giải pháp được phát triển bởi đội ngũ chuyên gia của EMS Solution để giải quyết triệt để vấn đề này. Dựa trên nền tảng Microsoft Excel quen thuộc, công cụ được trang bị macro VBA và công thức nâng cao để tự động hóa tối đa quy trình, giảm thiểu sai sót và tăng hiệu quả công việc rõ rệt.</p>
                             </div>
-                            <div id="features" class="tab-content">
-                                <h3>Tính năng nổi bật</h3>
-                                <ul>
-                                    <li><i class="fas fa-cogs"></i><b>Tự động tính toán:</b> Tự động bóc tách khối lượng vật tư (xi măng, cát, đá, thép...).</li>
-                                    <li><i class="fas fa-dollar-sign"></i><b>Cập nhật đơn giá:</b> Tích hợp sẵn đơn giá vật liệu, nhân công theo định mức và giá thị trường.</li>
-                                    <li><i class="fas fa-chart-pie"></i><b>Phân tích chi tiết:</b> Cung cấp bảng phân tích đơn giá chi tiết cho từng hạng mục công việc.</li>
-                                    <li><i class="fas fa-file-invoice"></i><b>Báo cáo chuyên nghiệp:</b> Tự động tổng hợp kinh phí, tạo bảng dự toán, dự thầu chuyên nghiệp.</li>
-                                </ul>
+                            <div id="features" class="tab-content active">
+                                <!-- NEW: FEATURES GRID LAYOUT -->
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-cogs"></i>
+                                        <div><h4>Tự động tính toán</h4><p>Tự động bóc tách khối lượng vật tư (xi măng, cát, đá, thép...) chỉ với vài cú nhấp chuột.</p></div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <div><h4>Cập nhật đơn giá</h4><p>Tích hợp sẵn đơn giá vật liệu, nhân công theo định mức và giá thị trường, dễ dàng tùy chỉnh.</p></div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-chart-pie"></i>
+                                        <div><h4>Phân tích chi tiết</h4><p>Cung cấp bảng phân tích đơn giá chi tiết cho từng hạng mục công việc, giúp kiểm soát tối ưu.</p></div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-file-invoice"></i>
+                                        <div><h4>Báo cáo chuyên nghiệp</h4><p>Tự động tổng hợp kinh phí, tạo bảng dự toán, dự thầu chuyên nghiệp, sẵn sàng để in ấn.</p></div>
+                                    </div>
+                                </div>
                             </div>
                             <div id="for" class="tab-content">
                                 <h3>Sản phẩm này dành cho ai?</h3>
@@ -335,22 +389,10 @@
                         <div class="customer-benefits-section">
                             <h2 class="section-title" style="text-align: left; font-size: 1.8rem; margin-bottom: 25px;">Quyền lợi của khách hàng</h2>
                             <div class="benefits-grid">
-                                <div class="benefit-item-soft">
-                                    <i class="fas fa-rocket"></i>
-                                    <h4>Ứng dụng thực chiến sử dụng ngay</h4>
-                                </div>
-                                <div class="benefit-item-soft">
-                                    <i class="fas fa-chalkboard-teacher"></i>
-                                    <h4>Hỗ trợ tùy chỉnh & hướng dẫn trực tiếp</h4>
-                                </div>
-                                <div class="benefit-item-soft">
-                                    <i class="fas fa-headset"></i>
-                                    <h4>Miễn phí tùy biến & hỗ trợ 24/7</h4>
-                                </div>
-                                <div class="benefit-item-soft">
-                                    <i class="fas fa-sync-alt"></i>
-                                    <h4>Update phiên bản mới miễn phí</h4>
-                                </div>
+                                <div class="benefit-item-soft"><i class="fas fa-rocket"></i><h4>Ứng dụng thực chiến sử dụng ngay</h4></div>
+                                <div class="benefit-item-soft"><i class="fas fa-chalkboard-teacher"></i><h4>Hỗ trợ tùy chỉnh & hướng dẫn trực tiếp</h4></div>
+                                <div class="benefit-item-soft"><i class="fas fa-headset"></i><h4>Miễn phí tùy biến & hỗ trợ 24/7</h4></div>
+                                <div class="benefit-item-soft"><i class="fas fa-sync-alt"></i><h4>Update phiên bản mới miễn phí</h4></div>
                             </div>
                         </div>
                     </div>
@@ -362,26 +404,41 @@
                                     <span class="discount-badge">-50%</span>
                                 </div>
                                 <div class="current-price" data-price="499000">499.000đ</div>
-                                <div class="buyers-count"><i class="fas fa-users"></i> Hơn 1,200+ người đã mua</div>
                             </div>
+                            <!-- NEW: COUNTDOWN TIMER -->
+                            <div class="countdown-timer">
+                                <div class="label">🔥 Ưu đãi kết thúc sau:</div>
+                                <div class="timer" id="sale-countdown">01:23:45</div>
+                            </div>
+
                             <button class="btn btn-accent" id="open-order-modal-btn"><i class="fas fa-shopping-cart"></i> Mua ngay</button>
                             <button class="btn btn-outline" id="open-video-modal-btn"><i class="fas fa-play-circle"></i> Xem Video Giới thiệu</button>
-                            <a href="https://www.dropbox.com/s/sample.pdf?dl=1" target="_blank" class="btn btn-outline"><i class="fas fa-download"></i> Tải tài liệu mẫu</a>
+
                             <div class="package-info">
-                                <h4>Gói sản phẩm bao gồm:</h4>
+                                <h4>Bạn sẽ nhận được:</h4>
                                 <ul>
                                     <li><i class="fas fa-check-circle"></i>File Excel bản quyền vĩnh viễn</li>
-                                    <li><i class="fas fa-check-circle"></i>Video hướng dẫn chi tiết</li>
-                                    <li><i class="fas fa-check-circle"></i>Hỗ trợ cài đặt & sử dụng</li>
-                                    <li><i class="fas fa-check-circle"></i>Cập nhật miễn phí 1 năm</li>
+                                    <li><i class="fas fa-check-circle"></i>Video hướng dẫn sử dụng chi tiết</li>
+                                    <li><i class="fas fa-check-circle"></i>Hỗ trợ cài đặt & tư vấn qua Zalo/Ultraview</li>
+                                    <li><i class="fas fa-check-circle"></i>Cập nhật miễn phí trong 1 năm</li>
                                 </ul>
+                            </div>
+                            <!-- NEW: TRUST SEALS -->
+                            <div class="trust-seals">
+                                <div class="label">Thanh toán an toàn & bảo mật</div>
+                                <div class="icons">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    <i class="fas fa-university"></i>
+                                </div>
                             </div>
                         </div>
                     </aside>
                 </div>
             </div>
         </section>
-
+        
+        <!-- Other sections remain the same -->
         <section id="customer-reviews">
             <div class="container">
                 <h2 class="section-title">Phản hồi từ khách hàng</h2>
@@ -664,7 +721,7 @@
             const formatCurrency = (amount) => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
 
             function openOrderPopup() {
-                document.getElementById('product-name').value = document.querySelector('.page-header h1').textContent;
+                document.getElementById('product-name').value = document.querySelector('.product-intro h1').textContent;
                 document.getElementById('summary-total').textContent = formatCurrency(basePrice);
                 orderModal.classList.add('is-visible');
                 document.getElementById('order-form-view').style.display = 'block';
@@ -753,6 +810,21 @@
             if(chatInput) chatInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') sendMessage();
             });
+
+            // NEW: Countdown Timer Logic
+            const countdownEl = document.getElementById('sale-countdown');
+            if (countdownEl) {
+                let timeLeft = (24 * 60 * 60) - (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
+                setInterval(() => {
+                    if (timeLeft <= 0) timeLeft = 24 * 60 * 60;
+                    timeLeft--;
+                    const hours = Math.floor(timeLeft / 3600);
+                    const minutes = Math.floor((timeLeft % 3600) / 60);
+                    const seconds = timeLeft % 60;
+                    countdownEl.textContent = 
+                        `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                }, 1000);
+            }
         });
     </script>
 </body>
