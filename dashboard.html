@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -34,7 +33,7 @@
         h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: var(--primary); font-weight: 600; }
         a { text-decoration: none; color: inherit; }
 
-        /* REFINED: Layout Header */
+        /* Layout: Header */
         .top-header { height: var(--top-header-height); background-color: var(--primary); border-bottom: 1px solid var(--primary-light); padding: 0 30px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; z-index: 1002; }
         .header-left, .header-right { display: flex; align-items: center; gap: 15px; }
         .header-left { gap: 20px; }
@@ -49,15 +48,27 @@
         .header-icon-btn:hover { background-color: var(--primary-light); color: var(--white); }
         .header-badge { position: absolute; top: 2px; right: 2px; background-color: #e53935; color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 0.7rem; font-weight: 600; display: flex; align-items: center; justify-content: center; border: 2px solid var(--primary); }
         .header-dropdown-container { position: relative; display: flex; align-items: center; }
-        .header-dropdown { position: absolute; top: calc(100% + 15px); right: 0; width: 340px; background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1003; }
+        .header-dropdown { position: absolute; top: calc(100% + 15px); right: 0; width: 360px; background-color: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1003; }
         .header-dropdown.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
         .dropdown-header { padding: 15px; border-bottom: 1px solid var(--border-color); font-weight: 600; font-size: 1rem; }
         .dropdown-list { list-style: none; max-height: 300px; overflow-y: auto; padding: 8px; }
+        .dropdown-list li { border-bottom: 1px solid var(--border-color); }
+        .dropdown-list li:last-child { border-bottom: none; }
         .dropdown-list li a { display: flex; align-items: center; gap: 15px; padding: 12px; border-radius: 8px; } .dropdown-list li a:hover { background-color: var(--background); }
         .user-avatar { width: 42px; height: 42px; border-radius: 50%; cursor: pointer; border: 2px solid var(--accent); }
         .user-dropdown .dropdown-header .name { font-weight: 600; font-size: 1rem; }
         .user-dropdown .dropdown-header .email { font-size: 0.8rem; color: var(--text-secondary); word-break: break-all; }
         .user-dropdown a { display: flex; align-items: center; gap: 10px; padding: 12px 15px; font-size: 0.9rem; }
+        
+        /* Dropdown Item CSS */
+        .dropdown-item-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .dropdown-item-content { flex-grow: 1; }
+        .dropdown-item-content p { font-size: 0.9rem; margin-bottom: 3px; font-weight: 500; line-height: 1.3; }
+        .dropdown-item-content .time { font-size: 0.8rem; color: var(--text-secondary); }
+        /* REFINED: Cart Item CSS */
+        .cart-item .dropdown-item-content p { font-weight: 600; }
+        .cart-item .price { margin-left: auto; font-weight: 700; color: var(--primary); white-space: nowrap; }
+        .dropdown-footer { padding: 15px; border-top: 1px solid var(--border-color); }
         
         /* Layout: Sidebar & Main Content */
         .dashboard-container { display: flex; padding-top: var(--top-header-height); }
@@ -83,7 +94,6 @@
         .stat-green { background: linear-gradient(135deg, #2E7D32, #4CAF50); } .stat-blue { background: linear-gradient(135deg, #1E88E5, #42A5F5); } .stat-yellow { background: linear-gradient(135deg, #FBC02D, #FFCA28); } .stat-red { background: linear-gradient(135deg, #e53935, #ef5350); }
         .continue-learning-btn { display: flex; align-items: center; gap: 15px; background-color: var(--accent); color: var(--primary); padding: 12px 20px; border-radius: 8px; font-weight: 600; }
         .continue-learning-btn .info { display: flex; flex-direction: column; }
-        .continue-learning-btn .info .course-title { font-weight: 700; font-size: 1rem; }
         
         /* Main Dashboard Grid */
         .dashboard-main-grid { display: grid; grid-template-columns: 2fr 1.2fr 1fr; gap: 30px; }
@@ -115,7 +125,7 @@
         /* Responsive */
         @media (max-width: 1400px) { .dashboard-main-grid { grid-template-columns: 1.5fr 1fr; } .certificates-panel { grid-column: 1 / -1; margin-top: 30px; } }
         @media (max-width: 991px) { .hero-banner { flex-direction: column; align-items: stretch; text-align: center; } .hero-stats { grid-template-columns: repeat(2, 1fr); } .dashboard-main-grid { grid-template-columns: 1fr; } .main-content { padding: 20px; } .top-header { padding: 0 15px; } .header-center { display: none; } }
-        @media (max-width: 576px) { .hero-stats { grid-template-columns: 1fr; } }
+        @media (max-width: 767px) { .hero-banner { padding: 20px; } .main-content { padding: 15px; } .courses-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -129,7 +139,13 @@
                 <div class="header-dropdown" id="cart-dropdown">
                     <div class="dropdown-header">Giỏ hàng của bạn</div>
                     <ul class="dropdown-list">
-                        <li><a href="#" class="cart-item"><img src="https://plus.unsplash.com/premium_photo-1720551256879-92e5b13285be?w=500" class="cart-item-image"><div class="dropdown-item-content"><p>Khóa học Google Data Studio nâng cao</p></div><span class="price">1.200.000₫</span></a></li>
+                        <li><a href="#" class="cart-item">
+                            <!-- REMOVED thumbnail from here -->
+                            <div class="dropdown-item-content">
+                                <p>Khóa học Google Data Studio nâng cao</p>
+                            </div>
+                            <span class="price">1.200.000₫</span>
+                        </a></li>
                     </ul>
                     <div class="dropdown-footer"><a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Thanh toán</a></div>
                 </div>
@@ -139,8 +155,8 @@
                 <div class="header-dropdown" id="notification-dropdown">
                     <div class="dropdown-header">Thông báo</div>
                     <ul class="dropdown-list">
-                        <li><a href="#"><i class="fas fa-comment-dots item-icon" style="color: var(--color-blue)"></i><div class="dropdown-item-content"><p>Giảng viên đã trả lời câu hỏi của bạn.</p><span class="time">5 phút trước</span></div></a></li>
-                        <li><a href="#"><i class="fas fa-bolt item-icon" style="color: var(--color-green)"></i></i><div class="dropdown-item-content"><p>Khóa học "AppSheet" vừa có bài mới.</p><span class="time">1 giờ trước</span></div></a></li>
+                        <li><a href="#"><div class="dropdown-item-icon" style="background-color: #E3F2FD; color: #1E88E5;"><i class="fas fa-comment-dots"></i></div><div class="dropdown-item-content"><p>Giảng viên đã trả lời câu hỏi của bạn.</p><span class="time">5 phút trước</span></div></a></li>
+                        <li><a href="#"><div class="dropdown-item-icon" style="background-color: #E8F5E9; color: var(--secondary);"><i class="fas fa-bolt"></i></div><div class="dropdown-item-content"><p>Khóa học "AppSheet" vừa có bài mới.</p><span class="time">1 giờ trước</span></div></a></li>
                     </ul>
                 </div>
             </div>
@@ -241,7 +257,7 @@
 
     <!-- Google Login Modal -->
     <div id="google-login-modal" class="login-modal" style="align-items: center; justify-content: center; display: none;">
-        <div class="modal-content"><span class="close-modal-btn" id="close-login-modal">&times;</span><h2>Đăng nhập để tiếp tục</h2><p style="color: var(--text-secondary); margin-bottom: 25px;">Sử dụng tài khoản Google để truy cập tất cả khóa học và dịch vụ của EMS Solution.</p><a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=YOUR_CLIENT_ID.apps.googleusercontent.com&redirect_uri=https://your-website.com/callback&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email" class="btn google-login-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google G Logo"><span>Sign in with Google</span></a><p class="policy-text">Bằng việc tiếp tục, bạn đồng ý với <a href="/dieu-khoan.html" target="_blank">Điều khoản Dịch vụ</a> và đã đọc <a href="/chinh-sach.html" target="_blank">Chính sách Quyền riêng tư</a>.</p></div>
+        <div class="modal-content"><span class="close-modal-btn" id="close-login-modal">×</span><h2>Đăng nhập để tiếp tục</h2><p style="color: var(--text-secondary); margin-bottom: 25px;">Sử dụng tài khoản Google để truy cập tất cả khóa học và dịch vụ của EMS Solution.</p><a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=YOUR_CLIENT_ID.apps.googleusercontent.com&redirect_uri=https://your-website.com/callback&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email" class="btn google-login-btn"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google G Logo"><span>Sign in with Google</span></a><p class="policy-text">Bằng việc tiếp tục, bạn đồng ý với <a href="/dieu-khoan.html" target="_blank">Điều khoản Dịch vụ</a> và đã đọc <a href="/chinh-sach.html" target="_blank">Chính sách Quyền riêng tư</a>.</p></div>
     </div>
 
     <script>
