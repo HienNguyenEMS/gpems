@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -262,11 +263,78 @@
         .register-item .btn { margin-top: auto; }
         
         #contact { background-color: var(--light-background); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
         .contact-item { background-color: var(--white); padding: 20px; border-radius: 12px; box-shadow: var(--shadow); text-align: left; }
         .contact-item-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
         .contact-item-header i { font-size: 1.8rem; color: var(--accent); margin-bottom: 0; flex-shrink: 0; width: 30px; text-align: center; }
         .contact-item-header h3 { font-size: 1.2rem; margin: 0; }
         .contact-item p { padding-left: 45px; opacity: 0.9; margin: 0; }
+        #contact .contact-item p a {
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.3s;
+        }
+        #contact .contact-item p a:hover {
+            color: var(--button-primary);
+            text-decoration: underline;
+        }
+        .dark-mode #contact .contact-item p a {
+            color: #f1f1f1;
+        }
+
+        .contact-form-wrapper form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form-wrapper h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .contact-form-wrapper input,
+        .contact-form-wrapper textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+        .contact-form-wrapper input:focus,
+        .contact-form-wrapper textarea:focus {
+            outline: none;
+            border-color: var(--button-primary);
+        }
+        .contact-form-wrapper textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form-wrapper .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+        }
 
         .main-footer { background-color: var(--primary); color: var(--white); padding: 60px 0 20px 0; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
@@ -340,6 +408,7 @@
             .partners-grid, .grid-6 { grid-template-columns: repeat(3, 1fr); gap: 20px; }
             .grid-5 { grid-template-columns: repeat(2, 1fr); }
             .stats-grid { grid-template-columns: repeat(3, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 767px) { 
@@ -404,6 +473,34 @@
             .partners-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            /* NEW: Mobile card optimization */
+            .card-content {
+                padding: 10px;
+            }
+            .card-content h3 {
+                font-size: 0.95rem;
+                margin-bottom: 5px;
+            }
+            .product-details {
+                margin-bottom: 8px;
+                gap: 8px;
+            }
+            .product-price .current-price {
+                font-size: 1.2rem;
+            }
+            .product-price .old-price {
+                font-size: 0.8rem;
+            }
+            .card .btn {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+            /* END: Mobile card optimization */
+
 
             .about-image { order: -1; margin-bottom: 30px; }
             .card:hover, .testimonial-card:hover { transform: translateY(-5px); }
@@ -454,6 +551,15 @@
         }
         .dark-mode .suggestion-item:hover {
             background-color: #383838;
+        }
+        .dark-mode .contact-form-wrapper form {
+            background-color: #1e1e1e;
+        }
+        .dark-mode .contact-form-wrapper input,
+        .dark-mode .contact-form-wrapper textarea {
+            background-color: #333;
+            border-color: #555;
+            color: var(--white);
         }
 
         /* --- START: SEARCH MODAL STYLES --- */
@@ -945,29 +1051,43 @@
         <section id="contact" style="background-color: var(--light-background);">
              <div class="container">
                 <h2 class="section-title zoom-in-element">Liên Hệ Với Chúng Tôi</h2>
-                <div class="grid-3">
-                    <div class="contact-item fade-in-element">
-                        <div class="contact-item-header">
-                            <i class="fas fa-phone-volume"></i>
-                            <h3>Hotline</h3>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item fade-in-element">
+                            <div class="contact-item-header">
+                                <i class="fas fa-phone-volume"></i>
+                                <h3>Hotline / Zalo</h3>
+                            </div>
+                            <p><a href="https://zalo.me/0903375265" target="_blank" rel="noopener noreferrer">0903375265 (Mr. Hiền)</a></p>
+                            <p><a href="https://zalo.me/0963322110" target="_blank" rel="noopener noreferrer">0963322110 (Mr. Hòa)</a></p>
                         </div>
-                        <p>0903375265 (Mr. Hiền)</p>
-                        <p>0963322110 (Mr. Hòa)</p>
+                        <div class="contact-item fade-in-element">
+                             <div class="contact-item-header">
+                                <i class="fas fa-envelope-open-text"></i>
+                                <h3>Email</h3>
+                            </div>
+                            <p><a href="mailto:admin@gpems.net">admin@gpems.net</a></p>
+                            <p><a href="mailto:admin@giaiphapsoems.vn">admin@giaiphapsoems.vn</a></p>
+                        </div>
+                         <div class="contact-item fade-in-element">
+                             <div class="contact-item-header">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h3>Địa chỉ</h3>
+                            </div>
+                            <p>93/4 Liên Khu 5-6, Bình Hưng Hòa B, Bình Tân, TP.HCM</p>
+                        </div>
                     </div>
-                    <div class="contact-item fade-in-element">
-                         <div class="contact-item-header">
-                            <i class="fas fa-envelope-open-text"></i>
-                            <h3>Email</h3>
-                        </div>
-                        <p>admin@gpems.net</p>
-                        <p>admin@giaiphapsoems.vn</p>
-                    </div>
-                    <div class="contact-item fade-in-element">
-                         <div class="contact-item-header">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h3>Địa chỉ</h3>
-                        </div>
-                        <p>93/4 Liên Khu 5-6, Bình Hưng Hòa B, Bình Tân, TP.HCM</p>
+                    <div class="contact-form-wrapper fade-in-element">
+                        <h3>Gửi tin nhắn cho chúng tôi</h3>
+                        <form action="#" method="POST">
+                            <input type="text" name="name" placeholder="Họ và tên" required>
+                            <div class="form-row">
+                                <input type="email" name="email" placeholder="Email của bạn" required>
+                                <input type="tel" name="phone" placeholder="Số điện thoại" required>
+                            </div>
+                            <textarea name="message" placeholder="Nội dung cần tư vấn..." rows="5" required></textarea>
+                            <button type="submit" class="btn btn-accent">Gửi đi</button>
+                        </form>
                     </div>
                 </div>
              </div>
@@ -991,8 +1111,8 @@
                     <h4>CÔNG TY TNHH GIẢI PHÁP SỐ EMS</h4>
                     <p><strong>Địa chỉ:</strong> 93/4 Liên Khu 5-6, Phường Bình Hưng Hòa B, Quận Bình Tân, TP. Hồ Chí Minh</p>
                     <p><strong>MST:</strong> 0316870151</p>
-                    <p><strong>Email:</strong> admin@gpems.net</p>
-                    <p><strong>Hotline:</strong> 0903375265 (Mr.Hiền)</p>
+                    <p><strong>Email:</strong> <a href="mailto:admin@gpems.net">admin@gpems.net</a></p>
+                    <p><strong>Hotline:</strong> <a href="https://zalo.me/0903375265" target="_blank" rel="noopener noreferrer">0903375265 (Mr.Hiền)</a></p>
                 </div>
             </div>
             <div class="footer-bottom"><p>© 2024 Gpems.net by EMS Solution. All Rights Reserved. | <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản dịch vụ</a></p></div>
@@ -1299,4 +1419,4 @@
     </script>
 
 </body>
-</html>
+</htm
