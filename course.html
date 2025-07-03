@@ -95,7 +95,9 @@
             body.sidebar-open .sidebar { transform: translateX(0); }
             .main-content { margin-left: 0; }
             .top-header { padding: 0 15px; }
-            .header-center, .header-username { display: none; }
+            .header-center { display: none; }
+            /* --- UPDATED: Make username smaller on mobile instead of hiding --- */
+            .header-username { font-size: 0.9rem; margin-left: 10px; padding-left: 10px; }
         }
 
         .sidebar-nav-section { list-style: none; }
@@ -186,6 +188,7 @@
         .kpi-card .label { font-size: 0.85rem; }
         .kpi-card .percentage-change { font-size: 0.8rem; justify-content: center; }
         
+        /* --- UPDATED: Bolding all KPI labels --- */
         .stat-card .card-label,
         .kpi-card .label {
             font-weight: 600;
@@ -338,10 +341,9 @@
             
             <section class="main-stats-grid">
                 <div class="stat-card continue-learning">
-                   <div class="card-header">
-                    <span class="card-label" style="color: red;">Học tiếp</span>
-                    <i class="fas fa-arrow-right card-icon"></i>
-                    </div>
+                  <div class="card-header">  <span class="card-label" style="color: red;">Học tiếp</span>  <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+
                     <p class="card-value">Bài 5: Tự động hóa báo cáo</p>
                     <div class="card-extra-info">
                         <span class="hours-studied"><i class="fas fa-clock"></i> 12.5 giờ</span>
@@ -467,32 +469,34 @@
         const body = document.body;
         const menuToggle = document.getElementById('dashboard-menu-toggle');
         
-        // === NEW: Responsive Sidebar Handling ===
-        function handleSidebarToggle() {
-            if (window.innerWidth > 991) {
-                body.classList.toggle('sidebar-collapsed');
+        // === UPDATED & ROBUST: Responsive Sidebar Handling ===
+        const mobileBreakpoint = 991;
+
+        function applyLayout() {
+            if (window.innerWidth > mobileBreakpoint) {
+                // We are on a desktop
+                body.classList.remove('sidebar-open'); // Ensure mobile menu is closed
             } else {
-                body.classList.toggle('sidebar-open');
+                // We are on a mobile device
+                body.classList.remove('sidebar-collapsed'); // Ensure desktop collapsed state is removed
             }
         }
 
-        function checkWindowSize() {
-            const isDesktop = window.innerWidth > 991;
-            if (isDesktop) {
-                body.classList.remove('sidebar-open');
-            } else {
-                body.classList.remove('sidebar-collapsed');
-            }
-        }
-        
         if (menuToggle) {
-            menuToggle.addEventListener('click', handleSidebarToggle);
+            menuToggle.addEventListener('click', () => {
+                if (window.innerWidth > mobileBreakpoint) {
+                    body.classList.toggle('sidebar-collapsed');
+                } else {
+                    body.classList.toggle('sidebar-open');
+                }
+            });
         }
 
-        // Run on initial load and on resize
-        checkWindowSize();
-        window.addEventListener('resize', checkWindowSize);
-        // === END of New Code ===
+        // Apply layout on initial load to prevent flashing/fitting issues
+        applyLayout();
+        // Re-apply layout on resize to handle orientation changes or window resizing
+        window.addEventListener('resize', applyLayout);
+        // === END of Responsive Fix ===
 
         const userAvatarBtn = document.getElementById('user-avatar-btn');
         const userDropdownMenu = document.getElementById('user-dropdown-menu');
