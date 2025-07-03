@@ -7,7 +7,6 @@
     
     <meta name="description" content="Dashboard cá nhân hóa dành cho học viên, cộng tác viên, và giảng viên của EMS Solution.">
     
-    <!-- === NEW: Social Sharing Meta Tags === -->
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-dashboard-url.com/">
@@ -96,7 +95,9 @@
             body.sidebar-open .sidebar { transform: translateX(0); }
             .main-content { margin-left: 0; }
             .top-header { padding: 0 15px; }
-            .header-center, .header-username { display: none; }
+            .header-center { display: none; }
+            /* --- UPDATED: Make username smaller on mobile instead of hiding --- */
+            .header-username { font-size: 0.9rem; margin-left: 10px; padding-left: 10px; }
         }
 
         .sidebar-nav-section { list-style: none; }
@@ -141,10 +142,10 @@
         
         .stat-card .card-header { display: flex; justify-content: space-between; align-items: center; }
         .stat-card .card-icon { font-size: 1.5rem; }
-        .stat-card .card-value { font-size: 2rem; font-weight: 700; line-height: 1; color: var(--primary); }
+        .stat-card .card-value { font-size: 2rem; font-weight: 700; line-height: 1; color: var(--primary); margin-bottom: 0; }
         .stat-card .card-label { font-size: 0.9rem; color: var(--text-secondary); }
         
-        .stat-card.continue-learning { background: var(--accent-light); justify-content: space-between; }
+        .stat-card.continue-learning { background: var(--accent-light); justify-content: space-between; gap: 4px; }
         .stat-card.continue-learning .card-label { color: var(--text-secondary); }
         .stat-card.continue-learning .card-value { font-size: 1.05rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--primary); }
         .stat-card.continue-learning .card-icon { color: var(--accent-dark); }
@@ -152,6 +153,18 @@
         .main-stats-grid .stat-card:nth-of-type(2) { background-color: var(--color-green-light); }
         .main-stats-grid .stat-card:nth-of-type(3) { background-color: var(--color-blue-light); }
         .main-stats-grid .stat-card:nth-of-type(4) { background-color: var(--color-red-light); }
+
+        .card-extra-info {
+            display: flex; justify-content: space-between; align-items: center;
+            margin: 8px 0; font-size: 0.9rem; color: var(--text-secondary);
+        }
+        .card-extra-info .hours-studied { display: flex; align-items: center; gap: 5px; }
+        .percentage-change {
+            font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;
+        }
+        .percentage-change.positive { color: var(--text-green); }
+        .percentage-change.negative { color: var(--text-red); }
+        .stat-card .percentage-change { margin-top: 4px; }
         
         .dashboard-layout-grid { display: grid; grid-template-columns: 2fr 1.2fr; gap: 24px; align-items: flex-start; }
         .main-column, .side-column { display: flex; flex-direction: column; gap: 24px; }
@@ -171,9 +184,11 @@
         .kpi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-medium); cursor: pointer; }
         
         .kpi-card .icon-wrapper { font-size: 1.5rem; margin-bottom: 5px; }
-        .kpi-card .value { font-size: 1.5rem; line-height: 1.2; } .kpi-card .label { font-size: 0.85rem; }
+        .kpi-card .value { font-size: 1.5rem; line-height: 1.2; margin-bottom: 0; }
+        .kpi-card .label { font-size: 0.85rem; }
+        .kpi-card .percentage-change { font-size: 0.8rem; justify-content: center; }
         
-        /* --- NEW: Bold labels for cards --- */
+        /* --- UPDATED: Bolding all KPI labels --- */
         .stat-card .card-label,
         .kpi-card .label {
             font-weight: 600;
@@ -235,7 +250,6 @@
     
     <header class="top-header">
         <div class="header-left">
-            <!-- --- UPDATED: Menu Icon --- -->
             <button id="dashboard-menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars-staggered"></i></button>
             <a href="index.html" class="logo"><img src="https://gpems.net/_next/image?url=%2Flogo-ico.png&w=64&q=75" alt="EMS Logo" style="height:35px"></a>
             <span class="header-username">Hien Nguyen</span>
@@ -327,9 +341,14 @@
             
             <section class="main-stats-grid">
                 <div class="stat-card continue-learning">
-                    <div class="card-header"><span class="card-label">Học tiếp</span><i class="fas fa-arrow-right card-icon"></i></div>
+                  <div class="card-header">  <span class="card-label" style="color: red;">Học tiếp</span>  <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+
                     <p class="card-value">Bài 5: Tự động hóa báo cáo</p>
-                    <button class="btn-primary btn-sm">Vào học ngay</button>
+                    <div class="card-extra-info">
+                        <span class="hours-studied"><i class="fas fa-clock"></i> 12.5 giờ</span>
+                        <span class="percentage-change positive"><i class="fas fa-arrow-up"></i> +5%</span>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <div class="card-header"><span class="card-label">Khóa học đã mua</span><i class="fas fa-book-open card-icon" style="color:var(--color-green)"></i></div>
@@ -341,7 +360,10 @@
                 </div>
                 <div class="stat-card affiliate-only-flex" style="flex-direction: column;">
                      <div class="card-header"><span class="card-label">Doanh thu CTV</span><i class="fas fa-wallet card-icon" style="color:var(--color-red)"></i></div>
-                    <p class="card-value">1.5M</p>
+                     <div>
+                        <p class="card-value">1.5M</p>
+                        <span class="percentage-change positive"><i class="fas fa-arrow-up"></i> +10% vs. tháng trước</span>
+                     </div>
                 </div>
             </section>
 
@@ -406,10 +428,29 @@
                     <section class="dashboard-section instructor-only">
                         <div class="section-header"><h2 class="section-title"><i class="fas fa-chalkboard-teacher" style="color:var(--secondary)"></i> Giảng viên</h2></div>
                         <div class="panel-kpis">
-                            <div class="kpi-card"><div class="icon-wrapper" style="color: var(--color-green)"><i class="fas fa-dollar-sign"></i></div><div class="value">5.8M</div><div class="label">Doanh thu</div></div>
-                            <div class="kpi-card"><div class="icon-wrapper" style="color: var(--color-blue)"><i class="fas fa-users"></i></div><div class="value">1.250</div><div class="label">Học viên</div></div>
-                            <div class="kpi-card"><div class="icon-wrapper" style="color: var(--color-orange)"><i class="fas fa-chalkboard-teacher"></i></div><div class="value">3</div><div class="label">Khóa học</div></div>
-                            <div class="kpi-card"><div class="icon-wrapper" style="color: var(--color-red)"><i class="fas fa-comments"></i></div><div class="value">12</div><div class="label">Bình luận mới</div></div>
+                            <div class="kpi-card">
+                                <div class="icon-wrapper" style="color: var(--color-green)"><i class="fas fa-dollar-sign"></i></div>
+                                <div>
+                                    <div class="value">5.8M</div>
+                                    <span class="percentage-change positive"><i class="fas fa-arrow-up"></i> +8.2%</span>
+                                </div>
+                                <div class="label">Doanh thu</div>
+                            </div>
+                            <div class="kpi-card">
+                                <div class="icon-wrapper" style="color: var(--color-blue)"><i class="fas fa-users"></i></div>
+                                <div class="value">1.250</div>
+                                <div class="label">Học viên</div>
+                            </div>
+                            <div class="kpi-card">
+                                <div class="icon-wrapper" style="color: var(--color-orange)"><i class="fas fa-chalkboard-teacher"></i></div>
+                                <div class="value">3</div>
+                                <div class="label">Khóa học</div>
+                            </div>
+                            <div class="kpi-card">
+                                <div class="icon-wrapper" style="color: var(--color-red)"><i class="fas fa-comments"></i></div>
+                                <div class="value">12</div>
+                                <div class="label">Bình luận mới</div>
+                            </div>
                         </div>
                         <div class="chart-container"><canvas id="instructorRevenueChart"></canvas></div>
                     </section>
@@ -426,18 +467,37 @@
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const body = document.body;
-        
         const menuToggle = document.getElementById('dashboard-menu-toggle');
-        if(menuToggle) {
+        
+        // === UPDATED & ROBUST: Responsive Sidebar Handling ===
+        const mobileBreakpoint = 991;
+
+        function applyLayout() {
+            if (window.innerWidth > mobileBreakpoint) {
+                // We are on a desktop
+                body.classList.remove('sidebar-open'); // Ensure mobile menu is closed
+            } else {
+                // We are on a mobile device
+                body.classList.remove('sidebar-collapsed'); // Ensure desktop collapsed state is removed
+            }
+        }
+
+        if (menuToggle) {
             menuToggle.addEventListener('click', () => {
-                if (window.innerWidth > 991) {
+                if (window.innerWidth > mobileBreakpoint) {
                     body.classList.toggle('sidebar-collapsed');
                 } else {
                     body.classList.toggle('sidebar-open');
                 }
             });
         }
-        
+
+        // Apply layout on initial load to prevent flashing/fitting issues
+        applyLayout();
+        // Re-apply layout on resize to handle orientation changes or window resizing
+        window.addEventListener('resize', applyLayout);
+        // === END of Responsive Fix ===
+
         const userAvatarBtn = document.getElementById('user-avatar-btn');
         const userDropdownMenu = document.getElementById('user-dropdown-menu');
         const notificationToggle = document.getElementById('notification-toggle');
