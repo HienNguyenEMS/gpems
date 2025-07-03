@@ -7,6 +7,21 @@
     
     <meta name="description" content="Dashboard cá nhân hóa dành cho học viên, cộng tác viên, và giảng viên của EMS Solution.">
     
+    <!-- === NEW: Social Sharing Meta Tags === -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-dashboard-url.com/">
+    <meta property="og:title" content="Trang tổng quan - EMS Solution">
+    <meta property="og:description" content="Dashboard cá nhân hóa dành cho học viên, cộng tác viên, và giảng viên của EMS Solution.">
+    <meta property="og:image" content="https://your-domain.com/path/to/dashboard-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-dashboard-url.com/">
+    <meta property="twitter:title" content="Trang tổng quan - EMS Solution">
+    <meta property="twitter:description" content="Dashboard cá nhân hóa dành cho học viên, cộng tác viên, và giảng viên của EMS Solution.">
+    <meta property="twitter:image" content="https://your-domain.com/path/to/dashboard-preview.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -26,11 +41,11 @@
             --content-transition: margin-left 0.3s ease-in-out; --border-radius: 12px;
             --color-blue: #1E88E5; --color-green: #43A047; --color-orange: #FB8C00; --color-red: #e53935;
             
-            /* --- NEW: Added Light Colors for Backgrounds & Text --- */
             --color-green-light: #E8F5E9; --text-green: #2E7D32;
             --color-blue-light: #E3F2FD;
             --color-orange-light: #FFF3E0; --text-orange: #E65100;
             --color-red-light: #FFEBEE; --text-red: #C62828;
+            --accent-light: #E0F7FA; 
             --background-hover: #F0F2F5;
         }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -50,6 +65,12 @@
         .header-left { flex-shrink: 0; }
         .header-center { flex-grow: 1; justify-content: center; }
         .header-right { flex-shrink: 0; }
+
+        .header-username {
+            color: rgba(255, 255, 255, 0.9); font-weight: 600; font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif; margin-left: 15px;
+            border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: 15px;
+        }
         
         .header-filters { display: flex; align-items: center; gap: 20px; }
         .header-filters .filter-group { display: flex; align-items: center; gap: 8px; }
@@ -75,7 +96,7 @@
             body.sidebar-open .sidebar { transform: translateX(0); }
             .main-content { margin-left: 0; }
             .top-header { padding: 0 15px; }
-            .header-center { display: none; }
+            .header-center, .header-username { display: none; }
         }
 
         .sidebar-nav-section { list-style: none; }
@@ -110,14 +131,27 @@
         .btn-sm { padding: 8px 16px; font-size: 0.85rem; }
 
         .main-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-bottom: 24px; }
-        .stat-card { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 18px; box-shadow: var(--shadow-light); display: flex; flex-direction: column; gap: 8px; }
+        
+        .stat-card {
+            background-color: var(--card-bg); border-radius: var(--border-radius); padding: 18px; box-shadow: var(--shadow-light);
+            display: flex; flex-direction: column; gap: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-medium); cursor: pointer; }
+        
         .stat-card .card-header { display: flex; justify-content: space-between; align-items: center; }
         .stat-card .card-icon { font-size: 1.5rem; }
         .stat-card .card-value { font-size: 2rem; font-weight: 700; line-height: 1; color: var(--primary); }
         .stat-card .card-label { font-size: 0.9rem; color: var(--text-secondary); }
-        .stat-card.continue-learning { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: var(--white); justify-content: space-between; }
-        .stat-card.continue-learning .card-label, .stat-card.continue-learning .card-value, .stat-card.continue-learning .card-icon { color: var(--white); }
-        .stat-card.continue-learning .card-value { font-size: 1.05rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        
+        .stat-card.continue-learning { background: var(--accent-light); justify-content: space-between; }
+        .stat-card.continue-learning .card-label { color: var(--text-secondary); }
+        .stat-card.continue-learning .card-value { font-size: 1.05rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--primary); }
+        .stat-card.continue-learning .card-icon { color: var(--accent-dark); }
+        
+        .main-stats-grid .stat-card:nth-of-type(2) { background-color: var(--color-green-light); }
+        .main-stats-grid .stat-card:nth-of-type(3) { background-color: var(--color-blue-light); }
+        .main-stats-grid .stat-card:nth-of-type(4) { background-color: var(--color-red-light); }
         
         .dashboard-layout-grid { display: grid; grid-template-columns: 2fr 1.2fr; gap: 24px; align-items: flex-start; }
         .main-column, .side-column { display: flex; flex-direction: column; gap: 24px; }
@@ -125,7 +159,6 @@
         .panel-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-bottom: 24px; }
         .instructor-only .panel-kpis { grid-template-columns: repeat(4, 1fr); }
         
-        /* --- UPDATED: KPI Card Styling --- */
         .kpi-card {
             padding: 15px; border-radius: var(--border-radius); text-align: center;
             display: flex; flex-direction: column; gap: 8px; justify-content: center;
@@ -139,10 +172,16 @@
         
         .kpi-card .icon-wrapper { font-size: 1.5rem; margin-bottom: 5px; }
         .kpi-card .value { font-size: 1.5rem; line-height: 1.2; } .kpi-card .label { font-size: 0.85rem; }
+        
+        /* --- NEW: Bold labels for cards --- */
+        .stat-card .card-label,
+        .kpi-card .label {
+            font-weight: 600;
+        }
+
         .panel-main-content { display: grid; gap: 24px; grid-template-columns: 1fr; }
         .panel-main-content > * { min-width: 0; min-height: 0; }
         
-        /* --- UPDATED: Chart Container Styling --- */
         .chart-container { position: relative; height: 280px; transition: box-shadow 0.3s ease-out; padding: 10px; border-radius: var(--border-radius); }
         .chart-container:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
         
@@ -150,12 +189,10 @@
         .data-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
         .data-table th, .data-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
         
-        /* --- NEW: Data Table Hover Effect --- */
         .data-table tbody tr { transition: background-color 0.2s ease; }
         .data-table tbody tr:hover { background-color: var(--background-hover); cursor: pointer; }
         
         .status-badge { padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
-        /* --- NEW: Status Badge Colors --- */
         .status-badge.status-completed { background-color: var(--color-green-light); color: var(--text-green); }
         .status-badge.status-pending { background-color: var(--color-orange-light); color: var(--text-orange); }
         .status-badge.status-cancelled { background-color: var(--color-red-light); color: var(--text-red); }
@@ -188,8 +225,8 @@
             .stat-card .card-value { font-size: 1.8rem; }
             .dashboard-layout-grid { grid-template-columns: 1fr; gap: 24px; }
             .instructor-only .panel-kpis { grid-template-columns: 1fr 1fr; }
-            .tab-panel .tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 5px; scrollbar-width: none; /* Firefox */ }
-            .tab-panel .tabs::-webkit-scrollbar { display: none; /* Chrome, Safari, Opera */ }
+            .tab-panel .tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 5px; scrollbar-width: none; }
+            .tab-panel .tabs::-webkit-scrollbar { display: none; }
         }
     </style>
 </head>
@@ -198,8 +235,10 @@
     
     <header class="top-header">
         <div class="header-left">
-            <button id="dashboard-menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+            <!-- --- UPDATED: Menu Icon --- -->
+            <button id="dashboard-menu-toggle" aria-label="Toggle Menu"><i class="fas fa-bars-staggered"></i></button>
             <a href="index.html" class="logo"><img src="https://gpems.net/_next/image?url=%2Flogo-ico.png&w=64&q=75" alt="EMS Logo" style="height:35px"></a>
+            <span class="header-username">Hien Nguyen</span>
         </div>
         <div class="header-center">
             <div class="header-filters">
@@ -462,7 +501,6 @@
                         label: 'Doanh thu (triệu VND)',
                         data: [3.5, 4.2, 5.1, 4.8, 6.2, 5.8],
                         backgroundColor: 'rgba(30, 136, 229, 0.7)',
-                        /* --- UPDATED: Added Hover Color --- */
                         hoverBackgroundColor: 'rgba(30, 136, 229, 0.9)',
                         borderWidth: 0,
                         borderRadius: 5,
@@ -474,7 +512,6 @@
                     maintainAspectRatio: false,
                     scales: { y: { beginAtZero: true }, x: { grid: { display: false } } },
                     plugins: { legend: { display: false } },
-                    /* --- UPDATED: Added Hover Interaction --- */
                     interaction: {
                         mode: 'index',
                         intersect: false,
