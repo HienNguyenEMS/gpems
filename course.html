@@ -152,7 +152,6 @@
         .main-stats-grid .stat-card:nth-of-type(3) { background-color: var(--color-blue-light); }
         .main-stats-grid .stat-card:nth-of-type(4) { background-color: var(--color-red-light); }
 
-        /* --- NEW: Extra Info & Percentage Styling --- */
         .card-extra-info {
             display: flex; justify-content: space-between; align-items: center;
             margin: 8px 0; font-size: 0.9rem; color: var(--text-secondary);
@@ -338,9 +337,11 @@
         <main class="main-content">
             
             <section class="main-stats-grid">
-                <!-- === UPDATED: "Continue Learning" Card with Extra Info === -->
                 <div class="stat-card continue-learning">
-                    <div class="card-header"><span class="card-label">Học tiếp</span><i class="fas fa-arrow-right card-icon"></i></div>
+                   <div class="card-header">
+                    <span class="card-label" style="color: red;">Học tiếp</span>
+                    <i class="fas fa-arrow-right card-icon"></i>
+                    </div>
                     <p class="card-value">Bài 5: Tự động hóa báo cáo</p>
                     <div class="card-extra-info">
                         <span class="hours-studied"><i class="fas fa-clock"></i> 12.5 giờ</span>
@@ -355,7 +356,6 @@
                     <div class="card-header"><span class="card-label">Sản phẩm sở hữu</span><i class="fas fa-cube card-icon" style="color:var(--color-blue)"></i></div>
                     <p class="card-value">2</p>
                 </div>
-                <!-- === UPDATED: "Affiliate Revenue" Card with Percentage Change === -->
                 <div class="stat-card affiliate-only-flex" style="flex-direction: column;">
                      <div class="card-header"><span class="card-label">Doanh thu CTV</span><i class="fas fa-wallet card-icon" style="color:var(--color-red)"></i></div>
                      <div>
@@ -426,7 +426,6 @@
                     <section class="dashboard-section instructor-only">
                         <div class="section-header"><h2 class="section-title"><i class="fas fa-chalkboard-teacher" style="color:var(--secondary)"></i> Giảng viên</h2></div>
                         <div class="panel-kpis">
-                            <!-- === UPDATED: Instructor KPI Card with Percentage Change === -->
                             <div class="kpi-card">
                                 <div class="icon-wrapper" style="color: var(--color-green)"><i class="fas fa-dollar-sign"></i></div>
                                 <div>
@@ -466,18 +465,35 @@
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const body = document.body;
-        
         const menuToggle = document.getElementById('dashboard-menu-toggle');
-        if(menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                if (window.innerWidth > 991) {
-                    body.classList.toggle('sidebar-collapsed');
-                } else {
-                    body.classList.toggle('sidebar-open');
-                }
-            });
+        
+        // === NEW: Responsive Sidebar Handling ===
+        function handleSidebarToggle() {
+            if (window.innerWidth > 991) {
+                body.classList.toggle('sidebar-collapsed');
+            } else {
+                body.classList.toggle('sidebar-open');
+            }
+        }
+
+        function checkWindowSize() {
+            const isDesktop = window.innerWidth > 991;
+            if (isDesktop) {
+                body.classList.remove('sidebar-open');
+            } else {
+                body.classList.remove('sidebar-collapsed');
+            }
         }
         
+        if (menuToggle) {
+            menuToggle.addEventListener('click', handleSidebarToggle);
+        }
+
+        // Run on initial load and on resize
+        checkWindowSize();
+        window.addEventListener('resize', checkWindowSize);
+        // === END of New Code ===
+
         const userAvatarBtn = document.getElementById('user-avatar-btn');
         const userDropdownMenu = document.getElementById('user-dropdown-menu');
         const notificationToggle = document.getElementById('notification-toggle');
