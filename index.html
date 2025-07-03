@@ -429,19 +429,20 @@
         /* ====== START: MOBILE OPTIMIZATION (More Aggressive) ====== */
         @media (max-width: 767px) { 
             /* General Layout */
-            section { padding: 35px 0; }
-            #courses, #software, #student-benefits, #software-benefits { padding: 35px 0; }
-            .section-title { font-size: 1.6rem; margin-bottom: 30px; }
+            .container, .container-wide { padding: 0 15px; }
+            section { padding: 25px 0; }
+            #courses, #software, #student-benefits, #software-benefits { padding: 25px 0; }
+            .section-title { font-size: 1.6rem; margin-bottom: 25px; }
             .section-title::after { width: 50px; height: 3px; bottom: -8px; }
 
             .grid-3, .grid-4, .grid-5, .grid-6, 
             #solutions .grid-4, #team .grid-4, #courses .grid-4, #blog .grid-4, #testimonials .grid-4 { 
                 grid-template-columns: 1fr; 
-                gap: 15px; 
+                gap: 12px; 
             }
 
             /* Hero Section */
-            .hero { padding-top: 65px; padding-bottom: 20px; }
+            .hero { padding-top: 65px; padding-bottom: 15px; }
             .hero h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 10px;}
             .hero p { font-size: 0.95rem; margin-bottom: 15px; }
             .hero-benefits { gap: 10px; margin-bottom: 15px; font-size: 0.9rem;}
@@ -488,7 +489,7 @@
             /* Card Elements Optimization */
             .card:hover { transform: translateY(-5px); }
             .card-image { height: 140px; }
-            .card-content { padding: 12px; }
+            .card-content { padding: 10px; }
             .card-content h3 { font-size: 1rem; margin-bottom: 6px; }
             #blog .card-content p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 10px; }
             .product-details { margin-bottom: 10px; gap: 8px; }
@@ -502,7 +503,7 @@
             .faq-question { font-size: 1rem; padding: 12px 15px; }
             .faq-answer p { padding: 12px 15px; font-size: 0.9rem; }
             
-            .testimonial-card { padding: 15px; }
+            .testimonial-card { padding: 12px; }
             .testimonial-card:hover { transform: translateY(-5px); }
             .testimonial-card p { font-size: 0.9rem; }
             .testimonial-author { margin-top: 10px; padding-top: 10px; gap: 10px;}
@@ -521,10 +522,10 @@
             .benefit-item h4, .benefit-item-soft h4 {
                 font-size: 0.9rem;
             }
-            .contact-item { padding: 15px; }
+            .contact-item { padding: 12px; }
             .contact-item-header h3 { font-size: 1.1rem; }
             .contact-item p { font-size: 0.9rem; }
-            .contact-form-wrapper form { padding: 20px; }
+            .contact-form-wrapper form { padding: 15px; }
         }
         /* ====== END: MOBILE OPTIMIZATION ====== */
 
@@ -1139,6 +1140,8 @@
             const backToTopButton = document.getElementById('back-to-top');
             const sections = document.querySelectorAll('main section[id]');
             const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+            const userAvatarDropdown = document.querySelector('.user-avatar-dropdown');
+
 
             // --- START: UNIFIED SEARCH LOGIC ---
             
@@ -1168,6 +1171,7 @@
             
             // Reusable function to initialize suggestion logic for an input
             function initSearchSuggestions(inputElement, suggestionsContainer) {
+                if (!inputElement) return;
                 inputElement.addEventListener('input', () => {
                     const query = inputElement.value.toLowerCase().trim();
                     if (query.length === 0) {
@@ -1202,21 +1206,25 @@
             }
 
             // Initialize for both search inputs
-            if(heroSearchInput) initSearchSuggestions(heroSearchInput, heroSuggestionsContainer);
-            if(modalSearchInput) initSearchSuggestions(modalSearchInput, modalSuggestionsContainer);
+            initSearchSuggestions(heroSearchInput, heroSuggestionsContainer);
+            initSearchSuggestions(modalSearchInput, modalSuggestionsContainer);
             
             // Handlers for modal visibility
             function openSearchModal() {
-                searchModal.classList.add('is-visible');
-                document.body.style.overflow = 'hidden';
-                setTimeout(() => modalSearchInput.focus(), 300); // Focus after transition
+                if (searchModal) {
+                    searchModal.classList.add('is-visible');
+                    document.body.style.overflow = 'hidden';
+                    setTimeout(() => modalSearchInput.focus(), 300); // Focus after transition
+                }
             }
 
             function closeSearchModal() {
-                searchModal.classList.remove('is-visible');
-                document.body.style.overflow = '';
-                modalSearchInput.value = '';
-                modalSuggestionsContainer.style.display = 'none';
+                if (searchModal) {
+                    searchModal.classList.remove('is-visible');
+                    document.body.style.overflow = '';
+                    if (modalSearchInput) modalSearchInput.value = '';
+                    if (modalSuggestionsContainer) modalSuggestionsContainer.style.display = 'none';
+                }
             }
 
             // Attach event listeners to open/close triggers
@@ -1285,7 +1293,7 @@
             }
 
             function handleScroll() {
-                header.classList.toggle('scrolled', window.scrollY > 50);
+                if (header) header.classList.toggle('scrolled', window.scrollY > 50);
                 if (backToTopButton) {
                     backToTopButton.classList.toggle('visible', window.scrollY > 300);
                 }
@@ -1293,9 +1301,9 @@
             window.addEventListener('scroll', handleScroll);
 
             function closeMobileMenu() {
-                mainNav.classList.remove('is-open');
-                pageOverlay.classList.remove('is-visible');
-                menuToggle.classList.remove('is-active');
+                if (mainNav) mainNav.classList.remove('is-open');
+                if (pageOverlay) pageOverlay.classList.remove('is-visible');
+                if (menuToggle) menuToggle.classList.remove('is-active');
                 document.body.style.overflow = '';
             }
             
@@ -1384,14 +1392,15 @@
             });
 
             // --- START: AVATAR DROPDOWN CLICK LOGIC ---
-            const userAvatarDropdown = document.querySelector('.user-avatar-dropdown');
             if (userAvatarDropdown) {
                 const avatarIcon = userAvatarDropdown.querySelector('.avatar-icon');
                 
-                avatarIcon.addEventListener('click', (event) => {
-                    event.stopPropagation(); // Prevent document click listener from closing it immediately
-                    userAvatarDropdown.classList.toggle('is-open');
-                });
+                if (avatarIcon) {
+                    avatarIcon.addEventListener('click', (event) => {
+                        event.stopPropagation(); // Prevent document click listener from closing it immediately
+                        userAvatarDropdown.classList.toggle('is-open');
+                    });
+                }
             }
             
             // Close avatar dropdown when clicking anywhere else on the page
@@ -1415,19 +1424,21 @@
         window.toggleLoginState = function() {
             loggedIn = !loggedIn;
             if (loggedIn) {
-                loginBtn.style.display = "none";
-                avatar.style.display = "inline-block";
+                if (loginBtn) loginBtn.style.display = "none";
+                if (avatar) avatar.style.display = "inline-block";
             } else {
-                loginBtn.style.display = "flex";
-                avatar.style.display = "none";
-                 // Also close the dropdown menu if it's open
-                if (avatar.classList.contains('is-open')) {
-                    avatar.classList.remove('is-open');
+                if (loginBtn) loginBtn.style.display = "flex";
+                if (avatar) {
+                    avatar.style.display = "none";
+                     // Also close the dropdown menu if it's open when logging out
+                    if (avatar.classList.contains('is-open')) {
+                        avatar.classList.remove('is-open');
+                    }
                 }
             }
         };
 
-        // Create test button
+        // Create test button to simulate login/logout
         const testBtn = document.createElement("button");
         testBtn.innerText = "Chuyển trạng thái đăng nhập";
         testBtn.style.position = "fixed";
