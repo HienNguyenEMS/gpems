@@ -658,7 +658,7 @@
     .dropdown-menu li:hover {
         background-color: #f0f0f0;
     }
-    .user-avatar-dropdown:hover .dropdown-menu {
+    .user-avatar-dropdown.is-open .dropdown-menu {
         display: block;
     }
     </style></head>
@@ -1382,6 +1382,27 @@
                    navObserver.observe(section);
                 }
             });
+
+            // --- START: AVATAR DROPDOWN CLICK LOGIC ---
+            const userAvatarDropdown = document.querySelector('.user-avatar-dropdown');
+            if (userAvatarDropdown) {
+                const avatarIcon = userAvatarDropdown.querySelector('.avatar-icon');
+                
+                avatarIcon.addEventListener('click', (event) => {
+                    event.stopPropagation(); // Prevent document click listener from closing it immediately
+                    userAvatarDropdown.classList.toggle('is-open');
+                });
+            }
+            
+            // Close avatar dropdown when clicking anywhere else on the page
+            document.addEventListener('click', (event) => {
+                if (userAvatarDropdown && userAvatarDropdown.classList.contains('is-open')) {
+                    if (!userAvatarDropdown.contains(event.target)) {
+                        userAvatarDropdown.classList.remove('is-open');
+                    }
+                }
+            });
+            // --- END: AVATAR DROPDOWN CLICK LOGIC ---
         });
     </script>
 <script>
@@ -1399,6 +1420,10 @@
             } else {
                 loginBtn.style.display = "flex";
                 avatar.style.display = "none";
+                 // Also close the dropdown menu if it's open
+                if (avatar.classList.contains('is-open')) {
+                    avatar.classList.remove('is-open');
+                }
             }
         };
 
