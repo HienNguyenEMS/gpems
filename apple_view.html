@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EMS Solution - Số Hóa Quy Trình Phong Cách Apple Water Liquid</title>
+<meta content="Tư vấn, đào tạo, và thiết kế ứng dụng Số hóa quy trình quản lý doanh nghiệp dựa trên nền tảng Google Workspace và AI Agent mà không cần code." name="description"/>
+<meta content="số hóa, no-code, low-code, appsheet, google sheets, ai agent, tự động hóa, ems solution, apple liquid glass" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="https://giaiphapsoems.vn/" property="og:url"/>
+<meta content="EMS Solution - Số Hóa Quy Trình Phong Cách Apple Water Liquid" property="og:title"/>
+<meta content="Tư vấn, đào tạo, và thiết kế ứng dụng Số hóa quy trình quản lý doanh nghiệp dựa trên nền tảng Google Workspace và AI Agent." property="og:description"/>
+<meta content="https://gpems.net/metaImage.png" property="og:image"/>
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="https://giaiphapsoems.vn/" property="twitter:url"/>
+<meta content="EMS Solution - Số Hóa Quy Trình Phong Cách Apple Water Liquid" property="twitter:title"/>
+<meta content="Tư vấn, đào tạo, và thiết kế ứng dụng Số hóa quy trình quản lý doanh nghiệp dựa trên nền tảng Google Workspace và AI Agent." property="twitter:description"/>
+<meta content="https://gpems.net/metaImage.png" property="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<link href="https://giaiphapsoems.vn/favicon.ico" rel="icon" type="image/x-icon">
+<style>
+    /* ====== START: APPLE WATER LIQUID STYLE PALETTE V4.2 (FINAL) ====== */
+    :root {
+        --primary-text: #F5F5F7;
+        --secondary-text: #A1A1A6;
+        --accent-gradient: linear-gradient(135deg, #007AFF 0%, #AF52DE 100%);
+        --accent-color: #007AFF;
+        --price-color: #F5F5F7;
+        
+        --glass-bg: rgba(255, 255, 255, 0.08);
+        --glass-bg-hover: rgba(255, 255, 255, 0.12);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        --glass-inset-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.4);
+
+        --button-primary-bg: rgba(0, 122, 255, 0.25);
+        --button-primary-bg-hover: rgba(0, 122, 255, 0.4);
+        --button-primary-border: rgba(0, 122, 255, 0.5);
+        
+        --button-outline-bg: transparent;
+        --button-outline-border: var(--glass-border);
+
+        --header-height: 70px; 
+        --border-radius-main: 22px;
+        --border-radius-sub: 14px;
+        
+        --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    /* ====== END: APPLE WATER LIQUID STYLE PALETTE V4.2 (FINAL) ====== */
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { 
+        scroll-behavior: smooth; 
+        font-size: 15px;
+    }
+    
+    body { 
+        font-family: 'Open Sans', sans-serif; 
+        color: var(--secondary-text); 
+        line-height: 1.55;
+        overflow-x: hidden;
+        background: #111;
+    }
+
+    body::before {
+        content: ''; position: fixed; top: 0; left: 0;
+        width: 100%; height: 100%; z-index: -1;
+        background: 
+            radial-gradient(ellipse 50% 50% at 20% 20%, rgba(0, 122, 255, 0.2), transparent 70%),
+            radial-gradient(ellipse 50% 50% at 80% 30%, rgba(175, 82, 222, 0.2), transparent 70%),
+            radial-gradient(ellipse 50% 50% at 30% 80%, rgba(0, 200, 255, 0.2), transparent 70%),
+            radial-gradient(ellipse 50% 50% at 90% 90%, rgba(255, 0, 150, 0.2), transparent 70%);
+        animation: aurora 20s linear infinite alternate;
+    }
+
+    @keyframes aurora {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(-20%, 20%) rotate(10deg); }
+        100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: var(--primary-text); font-weight: 600; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .container-wide { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+    
+    section { padding: 60px 0; position: relative; }
+    
+    .section-title { text-align: center; font-size: 2.6rem; font-weight: 700; margin-bottom: 50px; position: relative; }
+    .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 24px; border-radius: 99px; text-decoration: none; font-weight: 600; cursor: pointer; font-size: 0.9rem; color: var(--primary-text); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: all 0.4s var(--transition-curve); }
+    .btn:hover { transform: translateY(-3px) scale(1.03); }
+    .btn:active { transform: translateY(-1px) scale(1); }
+    .btn-accent { background: var(--button-primary-bg); border: 1px solid var(--button-primary-border); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), var(--glass-inset-shadow); }
+    .btn-accent:hover { background: var(--button-primary-bg-hover); box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3); }
+    .btn-outline { background: var(--button-outline-bg); border: 1px solid var(--button-outline-border); }
+    .btn-outline:hover { background: var(--glass-bg); border-color: var(--primary-text); }
+
+    .main-header { padding: 10px 0; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: background 0.4s var(--transition-curve), backdrop-filter 0.4s var(--transition-curve); }
+    .main-header.scrolled { background: rgba(20, 20, 20, 0.7); backdrop-filter: blur(15px); box-shadow: 0 2px 15px rgba(0,0,0,0.2); }
+    .main-header .container { display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .logo img { height: 32px; width: auto; filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); }
+    .logo span { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--primary-text); }
+    
+    .main-nav { flex-grow: 1; text-align: center; }
+    .main-nav ul { list-style: none; display: inline-flex; gap: 28px; white-space: nowrap; }
+    .main-nav a { position: relative; text-decoration: none; color: var(--secondary-text); font-weight: 500; font-size: 0.95rem; padding-bottom: 5px; transition: color 0.3s var(--transition-curve); }
+    .main-nav a:hover, .main-nav li.active > a { color: var(--primary-text); }
+    .main-nav a::after { content: ''; position: absolute; width: 6px; height: 6px; bottom: -5px; left: 50%; background: var(--accent-color); transition: all 0.3s var(--transition-curve); transform: translateX(-50%) scale(0); border-radius: 50%; }
+    .main-nav a:hover::after, .main-nav li.active > a::after { transform: translateX(-50%) scale(1); }
+    .main-nav li.has-dropdown > a .fa-chevron-down { font-size: 0.7em; margin-left: 6px; }
+
+    .header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-actions .icon-btn { background: var(--glass-bg); border: 1px solid var(--glass-border); width: 38px; height: 38px; border-radius: 50%; font-size: 1rem; cursor: pointer; color: var(--primary-text); display: inline-flex; justify-content: center; align-items: center; transition: background 0.3s var(--transition-curve); }
+    .header-actions .icon-btn:hover { background: var(--glass-bg-hover); }
+    .cart-widget { position: relative; }
+    .cart-badge { position: absolute; top: -4px; right: -4px; background: var(--accent-color); color: white; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; border: 2px solid #111; }
+    .header-actions .login-btn { display: flex; align-items: center; gap: 8px; padding: 6px 15px 6px 8px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 99px; text-decoration: none; color: var(--primary-text); font-size: 0.85rem; font-weight: 600; transition: background 0.3s var(--transition-curve); }
+    .header-actions .login-btn:hover { background: var(--glass-bg-hover); }
+    .header-actions .login-btn img { width: 20px; height: 20px; }
+
+    .submenu { list-style: none; position: absolute; top: 120%; left: 50%; min-width: 200px; box-shadow: var(--glass-shadow); opacity: 0; visibility: hidden; transform-origin: top center; transform: translateX(-50%) translateY(-10px) scale(0.95); transition: all 0.3s var(--transition-curve); z-index: 100; padding: 8px; background: rgba(30, 30, 30, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: var(--border-radius-sub); border: 1px solid var(--glass-border); }
+    .main-nav li.has-dropdown:hover > .submenu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0) scale(1); }
+    .main-nav .submenu li a { padding: 8px 12px; display: block; color: var(--secondary-text); text-align: left; white-space: nowrap; font-size: 0.9rem; font-weight: 500; border-radius: 10px; transition: all 0.2s var(--transition-curve); }
+    .main-nav .submenu li a:hover { background: var(--accent-color); color: white; }
+    .main-nav .submenu li a::after { display: none; }
+    
+    .hero { padding-top: calc(var(--header-height) + 50px); padding-bottom: 60px; text-align: center; }
+    .hero h1 { font-size: 3.8rem; line-height: 1.15; font-weight: 700; margin-bottom: 20px; color: var(--primary-text); text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); }
+    .hero p.subtitle { font-size: 1.2rem; max-width: 750px; margin: 0 auto 30px; color: var(--secondary-text); font-weight: 400; }
+    .hero-benefits { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 20px; margin-bottom: 35px; color: var(--secondary-text); font-weight: 500; }
+    .hero-benefits span { display: flex; align-items: center; gap: 8px; font-size: 0.9rem;}
+    .hero-benefits .fa-check-circle { color: #34C759; }
+    .hero-search-container { display: flex; align-items: center; max-width: 600px; margin: 0 auto 60px; position: relative; }
+    .hero-search-container input { flex-grow: 1; border: none; outline: none; padding: 16px 55px 16px 25px; font-size: 1rem; color: var(--primary-text); background: var(--glass-bg); backdrop-filter: blur(10px); border-radius: 99px; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); transition: all 0.3s var(--transition-curve); }
+    .hero-search-container input:focus { box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.3); border-color: var(--accent-color); }
+    .hero-search-container input::placeholder { color: var(--secondary-text); opacity: 1; }
+    .hero-search-container .mobile-search-button, .hero-search-container .desktop-search-button { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: none; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s var(--transition-curve); }
+    .hero-search-container .mobile-search-button:hover, .hero-search-container .desktop-search-button:hover { background: #0056b3; transform: translateY(-50%) scale(1.1); }
+    
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; text-align: center; }
+    .partners-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; align-items: center; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 40px; margin-bottom: 30px; }
+    .stats-item { padding: 18px 12px; }
+    a.stats-link { text-decoration: none; }
+    .stats-item .number { font-size: 2.2rem; font-weight: 700; color: var(--primary-text); }
+    .stats-item .label { font-size: 0.85rem; color: var(--secondary-text); }
+    
+    .card { display: flex; flex-direction: column; position: relative; overflow: hidden; background: var(--glass-bg); backdrop-filter: blur(25px); border-radius: var(--border-radius-main); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); transition: all 0.5s var(--transition-curve); height: 100%; }
+    .card:hover { transform: translateY(-8px); background: var(--glass-bg-hover); border-color: rgba(255, 255, 255, 0.4); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); }
+    .card-image { position: relative; width: 100%; height: 160px; overflow: hidden; }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--transition-curve); }
+    .card:hover .card-image img { transform: scale(1.08); }
+    .discount-badge { position: absolute; top: 12px; right: 12px; background: rgba(255, 59, 48, 0.8); backdrop-filter: blur(5px); color: white; padding: 4px 10px; border-radius: 99px; font-size: 0.8rem; font-weight: 700; z-index: 2; border: 1px solid rgba(255,255,255,0.2); }
+    .card-content { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; text-align: left; }
+    .card-content h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--primary-text); font-weight: 600; line-height: 1.4; flex-grow: 1; }
+    .card-content p { color: var(--secondary-text); font-size: 0.9rem; line-height: 1.5; flex-grow: 1; margin-bottom: 15px; }
+    .section-view-more { text-align: center; margin-top: 40px; }
+    .product-details { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .product-meta { font-size: 0.85rem; color: var(--secondary-text); }
+    .product-price .current-price { font-size: 1.4rem; font-weight: 700; color: var(--price-color); }
+    .product-price .old-price { text-decoration: line-through; color: #999; font-size: 0.85rem; }
+    
+    #team .card-content, #solutions .card-content, .process-step, .register-item { text-align: center; }
+    #blog .card .btn, #register-cta .card .btn { margin-top: auto; }
+    #solutions .card .icon, .register-item .icon { font-size: 2.5rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; transition: transform 0.4s var(--transition-curve); }
+    #solutions .card:hover .icon, .register-item:hover .icon { transform: scale(1.1); }
+    .process-step { padding: 25px; } 
+    .process-step .icon-wrapper { width: 50px; height: 50px; margin: 0 auto 15px; font-size: 1.4rem; background: var(--accent-gradient); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(0, 122, 255, 0.4); }
+    .process-step h3, .register-item h3 { font-size: 1.15rem; margin-bottom: 8px; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+    .about-image img { width: 100%; border-radius: var(--border-radius-main); box-shadow: var(--glass-shadow); }
+    .timeline { list-style: none; margin-top: 25px; border-left: 2px solid var(--glass-border); padding-left: 30px; }
+    .timeline li { position: relative; margin-bottom: 15px; }
+    .timeline li::before { content: attr(data-icon); font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: -2px; top: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--primary-text); background: rgba(30, 30, 30, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 50%; transform: translateX(-50%); }
+
+    .benefit-item, .benefit-item-soft { padding: 20px 15px; min-height: 160px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .benefit-item i, .benefit-item-soft i { font-size: 2.5rem; margin-bottom: 15px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .benefit-item h4, .benefit-item-soft h4 { font-size: 0.95rem; }
+
+    .partner-logo { padding: 15px; transition: all 0.3s var(--transition-curve); background: rgba(255,255,255,0.05); border-radius: var(--border-radius-sub); }
+    .partner-logo:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+    .partner-logo img { width: 100%; height: 50px; object-fit: contain; filter: grayscale(1) brightness(2) contrast(0.5); opacity: 0.8; transition: all 0.3s var(--transition-curve); }
+    .partner-logo:hover img { filter: grayscale(0) brightness(1) contrast(1); opacity: 1; }
+
+    .testimonial-card .quote-icon { font-size: 2.5rem; color: var(--accent-color); opacity: 0.3; position: absolute; top: 18px; left: 20px; }
+    .testimonial-author { display: flex; align-items: center; gap: 15px; margin-top: 15px; border-top: 1px solid var(--glass-border); padding-top: 15px; }
+    .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color); }
+    
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-item { margin-bottom: 8px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--border-radius-sub); overflow: hidden; }
+    .faq-question { display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1.05rem; font-weight: 500; padding: 18px; transition: background 0.3s var(--transition-curve); }
+    .faq-item.active .faq-question, .faq-question:hover { background: var(--glass-bg-hover); }
+    .faq-question i { transition: transform 0.5s var(--transition-curve); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--transition-curve); }
+    .faq-answer p { padding: 0 18px 18px; }
+    .faq-item.active .faq-question i { transform: rotate(135deg); }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 24px; align-items: flex-start; }
+    .contact-item { padding: 22px; }
+    .contact-item-header { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
+    .contact-item-header i { font-size: 1.6rem; color: var(--accent-color); width: 25px; text-align: center; }
+    .contact-item-header h3 { font-size: 1.1rem; }
+    .contact-item p { padding-left: 40px; margin-bottom: 5px; }
+    .contact-item p a { text-decoration: none; color: var(--secondary-text); transition: color 0.3s; }
+    .contact-item p a:hover { color: var(--primary-text); }
+    .contact-form-wrapper form { padding: 25px; display: flex; flex-direction: column; gap: 18px; }
+    .contact-form-wrapper h3 { text-align: center; margin-bottom: 10px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .contact-form-wrapper input, .contact-form-wrapper textarea { width: 100%; padding: 12px; border-radius: var(--border-radius-sub); font-size: 0.9rem; background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--primary-text); transition: all 0.3s; }
+    .contact-form-wrapper input::placeholder, .contact-form-wrapper textarea::placeholder { color: var(--secondary-text); }
+    .contact-form-wrapper input:focus, .contact-form-wrapper textarea:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.3); }
+    .contact-form-wrapper textarea { resize: vertical; min-height: 100px; }
+
+    .main-footer { margin-top: 50px; padding: 50px 0 20px 0; background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(30px); border-top: 1px solid var(--glass-border); }
+    .footer-col h4 { margin-bottom: 12px; }
+    .footer-col.footer-logo img { max-width: 160px; }
+    .footer-col a { color: var(--secondary-text); text-decoration: none; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--primary-text); }
+    .footer-socials { margin-top: 15px; display: flex; align-items: center; gap: 18px; }
+    .footer-socials a { font-size: 1.4rem; }
+    .footer-bottom { border-top: 1px solid var(--glass-border); padding-top: 20px; text-align: center; font-size: 0.85rem; }
+
+    #mobile-menu-toggle { display: none; background: none; border: none; z-index: 1002; }
+    #mobile-menu-toggle .burger-icon { position: relative; width: 22px; height: 16px; display: inline-block; }
+    #mobile-menu-toggle .burger-icon span { display: block; position: absolute; height: 2px; width: 100%; background: var(--primary-text); border-radius: 2px; transition: .25s var(--transition-curve); }
+    #mobile-menu-toggle .burger-icon span:nth-child(1) { top: 0px; }
+    #mobile-menu-toggle .burger-icon span:nth-child(2) { top: 7px; }
+    #mobile-menu-toggle .burger-icon span:nth-child(3) { top: 14px; }
+    .page-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.4s var(--transition-curve), visibility 0.4s var(--transition-curve); }
+    .page-overlay.is-visible { opacity: 1; visibility: visible; }
+    
+    @media (max-width: 1024px) { .main-nav ul { gap: 20px; } }
+
+    @media (max-width: 991px) {
+        html { font-size: 14px; }
+        .grid-3, .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+        .stats-grid, .partners-grid, .grid-6 { grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        .footer-col.footer-logo { display: flex; flex-direction: column; align-items: center; }
+        .footer-socials { justify-content: center; }
+        
+        .main-header .container { flex-wrap: nowrap; }
+        .main-nav { position: fixed; top: 0; left: -100%; width: 80%; max-width: 300px; height: 100vh; background-color: rgba(20, 20, 20, 0.85); backdrop-filter: blur(20px); display: flex; flex-direction: column; transition: left 0.4s var(--transition-curve); z-index: 1001; padding: 80px 25px 25px; }
+        .main-nav.is-open { left: 0; box-shadow: 5px 0 15px rgba(0,0,0,0.2); }
+        .main-nav ul { flex-direction: column; gap: 15px; width: 100%; align-items: flex-start; }
+        .main-nav a { font-size: 1.1rem; }
+        
+        /* === MOBILE SUBMENU FIX STARTS HERE === */
+        .main-nav .submenu {
+            position: static;
+            transform: none !important; /* Crucial fix: Reset transform */
+            opacity: 1;
+            visibility: visible;
+            min-width: 100%;
+            width: 100%;
+            background: transparent;
+            backdrop-filter: none;
+            box-shadow: none;
+            border: none;
+            padding: 10px 0 5px 20px; /* Indent sub-items */
+            display: none; /* Initially hidden, controlled by JS */
+        }
+        .main-nav li.has-dropdown:hover > .submenu { display: none; } /* Disable hover on mobile */
+        .main-nav li.has-dropdown.submenu-open > .submenu { display: block; } /* Show on click */
+        .main-nav .submenu li a { padding: 8px 15px; }
+        /* === MOBILE SUBMENU FIX ENDS HERE === */
+        
+        #mobile-menu-toggle { display: block; order: 1; }
+        .logo { order: 2; }
+        .header-actions { margin-left: auto; order: 3; }
+        .about-grid, .contact-grid { grid-template-columns: 1fr; }
+        .hero h1 { font-size: 3rem; }
+    }
+
+    @media (max-width: 767px) {
+        section { padding: 40px 0; }
+        .section-title { font-size: 2rem; margin-bottom: 30px; }
+        .hero h1 { font-size: 2.2rem; }
+        .hero p.subtitle { font-size: 1rem; }
+        .grid-3, .grid-4, .grid-6 { grid-template-columns: 1fr; gap: 18px; }
+        .stats-grid, .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .form-row { grid-template-columns: 1fr; }
+        .contact-item-header i { font-size: 1.4rem; }
+    }
+    
+    .search-modal-container{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(10,25,47,.9);backdrop-filter:blur(10px);z-index:1050;display:flex;align-items:flex-start;justify-content:center;padding-top:15vh;opacity:0;visibility:hidden;transition:opacity .4s var(--transition-curve),visibility .4s var(--transition-curve)}.search-modal-container.is-visible{opacity:1;visibility:visible}.search-modal-content{position:relative;background-color:var(--glass-bg);backdrop-filter:blur(20px);border-radius:var(--border-radius-main);padding:30px;width:90%;max-width:600px;box-shadow:var(--glass-shadow);border:1px solid var(--glass-border)}.search-modal-content h3{text-align:center;margin-bottom:20px;font-size:1.5rem;color:var(--primary-text)}.search-modal-input-wrapper{position:relative;margin-bottom:10px}.search-modal-input-wrapper input{width:100%;padding:15px 50px 15px 20px;font-size:1.1rem;border-radius:var(--border-radius-sub);outline:0;transition:all .3s var(--transition-curve);background:rgba(255,255,255,.1);border:1px solid var(--glass-border);color:var(--primary-text)}.search-modal-input-wrapper input:focus{border-color:var(--accent-color)}.search-modal-input-wrapper .fa-search{position:absolute;top:50%;right:20px;transform:translateY(-50%);color:#aaa}.search-modal-content .search-suggestions-list{position:static;border:1px solid var(--glass-border);box-shadow:none;max-height:250px;background:transparent;border-radius:var(--border-radius-sub);overflow:hidden}.suggestion-item{color:var(--secondary-text);padding:10px 15px;display:block;cursor:pointer;transition:all .2s var(--transition-curve)}.suggestion-item:hover{background-color:var(--accent-color);color:#fff}.search-modal-container .close-btn{position:absolute;top:-15px;right:-15px;width:40px;height:40px;background-color:#fff;border:none;border-radius:50%;font-size:2rem;color:var(--primary-text);cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;box-shadow:0 4px 10px rgba(0,0,0,.2);transition:transform .3s var(--transition-curve),background-color .3s var(--transition-curve)}.search-modal-container .close-btn:hover{transform:scale(1.1) rotate(90deg)}
+    .user-avatar-dropdown{position:relative;display:inline-block}.avatar-icon{width:38px;height:38px;border-radius:50%;cursor:pointer;border:2px solid var(--glass-border)}.dropdown-menu{position:absolute;top:55px;right:0;list-style:none;padding:8px;margin:0;display:none;min-width:180px;z-index:1000;background:rgba(30,30,30,.7);backdrop-filter:blur(20px);border-radius:var(--border-radius-sub);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow)}.dropdown-menu li a{color:var(--secondary-text);text-decoration:none;display:block;padding:8px 12px;border-radius:10px;transition:all .2s var(--transition-curve)}.dropdown-menu li a:hover{background-color:var(--accent-color);color:#fff}.user-avatar-dropdown.is-open .dropdown-menu{display:block}
+    
+    .fade-in-element, .slide-in-from-left, .slide-in-from-right, .zoom-in-element { opacity: 0; transition: opacity 0.8s var(--transition-curve), transform 0.8s var(--transition-curve); }
+    .slide-in-from-left { transform: translateX(-20px); }
+    .slide-in-from-right { transform: translateX(20px); }
+    .zoom-in-element { transform: scale(0.98); }
+    .is-visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- The body content remains identical to the original file -->
+<div class="page-overlay"></div>
+<header class="main-header">
+<div class="container">
+<button aria-label="Open Menu" id="mobile-menu-toggle">
+<div class="burger-icon"><span></span><span></span><span></span></div>
+</button>
+<a class="logo" href="#home">
+<img alt="EMS Logo Icon" src="https://gpems.net/_next/image?url=%2Flogo-ico.png&w=64&q=75"/>
+<span>GPEMS</span>
+</a>
+<nav class="main-nav">
+<ul>
+<li class="nav-home-link"><a href="#home">Trang chủ</a></li>
+<li><a href="#about">Giới thiệu</a></li>
+<li class="has-dropdown">
+<a href="#courses">Khóa học <i class="fas fa-chevron-down"></i></a>
+<ul class="submenu">
+<li><a href="#courses">Tất cả</a></li>
+<li><a href="#">AppSheet</a></li>
+<li><a href="#">Google Sheets</a></li>
+<li><a href="#">Excel</a></li>
+<li><a href="#">Looker Studio</a></li>
+<li><a href="#">Apps Script</a></li>
+<li><a href="#">AI Agent</a></li>
+</ul>
+</li>
+<li class="has-dropdown">
+<a href="#software">Phần mềm <i class="fas fa-chevron-down"></i></a>
+<ul class="submenu">
+<li><a href="#software">Tất cả</a></li>
+<li><a href="#">AppSheet</a></li>
+<li><a href="#">Google Sheets</a></li>
+<li><a href="#">Excel</a></li>
+<li><a href="#">Dashboard</a></li>
+<li><a href="#">AI Automation</a></li>
+</ul>
+</li>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#team">Chuyên gia</a></li>
+<li class="has-dropdown">
+<a href="#">Cộng Đồng <i class="fas fa-chevron-down"></i></a>
+<ul class="submenu">
+<li><a href="https://www.facebook.com/groups/emssolution" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+<li><a href="https://zalo.me/g/rgssea245" rel="noopener noreferrer" target="_blank">Zalo</a></li>
+<li><a href="https://www.youtube.com/@emssolution" rel="noopener noreferrer" target="_blank">Youtube</a></li>
+<li><a href="https://www.linkedin.com/company/107340505/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+</ul>
+</li>
+<li class="has-dropdown">
+    <a href="#contact">Hỗ trợ <i class="fas fa-chevron-down"></i></a>
+    <ul class="submenu">
+        <li><a href="#register-cta">Đăng ký CTV</a></li>
+        <li><a href="#register-cta">Đăng ký Giảng Viên</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+</li>
+</ul>
+</nav>
+<div class="header-actions">
+<button aria-label="Tìm kiếm" class="icon-btn" id="sticky-search-icon"><i class="fas fa-search"></i></button>
+<a class="login-btn" href="#"><img alt="Google Icon" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"/><span>Đăng nhập</span></a>
+<div class="cart-widget">
+<button aria-label="Giỏ hàng" class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+<span class="cart-badge">1</span>
+</div>
+<div class="user-avatar-dropdown" style="display: none;">
+<img alt="User Avatar" class="avatar-icon" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"/>
+<ul class="dropdown-menu">
+<li><a href="#">Khóa học của tôi</a></li>
+<li><a href="#">Hồ sơ</a></li>
+<li><a href="#">Đăng xuất</a></li>
+</ul>
+</div>
+</div>
+</div>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="container">
+<h1 class="zoom-in-element">KIẾN TẠO TƯƠNG LAI DOANH NGHIỆP<br/>VỚI SỨC MẠNH CỦA AI</h1>
+<p class="subtitle fade-in-element">Tư vấn, đào tạo và xây dựng giải pháp số hóa thông minh. Tự động hóa quy trình, không cần một dòng code.</p>
+<div class="hero-benefits fade-in-element">
+<span><i class="fas fa-check-circle"></i> Tiết kiệm thời gian</span>
+<span><i class="fas fa-check-circle"></i> Giảm thiểu sai sót</span>
+<span><i class="fas fa-check-circle"></i> Tăng hiệu suất</span>
+</div>
+<div class="hero-search-container fade-in-element" id="main-search-container">
+<input autocomplete="off" id="hero-search-input" placeholder="Tìm kiếm giải pháp, khóa học, chuyên gia..." type="text"/>
+<div class="search-suggestions-list" id="hero-search-suggestions"></div>
+<button aria-label="Tìm kiếm" class="desktop-search-button"><i class="fas fa-search"></i></button>
+<button aria-label="Tìm kiếm" class="mobile-search-button"><i class="fas fa-search"></i></button>
+</div>
+<div id="hero-stats">
+<div class="stats-grid">
+<a class="stats-link slide-in-from-left" href="#testimonials"><div class="stats-item"><div class="number" data-target="200">0</div><div class="label">Khách Hàng</div></div></a>
+<a class="stats-link slide-in-from-right" href="#software"><div class="stats-item"><div class="number" data-target="250">0</div><div class="label">Dự Án</div></div></a>
+<a class="stats-link slide-in-from-left" href="#software"><div class="stats-item"><div class="number" data-target="300">0</div><div class="label">Giải Pháp</div></div></a>
+<a class="stats-link slide-in-from-right" href="#courses"><div class="stats-item"><div class="number" data-target="120">0</div><div class="label">Khóa Học</div></div></a>
+<a class="stats-link slide-in-from-left" href="#testimonials"><div class="stats-item"><div class="number" data-target="10000">0</div><div class="label">Học Viên</div></div></a>
+<a class="stats-link slide-in-from-right" href="#register-cta"><div class="stats-item"><div class="number" data-target="35000">0</div><div class="label">Thành Viên</div></div></a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<h2 class="section-title gradient-text zoom-in-element">QUY TRÌNH TRIỂN KHAI VƯỢT TRỘI</h2>
+<div class="grid-4">
+<div class="process-step card slide-in-from-left">
+<div class="icon-wrapper">1</div>
+<h3>Tư vấn & Khảo sát</h3>
+<p>Lắng nghe, phân tích nhu cầu và các vấn đề doanh nghiệp đang gặp phải.</p>
+</div>
+<div class="process-step card slide-in-from-right">
+<div class="icon-wrapper">2</div>
+<h3>Thiết kế & Báo giá</h3>
+<p>Đề xuất giải pháp, lộ trình triển khai và chi phí tối ưu nhất cho bạn.</p>
+</div>
+<div class="process-step card slide-in-from-left">
+<div class="icon-wrapper">3</div>
+<h3>Phát triển & Triển khai</h3>
+<p>Xây dựng, kiểm thử và bàn giao sản phẩm theo đúng cam kết.</p>
+</div>
+<div class="process-step card slide-in-from-right">
+<div class="icon-wrapper">4</div>
+<h3>Hỗ trợ & Bảo trì</h3>
+<p>Đồng hành cùng doanh nghiệp trong suốt quá trình vận hành và sử dụng.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-image slide-in-from-left"><img alt="Infographic về giải pháp của EMS Solution" loading="lazy" src="https://gpems.net/metaImage.png?q=80&w=1770&auto=format&fit=crop"/></div>
+<div class="about-content slide-in-from-right">
+<h2 class="section-title gradient-text" style="text-align: left; margin-bottom: 25px;">Về EMS Solution</h2>
+<h3>Đối tác tin cậy trên hành trình chuyển đổi số của doanh nghiệp</h3>
+<p>Được thành lập từ năm 2021, EMS Solution ra đời với sứ mệnh giúp các doanh nghiệp Việt Nam tối ưu hóa vận hành, tăng hiệu suất làm việc thông qua việc số hóa quy trình mà không yêu cầu kiến thức lập trình phức tạp.</p>
+<ul class="timeline">
+<li data-icon=""><h4>2021</h4><p>Thành lập công ty, triển khai các dự án đầu tiên về Google Sheets và AppSheet.</p></li>
+<li data-icon=""><h4>2022</h4><p>Đẩy mạnh đào tạo Google Sheets, AppSheet, Looker Studio trên nền tảng online và offline.</p></li>
+<li data-icon=""><h4>2023</h4><p>Đạt mốc 10,000+ học viên và 200+ khách hàng doanh nghiệp.</p></li>
+<li data-icon=""><h4>2024</h4><p>Tích hợp giải pháp AI Agent vào Zalo, Facebook, Website doanh nghiệp Automation.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="solutions">
+<div class="container-wide">
+<h2 class="section-title gradient-text zoom-in-element">Hệ Sinh Thái Giải Pháp Toàn Diện</h2>
+<div class="grid-4">
+<div class="card fade-in-element"><div class="card-content"><div class="icon"><i class="fas fa-file-invoice-dollar"></i></div><h3>Số Hóa Quy Trình Với Google Workspace</h3><p>Khai thác tối đa Gmail, Drive, Sheets, Chat… để tự động hóa công việc và quản lý doanh nghiệp thông minh.</p></div></div>
+<div class="card fade-in-element"><div class="card-content"><div class="icon"><i class="fas fa-warehouse"></i></div><h3>Xây Dựng Hệ Thống Quản Trị Với AppSheet</h3><p>Phát triển ứng dụng doanh nghiệp không cần lập trình, kết nối chặt chẽ với Google Workspace, linh hoạt và nhanh chóng.</p></div></div>
+<div class="card fade-in-element"><div class="card-content"><div class="icon"><i class="fas fa-users-cog"></i></div><h3>Mini-ERP Cho Mọi Doanh Nghiệp</h3><p>Thiết kế giải pháp quản trị tổng thể: nhân sự, tài chính, kho vận, công việc… trong một hệ thống duy nhất, dễ triển khai.</p></div></div>
+<div class="card fade-in-element"><div class="card-content"><div class="icon"><i class="fas fa-robot"></i></div><h3>Tự Động Hóa Với AI Agent</h3><p>Ứng dụng trí tuệ nhân tạo để tạo trợ lý ảo, tự động hóa chăm sóc khách hàng, xử lý dữ liệu và hỗ trợ ra quyết định.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="team">
+<div class="container">
+<h2 class="section-title gradient-text zoom-in-element">Đội Ngũ Chuyên Gia</h2>
+<div class="grid-4">
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Tấn Hiền" loading="lazy" src="https://admin.gpems.net/storage/uploads/courses/lecturers/dwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png"/></div><div class="card-content"><h3>Nguyễn Tấn Hiền</h3><p>Founder & CEO</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Hòa" loading="lazy" src="https://admin.gpems.net/storage/uploads/courses/lecturers/mlXRjIPyPsdcucphnW5fNbCrq9IRoH-metaMTkwMjE3NjgyNzE2NzE1MzM0MzAuanBn-.jpg"/></div><div class="card-content"><h3>Nguyễn Văn Hòa</h3><p>Co-Founder & CTO</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Tráng" loading="lazy" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2FvvOGk1ZcVjmDQHINibww4X7qdCxPwT-metac2NyZWVuc2hvdF8xNzI5MjQyMTI4LnBuZw%3D%3D-.png&w=1920&q=75"/></div><div class="card-content"><h3>Nguyễn Văn Tráng</h3><p>Google Sheets Expert</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Lê Anh Tuấn" loading="lazy" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2Fyi9klBFRfQeqdwI02cMJ3SNWMM9Qcx-metaNjcwMTg1ODkxNjgyMDg2OTExLmpwZw%3D%3D-.jpg&w=1920&q=75"/></div><div class="card-content"><h3>Lê Anh Tuấn</h3><p>Analytics Expert</p></div></div>
+</div>
+<div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#register-cta">Gia nhập đội ngũ</a></div>
+</div>
+</section>
+
+<section id="courses">
+<div class="container-wide">
+<h2 class="section-title gradient-text zoom-in-element">Khóa Học Dành Cho Bạn</h2>
+<div class="grid-4">
+<div class="card fade-in-element"><div class="card-image"><img alt="Khóa học Google Sheets" loading="lazy" src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=1769&auto=format&fit=crop"/><span class="discount-badge">-47%</span></div><div class="card-content"><h3>Làm chủ Google Sheets A-Z</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 15,320+</span></div><div class="product-price"><span class="old-price">1.500.000đ</span><span class="current-price">799.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Khóa học AppSheet" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720551256879-92e5b13285be?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-48%</span></div><div class="card-content"><h3>Xây dựng App với AppSheet</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 9,850+</span></div><div class="product-price"><span class="old-price">2.500.000đ</span><span class="current-price">1.299.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Khóa học AI" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720503242835-b537741c9736?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>AI Agent & ChatGPT cho công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 21,100+</span></div><div class="product-price"><span class="old-price">2.000.000đ</span><span class="current-price">999.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Khóa học BI" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>Dashboard Reporting & BI</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 5,500+</span></div><div class="product-price"><span class="old-price">3.000.000đ</span><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Google Workspace" loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1771&auto=format&fit=crop"/></div><div class="card-content"><h3>Quản trị & Tối ưu Google Workspace</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 4,100+</span></div><div class="product-price"><span class="current-price">899.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Excel nâng cao" loading="lazy" src="https://images.unsplash.com/photo-1649433391420-542fcd3835ea?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-42%</span></div><div class="card-content"><h3>Excel Nâng cao cho Chuyên gia</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 8,250+</span></div><div class="product-price"><span class="old-price">1.200.000đ</span><span class="current-price">699.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Tự động hóa Marketing" loading="lazy" src="https://plus.unsplash.com/premium_photo-1684179641331-e89c6320b6a9?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Tự động hóa Marketing (Zalo & Messenger)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 3,500+</span></div><div class="product-price"><span class="current-price">1.199.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Lập trình Apps Script" loading="lazy" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1806&auto=format&fit=crop"/><span class="discount-badge">-43%</span></div><div class="card-content"><h3>Lập trình Google Apps Script từ Zero</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 2,900+</span></div><div class="product-price"><span class="old-price">3.500.000đ</span><span class="current-price">1.999.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+</div>
+<div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Xem tất cả khóa học</a></div>
+</div>
+</section>
+
+<section id="student-benefits">
+<div class="container">
+<h2 class="section-title gradient-text zoom-in-element">Đặc Quyền Dành Riêng Cho Học Viên</h2>
+<div class="grid-6">
+<div class="benefit-item card fade-in-element"><i class="fas fa-tasks"></i><h4>Lộ trình bài bản – học là làm được</h4></div>
+<div class="benefit-item card fade-in-element"><i class="fas fa-rocket"></i><h4>App mẫu thực tế – ứng dụng ngay</h4></div>
+<div class="benefit-item card fade-in-element"><i class="fas fa-book-open"></i><h4>Tài liệu & video chi tiết, dễ hiểu</h4></div>
+<div class="benefit-item card fade-in-element"><i class="fas fa-sync-alt"></i><h4>Nội dung luôn cập nhật mới nhất</h4></div>
+<div class="benefit-item card fade-in-element"><i class="fas fa-headset"></i><h4>Hỗ trợ nhanh chóng 24/7</h4></div>
+<div class="benefit-item card fade-in-element"><i class="fas fa-users-cog"></i><h4>Tham gia cộng đồng học viên</h4></div>
+</div>
+</div>
+</section>
+
+<section id="software">
+<div class="container-wide">
+<h2 class="section-title gradient-text zoom-in-element">Giải Pháp & Công Cụ Sẵn Sàng</h2>
+<div class="grid-4">
+<div class="card fade-in-element"><div class="card-image"><img alt="Tool Excel tính giá xây dựng" loading="lazy" src="https://images.unsplash.com/photo-1707902665498-a202981fb5ac?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content"><h3>Tool Excel tính giá xây dựng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 1,200+</span></div><div class="product-price"><span class="current-price">499.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Mini ERP" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661400407813-c21af2b2c111?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Mini ERP Sản xuất (AppSheet)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 350+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-info-circle"></i><span>Khám phá</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Web App quản lý tài liệu" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661313626999-90d230cabf8d??q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Web App quản lý tài liệu</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 500+</span></div><div class="product-price"><span class="current-price">2.999.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Google Sheets tài chính" loading="lazy" src="https://plus.unsplash.com/premium_photo-1681487803114-637de228039c?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-33%</span></div><div class="card-content"><h3>Google Sheets quản lý tài chính</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 2,500+</span></div><div class="product-price"><span class="old-price">600.000đ</span><span class="current-price">399.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="App Quản lý nhân sự" loading="lazy" src="https://plus.unsplash.com/premium_photo-1663100794696-6b7afa02016c?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>App Quản lý Nhân sự & KPI (HRM)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 320+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-info-circle"></i><span>Khám phá</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Hệ thống CRM" loading="lazy" src="https://plus.unsplash.com/premium_photo-1733306696471-807493ff845b?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Hệ thống CRM Chăm sóc Khách hàng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 480+</span></div><div class="product-price"><span class="current-price">4.999.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="AI Chatbot" loading="lazy" src="https://plus.unsplash.com/premium_photo-1725985758251-b49c6b581d17?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content"><h3>AI Chatbot Tích hợp Website/Fanpage</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 180+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-info-circle"></i><span>Khám phá</span></a></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="App Quản lý dự án" loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>App Quản lý Dự án & Công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 950+</span></div><div class="product-price"><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent" href="#"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+</div>
+<div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Xem tất cả phần mềm</a></div>
+</div>
+</section>
+
+<section id="software-benefits">
+<div class="container">
+<h2 class="section-title gradient-text zoom-in-element">Cam Kết Vàng Cho Khách Hàng</h2>
+<div class="grid-4">
+<div class="benefit-item-soft card fade-in-element"><i class="fas fa-rocket"></i><h4>Ứng dụng thực chiến, dùng được ngay</h4></div>
+<div class="benefit-item-soft card fade-in-element"><i class="fas fa-chalkboard-teacher"></i><h4>Hỗ trợ tùy chỉnh & hướng dẫn trực tiếp</h4></div>
+<div class="benefit-item-soft card fade-in-element"><i class="fas fa-headset"></i><h4>Miễn phí tùy biến & hỗ trợ 24/7</h4></div>
+<div class="benefit-item-soft card fade-in-element"><i class="fas fa-sync-alt"></i><h4>Update phiên bản mới miễn phí trọn đời</h4></div>
+</div>
+</div>
+</section>
+
+<section id="blog">
+<div class="container-wide">
+<h2 class="section-title gradient-text zoom-in-element">Blog Chia Sẻ Kiến Thức</h2>
+<div class="grid-4">
+<div class="card slide-in-from-left"><div class="card-image"><img alt="AI Automation" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>5 bước tự động hóa công việc với AI</h3><p>Khám phá cách sử dụng các công cụ AI để giảm thiểu công việc lặp đi lặp lại và tăng hiệu suất đột phá.</p><a class="btn btn-outline" href="#">Đọc thêm</a></div></div>
+<div class="card slide-in-from-right"><div class="card-image"><img alt="Dashboard" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Bí quyết xây dựng Dashboard hiệu quả</h3><p>Học cách trực quan hóa dữ liệu kinh doanh một cách hiệu quả để đưa ra quyết định nhanh chóng và chính xác.</p><a class="btn btn-outline" href="#">Đọc thêm</a></div></div>
+<div class="card slide-in-from-left"><div class="card-image"><img alt="AppSheet vs PowerApps" loading="lazy" src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>AppSheet vs PowerApps: Cái nào cho bạn?</h3><p>Một bài so sánh chi tiết giữa hai nền tảng no-code hàng đầu để giúp bạn lựa chọn công cụ phù hợp nhất.</p><a class="btn btn-outline" href="#">Đọc thêm</a></div></div>
+<div class="card slide-in-from-right"><div class="card-image"><img alt="Content Creation" loading="lazy" src="https://phala.network/illustrations/ai-agents/features.png?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Sáng tạo nội dung hàng loạt với AI</h3><p>Làm thế nào để tạo ra hàng trăm bài viết, email marketing chỉ với vài cú nhấp chuột nhờ sức mạnh của AI.</p><a class="btn btn-outline" href="#">Đọc thêm</a></div></div>
+</div>
+<div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Truy cập Blog</a></div>
+</div>
+</section>
+
+<section id="partners">
+<div class="container">
+<h2 class="section-title gradient-text zoom-in-element">Khách Hàng & Đối Tác Tiêu Biểu</h2>
+<div class="partners-grid fade-in-element">
+<div class="partner-logo"><img alt="Logo Vietnam Airlines" loading="lazy" src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/vietnam-airlines-logo-2.png"/></div>
+<div class="partner-logo"><img alt="Logo EVN" loading="lazy" src="https://www.evn.com.vn//userfile/User/tcdl/images/2023/4/14042023_LogoEVN_Ngang_FULL.jpg"/></div>
+<div class="partner-logo"><img alt="Logo Jollibee" loading="lazy" src="https://brandlogos.net/wp-content/uploads/2025/05/jollibee_horizontal-logo_brandlogos.net_lrab6.png"/></div>
+<div class="partner-logo"><img alt="Logo Bảo Việt" loading="lazy" src="https://i0.wp.com/www.globalsafe.vn/noidung/uploads/2017/10/thiet-ke-logo-baoviet.png?fit=438%2C388&ssl=1"/></div>
+<div class="partner-logo"><img alt="Logo Vingroup" loading="lazy" src="https://upload.wikimedia.org/wikipedia/vi/thumb/9/98/Vingroup_logo.svg/1200px-Vingroup_logo.svg.png"/></div>
+<div class="partner-logo"><img alt="HCDC" loading="lazy" src="https://hcdc.vn/public/img/images/news/2019/11/news-1569819039115.png"/></div>
+<div class="partner-logo"><img alt="Logo Tiki" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Logo_Tiki.png/1200px-Logo_Tiki.png"/></div>
+<div class="partner-logo"><img alt="Logo Vietcombank" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Vietcombank_logo_fixed.svg/2560px-Vietcombank_logo_fixed.svg.png"/></div>
+<div class="partner-logo"><img alt="Logo Bizbooks" loading="lazy" src="https://bizbooks.vn/uploads/images/2022/thang-9/logo-biz-moi.png"/></div>
+<div class="partner-logo"><img alt="Logo Grab" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAY1NIiI_FKkp6GaIXj1_pYNgJfb0n4AU0Ug&s"/></div>
+<div class="partner-logo"><img alt="Logo Viettel" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Viettel_Telecom_banner.jpg/1200px-Viettel_Telecom_banner.jpg"/></div>
+<div class="partner-logo"><img alt="Logo Shopee" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg"/></div>
+</div>
+</div>
+</section>
+
+<section id="testimonials">
+<div class="container">
+<h2 class="section-title gradient-text zoom-in-element">Phản Hồi Từ Khách Hàng & Học Viên</h2>
+<div class="grid-4">
+<div class="testimonial-card card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><div class="card-content"><p>"Giải pháp của EMS đã giúp chúng tôi tiết kiệm 30% thời gian báo cáo. Rất chuyên nghiệp và hiệu quả!"</p><div class="testimonial-author"><img alt="Anh Trần Văn A" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"/><div><h4>Anh Trần Văn A</h4><span>Giám đốc, Công ty ABC</span></div></div></div></div>
+<div class="testimonial-card card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><div class="card-content"><p>"Khóa học AppSheet rất dễ hiểu và thực tế. Tôi đã tự xây dựng được ứng dụng quản lý kho chỉ sau 2 tuần."</p><div class="testimonial-author"><img alt="Chị Nguyễn Thị B" loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop"/><div><h4>Chị Nguyễn Thị B</h4><span>Trưởng phòng, Doanh nghiệp XYZ</span></div></div></div></div>
+<div class="testimonial-card card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><div class="card-content"><p>"Đội ngũ hỗ trợ rất nhiệt tình. Mọi thắc mắc của tôi đều được giải đáp nhanh chóng. Hoàn toàn tin tưởng."</p><div class="testimonial-author"><img alt="Anh Lê Văn C" loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto=format&fit=crop"/><div><h4>Anh Lê Văn C</h4><span>Chủ cửa hàng</span></div></div></div></div>
+<div class="testimonial-card card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><div class="card-content"><p>"Các giải pháp AI Agent đã giúp chúng tôi tự động hóa quy trình chăm sóc khách hàng một cách bất ngờ."</p><div class="testimonial-author"><img alt="Chị Phạm Thu D" loading="lazy" src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1923&auto=format&fit=crop"/><div><h4>Chị Phạm Thu D</h4><span>CEO, Startup Công nghệ</span></div></div></div></div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="container faq-container fade-in-element">
+<h2 class="section-title gradient-text">Câu Hỏi Thường Gặp (FAQ)</h2>
+<div class="faq-item">
+<div class="faq-question">Chi phí để xây dựng một giải pháp là bao nhiêu?<i class="fas fa-plus"></i></div>
+<div class="faq-answer"><p>Chi phí phụ thuộc vào độ phức tạp của quy trình và các tính năng yêu cầu. Chúng tôi sẽ khảo sát và gửi báo giá chi tiết, minh bạch cho từng trường hợp cụ thể. Vui lòng liên hệ để nhận tư vấn miễn phí.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Thời gian triển khai một dự án mất bao lâu?<i class="fas fa-plus"></i></div>
+<div class="faq-answer"><p>Thời gian triển khai dao động từ 1 tuần đối với các giải pháp đơn giản đến 1–2 tháng cho các hệ thống phức tạp hơn. Chúng tôi luôn cam kết hoàn thành đúng tiến độ đã thống nhất với khách hàng.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Tôi có cần kiến thức về lập trình không?<i class="fas fa-plus"></i></div>
+<div class="faq-answer"><p>Hoàn toàn không. Sứ mệnh của chúng tôi là "Số hóa quy trình không cần code". Bạn chỉ cần cung cấp quy trình nghiệp vụ, đội ngũ EMS sẽ lo toàn bộ phần kỹ thuật.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Chính sách hỗ trợ và bảo trì sau khi bàn giao như thế nào?<i class="fas fa-plus"></i></div>
+<div class="faq-answer"><p>Chúng tôi cung cấp gói hỗ trợ kỹ thuật miễn phí trong 3–6 tháng đầu tiên sau khi bàn giao. Sau đó, bạn có thể lựa chọn các gói bảo trì linh hoạt theo tháng hoặc theo năm để đảm bảo hệ thống luôn hoạt động ổn định.</p></div>
+</div>
+</div>
+</section>
+
+<section id="register-cta">
+<div class="container">
+<h2 class="section-title zoom-in-element">Sẵn sàng Đồng hành cùng EMS Solution?</h2>
+<div class="grid-3">
+<div class="register-item card fade-in-element"><div class="icon"><i class="fas fa-building"></i></div><h3>Tư vấn Doanh nghiệp</h3><p>Tìm kiếm giải pháp số hóa riêng biệt cho doanh nghiệp của bạn? Hãy để chuyên gia của chúng tôi tư vấn.</p><a class="btn btn-accent" href="#contact">Yêu cầu tư vấn</a></div>
+<div class="register-item card fade-in-element"><div class="icon"><i class="fas fa-microphone-alt"></i></div><h3>Trở thành Giảng viên</h3><p>Bạn là chuyên gia và muốn chia sẻ kiến thức? Hãy hợp tác xây dựng các khóa học chất lượng cùng chúng tôi.</p><a class="btn btn-accent" href="#contact">Đăng ký ngay</a></div>
+<div class="register-item card fade-in-element"><div class="icon"><i class="fas fa-handshake"></i></div><h3>Làm Cộng tác viên</h3><p>Tham gia mạng lưới cộng tác viên của EMS để lan tỏa các giải pháp số và nhận mức hoa hồng hấp dẫn.</p><a class="btn btn-accent" href="#contact">Tham gia ngay</a></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<h2 class="section-title gradient-text zoom-in-element">Liên Hệ Với Chúng Tôi</h2>
+<div class="contact-grid">
+<div class="contact-info">
+<div class="contact-item card fade-in-element">
+<div class="contact-item-header"><i class="fas fa-phone-volume"></i><h3>Hotline / Zalo</h3></div>
+<p><a href="https://zalo.me/0903375265" rel="noopener noreferrer" target="_blank">0903375265 (Mr. Hiền)</a></p>
+<p><a href="https://zalo.me/0963322110" rel="noopener noreferrer" target="_blank">0963322110 (Mr. Hòa)</a></p>
+</div>
+<div class="contact-item card fade-in-element">
+<div class="contact-item-header"><i class="fas fa-envelope-open-text"></i><h3>Email</h3></div>
+<p><a href="mailto:admin@gpems.net">admin@gpems.net</a></p>
+<p><a href="mailto:admin@giaiphapsoems.vn">admin@giaiphapsoems.vn</a></p>
+</div>
+<div class="contact-item card fade-in-element">
+<div class="contact-item-header"><i class="fas fa-map-marker-alt"></i><h3>Địa chỉ</h3></div>
+<p>93/4 Liên Khu 5-6, Bình Hưng Hòa B, Bình Tân, TP.HCM</p>
+</div>
+</div>
+<div class="contact-form-wrapper card fade-in-element">
+<form action="#" method="POST">
+<h3>Gửi tin nhắn cho chúng tôi</h3>
+<input name="name" placeholder="Họ và tên" required="" type="text"/>
+<div class="form-row">
+<input name="email" placeholder="Email của bạn" required="" type="email"/>
+<input name="phone" placeholder="Số điện thoại" required="" type="tel"/>
+</div>
+<textarea name="message" placeholder="Nội dung cần tư vấn..." required="" rows="5"></textarea>
+<button class="btn btn-accent" type="submit" style="width: 100%;">Gửi đi</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="main-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col footer-logo">
+<img alt="Logo EMS Solution" loading="lazy" src="https://gpems.net/metaImage.png"/>
+<div class="footer-socials">
+<a aria-label="Facebook" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Youtube" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-youtube"></i></a>
+<a aria-label="Zalo" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-zalo"></i></a>
+<a aria-label="LinkedIn" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-col"><h4>Điều hướng</h4><ul><li><a href="#about">Giới thiệu</a></li><li><a href="#courses">Khóa học</a></li><li><a href="#software">Phần mềm</a></li><li><a href="#blog">Blog</a></li></ul></div>
+<div class="footer-col">
+<h4>CÔNG TY TNHH GIẢI PHÁP SỐ EMS</h4>
+<p><strong>Địa chỉ:</strong> 93/4 Liên Khu 5-6, Phường Bình Hưng Hòa B, Quận Bình Tân, TP. Hồ Chí Minh</p>
+<p><strong>MST:</strong> 0316870151</p>
+<p><strong>Email:</strong> <a href="mailto:admin@gpems.net">admin@gpems.net</a></p>
+<p><strong>Hotline:</strong> <a href="tel:0903375265">0903375265 (Mr.Hiền)</a></p>
+</div>
+</div>
+<div class="footer-bottom"><p>© 2024 Gpems.net by EMS Solution. All Rights Reserved. | <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản dịch vụ</a></p></div>
+</div>
+</footer>
+
+<a aria-label="Chat Zalo" class="zalo-chat-widget" href="https://zalo.me/giaiphapsoems" rel="noopener noreferrer" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M16.6,15.2l-1.4-0.3c-0.4-0.1-0.7,0-1,0.2l-0.8,0.7c-1.3-0.6-2.5-1.4-3.6-2.5C9.1,12.7,8.3,11.5,7.6,10.2l0.8-0.7 c0.2-0.2,0.3-0.6,0.2-1l-0.3-1.4c-0.1-0.4-0.4-0.7-0.8-0.7H6c-0.4,0-0.7,0.3-0.8,0.6C5.1,7.2,5,7.5,5.1,7.8C5.2,8.8,5.5,10,6.2,11.1 c1.4,2.4,3.5,4.4,6.1,5.6c1,0.5,2,0.8,3,1c0.3,0.1,0.6,0,0.8-0.1c0.3-0.1,0.5-0.4,0.6-0.8V16C17.3,15.6,17,15.2,16.6,15.2z M12,0 C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,21.6c-5.3,0-9.6-4.3-9.6-9.6S6.7,2.4,12,2.4s9.6,4.3,9.6,9.6 S17.3,21.6,12,21.6z"></path></svg>
+</a>
+<a aria-label="Lên đầu trang" href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<div class="search-modal-container" id="search-modal">
+<div class="search-modal-content">
+<button aria-label="Đóng tìm kiếm" class="close-btn" id="close-search-modal">×</button>
+<h3>Tìm kiếm</h3>
+<div class="search-modal-input-wrapper">
+<input autocomplete="off" id="modal-search-input" placeholder="Nhập từ khóa cần tìm..." type="text"/>
+<i class="fas fa-search"></i>
+</div>
+<div class="search-suggestions-list" id="modal-search-suggestions"></div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('.main-header');
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        const pageOverlay = document.querySelector('.page-overlay');
+        const backToTopButton = document.getElementById('back-to-top');
+        const sections = document.querySelectorAll('main section[id]');
+        const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+        const userAvatarDropdown = document.querySelector('.user-avatar-dropdown');
+        
+        const searchData=['AppSheet','Google Sheets','Excel','Looker Studio','Apps Script','AI Agent','Zalo','Facebook','Dashboard','Mini-ERP','Tự động hóa','Số hóa','Báo cáo','ChatGPT','Làm chủ Google Sheets A-Z','Xây dựng App với AppSheet','AI Agent & ChatGPT cho công việc','Dashboard Reporting & BI','Quản trị & Tối ưu Google Workspace','Excel Nâng cao cho Chuyên gia','Tự động hóa Marketing (Zalo & Messenger)','Lập trình Google Apps Script từ Zero','Tool Excel tính giá xây dựng','Mini ERP Sản xuất (AppSheet)','Web App quản lý tài liệu','Google Sheets quản lý tài chính','App Quản lý Nhân sự & KPI (HRM)','Hệ thống CRM Chăm sóc Khách hàng','AI Chatbot Tích hợp Website/Fanpage','App Quản lý Dự án & Công việc'];
+        const heroSearchInput = document.getElementById('hero-search-input');
+        const heroSuggestionsContainer = document.getElementById('hero-search-suggestions');
+        const searchModal = document.getElementById('search-modal');
+        const modalSearchInput = document.getElementById('modal-search-input');
+        const modalSuggestionsContainer = document.getElementById('modal-search-suggestions');
+        const openSearchTriggers = [document.getElementById('sticky-search-icon'), document.querySelector('.mobile-search-button'), document.querySelector('.desktop-search-button')];
+        const closeSearchModalBtn = document.getElementById('close-search-modal');
+        
+        function initSearchSuggestions(input, container) {
+            if (!input || !container) return;
+            input.addEventListener('input', () => {
+                const query = input.value.toLowerCase().trim();
+                container.style.display = 'none';
+                if (query.length === 0) return;
+                const filtered = searchData.filter(item => item.toLowerCase().includes(query)).slice(0, 5);
+                displaySuggestions(filtered, input, container);
+            });
+        }
+
+        function displaySuggestions(suggestions, input, container) {
+            container.innerHTML = '';
+            if (suggestions.length === 0) return;
+            suggestions.forEach(suggestion => {
+                const item = document.createElement('a');
+                item.className = 'suggestion-item';
+                item.textContent = suggestion;
+                item.href = '#';
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    input.value = suggestion;
+                    container.style.display = 'none';
+                    input.focus();
+                });
+                container.appendChild(item);
+            });
+            container.style.display = 'block';
+        }
+
+        initSearchSuggestions(heroSearchInput, heroSuggestionsContainer);
+        initSearchSuggestions(modalSearchInput, modalSuggestionsContainer);
+        
+        function openSearchModal() { if (searchModal) { searchModal.classList.add('is-visible'); document.body.style.overflow = 'hidden'; setTimeout(() => modalSearchInput.focus(), 300); } }
+        function closeSearchModal() { if (searchModal) { searchModal.classList.remove('is-visible'); document.body.style.overflow = ''; if (modalSearchInput) modalSearchInput.value = ''; if (modalSuggestionsContainer) modalSuggestionsContainer.style.display = 'none'; } }
+
+        openSearchTriggers.forEach(trigger => { if(trigger) trigger.addEventListener('click', e => { e.preventDefault(); openSearchModal(); }); });
+        if(closeSearchModalBtn) closeSearchModalBtn.addEventListener('click', closeSearchModal);
+        if(searchModal) searchModal.addEventListener('click', e => { if (e.target === searchModal) closeSearchModal(); });
+        document.addEventListener('click', e => { const searchContainer = document.getElementById('main-search-container'); if (searchContainer && heroSuggestionsContainer && !searchContainer.contains(e.target)) { heroSuggestionsContainer.style.display = 'none'; } });
+
+        const counters = document.querySelectorAll('.stats-item .number');
+        if (counters.length > 0) {
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { animateCounter(entry.target); observer.unobserve(entry.target); } });
+            }, { threshold: 0.8 });
+            counters.forEach(counter => counterObserver.observe(counter));
+        }
+
+        function animateCounter(counter) {
+            const target = +counter.getAttribute('data-target');
+            if(isNaN(target)) return;
+            let count = 0;
+            const duration = 2000;
+            const frameDuration = 1000 / 60;
+            const totalFrames = Math.round(duration / frameDuration);
+            const increment = target / totalFrames;
+            const updateCount = () => { count += increment; if (count < target) { counter.innerText = Math.ceil(count).toLocaleString('vi-VN'); requestAnimationFrame(updateCount); } else { counter.innerText = target.toLocaleString('vi-VN'); } };
+            requestAnimationFrame(updateCount);
+        }
+
+        const stickySearchIcon = document.querySelector('#sticky-search-icon');
+        if (header && heroSearchInput && stickySearchIcon) {
+            const searchObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => { stickySearchIcon.classList.toggle('visible', !entry.isIntersecting); });
+            }, { rootMargin: `-${header.offsetHeight}px 0px 0px 0px` });
+            searchObserver.observe(heroSearchInput);
+        }
+
+        function handleScroll() {
+            if (header) header.classList.toggle('scrolled', window.scrollY > 30);
+            if (backToTopButton) backToTopButton.classList.toggle('visible', window.scrollY > 300);
+        }
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        function closeMobileMenu() {
+            if (mainNav) mainNav.classList.remove('is-open');
+            if (pageOverlay) pageOverlay.classList.remove('is-visible');
+            if (menuToggle) menuToggle.classList.remove('is-active');
+            document.body.style.overflow = '';
+        }
+        
+        if (menuToggle && mainNav && pageOverlay) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('is-active');
+                mainNav.classList.toggle('is-open');
+                pageOverlay.classList.toggle('is-visible');
+                document.body.style.overflow = mainNav.classList.contains('is-open') ? 'hidden' : '';
+            });
+            pageOverlay.addEventListener('click', closeMobileMenu);
+            mainNav.querySelectorAll('a').forEach(link => {
+                if (!link.parentElement.classList.contains('has-dropdown')) {
+                    link.addEventListener('click', closeMobileMenu);
+                }
+            });
+        }
+
+        const dropdownToggles = document.querySelectorAll('.main-nav .has-dropdown > a');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth <= 991) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('submenu-open');
+                }
+            });
+        });
+
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const isOpen = item.classList.contains('active');
+                faqItems.forEach(other => { if (other !== item) { other.classList.remove('active'); other.querySelector('.faq-answer').style.maxHeight = null; } });
+                if (isOpen) { item.classList.remove('active'); answer.style.maxHeight = null; } else { item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+            });
+        });
+
+        const animationObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in-element, .slide-in-from-left, .slide-in-from-right, .zoom-in-element').forEach(el => animationObserver.observe(el));
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        const parent = link.parentElement;
+                        parent.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) { parent.classList.add('active'); }
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -60% 0px' });
+        sections.forEach(section => { if(section.id) navObserver.observe(section); });
+
+        if (userAvatarDropdown) {
+            const avatarIcon = userAvatarDropdown.querySelector('.avatar-icon');
+            if (avatarIcon) avatarIcon.addEventListener('click', e => { e.stopPropagation(); userAvatarDropdown.classList.toggle('is-open'); });
+        }
+        document.addEventListener('click', () => { if (userAvatarDropdown && userAvatarDropdown.classList.contains('is-open')) { userAvatarDropdown.classList.remove('is-open'); } });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const loginBtn = document.querySelector(".login-btn");
+        const avatar = document.querySelector(".user-avatar-dropdown");
+        let loggedIn = false;
+        window.toggleLoginState = function() {
+            loggedIn = !loggedIn;
+            if (loggedIn) {
+                if (loginBtn) loginBtn.style.display = "none";
+                if (avatar) avatar.style.display = "inline-block";
+            } else {
+                if (loginBtn) loginBtn.style.display = "flex";
+                if (avatar) {
+                    avatar.style.display = "none";
+                    if (avatar.classList.contains('is-open')) avatar.classList.remove('is-open');
+                }
+            }
+        };
+        const testBtn = document.createElement("button");
+        testBtn.innerHTML = '<i class="fas fa-sync-alt" title="Chuyển trạng thái đăng nhập"></i>';
+        testBtn.style.position = "fixed"; testBtn.style.bottom = "20px"; testBtn.style.left = "20px";
+        testBtn.style.zIndex = "9999"; testBtn.style.padding = "10px 15px";
+        testBtn.style.background = "var(--accent-color)"; testBtn.style.color = "#fff";
+        testBtn.style.border = "none"; testBtn.style.borderRadius = "8px"; testBtn.style.cursor = "pointer";
+        testBtn.onclick = () => window.toggleLoginState();
+        document.body.appendChild(testBtn);
+    });
+</script>
+
+</body>
+</html>
