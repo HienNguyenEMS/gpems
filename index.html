@@ -18,25 +18,28 @@
 <meta content="https://gpems.net/metaImage.png" property="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
 <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
-<link href="https://giaiphapsoems.vn/favicon.ico" rel="icon" type="image/x-icon">
+<link href="https://giaiphapsoems.vn/favicon.ico" rel="icon" type="image/x-icon"/>
 <style>
+        /* ====== START: UPDATED COPILOT STYLE PALETTE ====== */
         :root {
-            --primary: #011627;
-            --secondary: #2E7D32;
-            --accent: #17d1f5;
-            --button-primary: #007BFF;
-            --button-primary-hover: #0056b3;
+            --primary: #0A192F; /* Deep Navy Blue */
+            --secondary: #4F46E5; /* Indigo */
+            --accent: #33D4FF; /* Bright Cyan */
+            --accent-gradient: linear-gradient(135deg, #33D4FF 0%, #A333FF 100%);
+            --button-primary: var(--secondary);
+            --button-primary-hover: #4338CA; /* Darker Indigo */
             --price-color: #e53935; 
             --background: #FFFFFF;
-            --light-background: #F4F7F6;
+            --light-background: #F0F4F8; /* Light Blue-Gray */
             --text: #333333;
             --white: #FFFFFF;
-            --shadow: 0 8px 25px rgba(0,0,0,0.08);
-            --shadow-hover: 0 12px 35px rgba(0,0,0,0.15);
+            --shadow: 0 8px 25px rgba(0,0,0,0.07);
+            --shadow-hover: 0 12px 35px rgba(0,0,0,0.12);
             --header-height: 80px; 
         }
+        /* ====== END: UPDATED COPILOT STYLE PALETTE ====== */
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -54,22 +57,32 @@
         section { padding: 60px 0; }
         #courses, #software, #student-benefits, #software-benefits { padding: 60px 0; }
         
-        .section-title { text-align: center; font-size: 2.0rem; margin-bottom: 50px; font-weight: 700; position: relative; }
-        .section-title::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: var(--accent); border-radius: 2px; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; font-weight: 700; position: relative; }
+        
+        /* ====== START: GRADIENT TEXT FOR TITLES ====== */
+        .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .section-title::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent-gradient); border-radius: 2px; }
+        /* ====== END: GRADIENT TEXT FOR TITLES ====== */
 
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 0.9rem; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 0.95rem; }
         .btn:active { transform: translateY(-2px) scale(0.98); }
-        .btn-accent { background-color: var(--button-primary); color: var(--white); box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); }
+        .btn-accent { background-color: var(--button-primary); color: var(--white); box-shadow: 0 4px 15px rgba(79, 70, 229, 0.25); }
         .btn-accent:hover { 
             background-color: var(--button-primary-hover); 
             transform: translateY(-4px); 
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4), 0 0 15px rgba(0, 123, 255, 0.3);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4), 0 0 20px rgba(51, 212, 255, 0.3);
         }
         .btn-outline { background-color: transparent; color: var(--button-primary); border: 2px solid var(--button-primary); }
         .btn-outline:hover { background-color: var(--button-primary); color: var(--white); transform: translateY(-4px); }
         
-        .main-header { background-color: transparent; padding: 15px 0; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: background-color 0.4s ease, box-shadow 0.4s ease; }
-        .main-header.scrolled { background-color: rgba(1, 22, 39, 0.95); box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .main-header { background-color: transparent; padding: 15px 0; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease; }
+        .main-header.scrolled { background-color: rgba(10, 25, 47, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
         .main-header .container { display: flex; justify-content: space-between; align-items: center; }
         
         .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
@@ -80,7 +93,7 @@
         .main-nav ul { list-style: none; display: inline-flex; gap: 32px; }
         .main-nav a { position: relative; text-decoration: none; color: var(--white); font-weight: 600; transition: color 0.3s, opacity 0.3s; font-size: 0.95rem; opacity: 0.9; padding-bottom: 5px; }
         .main-nav a:hover, .main-nav li.active > a { color: var(--accent); opacity: 1; }
-        .main-nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; background-color: var(--accent); transition: all 0.3s ease-in-out; transform: translateX(-50%); }
+        .main-nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; background: var(--accent-gradient); transition: all 0.3s ease-in-out; transform: translateX(-50%); }
         .main-nav a:hover::after, .main-nav li.active > a::after { width: 100%; }
 
         .header-actions { display: flex; align-items: center; gap: 20px; }
@@ -107,7 +120,7 @@
         .main-nav li.has-dropdown { position: relative; }
         .main-nav li.has-dropdown > a { display: inline-flex; align-items: center; gap: 6px; }
         .main-nav li.has-dropdown > a .fa-chevron-down { font-size: 0.7em; opacity: 0.8; transition: transform 0.3s ease; }
-        .main-nav .submenu { list-style: none; position: absolute; top: 120%; left: 50%; background-color: rgba(1, 22, 39, 0.95); border-radius: 8px; padding: 10px 0; min-width: 220px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transform-origin: top center; transform: translateX(-50%) translateY(-10px); transition: all 0.3s ease; z-index: 100; }
+        .main-nav .submenu { list-style: none; position: absolute; top: 120%; left: 50%; background-color: rgba(10, 25, 47, 0.9); backdrop-filter: blur(5px); border-radius: 8px; padding: 10px 0; min-width: 220px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transform-origin: top center; transform: translateX(-50%) translateY(-10px); transition: all 0.3s ease; z-index: 100; border: 1px solid rgba(255, 255, 255, 0.1); }
         .main-nav li.has-dropdown:hover > .submenu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
         .main-nav .submenu li a { padding: 10px 20px; display: block; color: var(--white); text-align: left; white-space: nowrap; font-size: 0.9rem; font-weight: 400; opacity: 0.9; }
         .main-nav .submenu li a::after { display: none; }
@@ -115,63 +128,42 @@
         .main-nav li.active .submenu a { color: var(--white); }
         .main-nav li.active .submenu a:hover { color: var(--primary); }
 
-        .hero { padding-top: calc(var(--header-height) + 20px); padding-bottom: 30px; text-align: center; color: var(--white); background: linear-gradient(rgba(1, 22, 39, 0.92), rgba(1, 22, 39, 0.92)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1770&auto=format&fit=crop') no-repeat center center/cover; }
-        .hero h1 { font-size: 3.2rem; line-height: 1.2; font-weight: 700; color: var(--accent); text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); margin-bottom: 15px; }
-        .hero p { font-size: 1.1rem; max-width: 750px; margin: 0 auto 20px; opacity: 0.9; }
-        .hero-benefits { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 25px; color: var(--accent); font-weight: 600; }
+        .hero { padding-top: calc(var(--header-height) + 40px); padding-bottom: 50px; text-align: center; color: var(--white); background-color: var(--primary); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1770&auto=format&fit=crop') no-repeat center center/cover; z-index: 1; }
+        .hero::after { content: ""; position: absolute; top: 0; left: 0; width: 200%; height: 200%; background: radial-gradient(circle at 20% 20%, hsla(195, 100%, 50%, 0.2), transparent 40%), radial-gradient(circle at 80% 70%, hsla(260, 100%, 60%, 0.2), transparent 40%); animation: moveGradient 20s linear infinite; z-index: 2; }
+        @keyframes moveGradient { 0% { transform: translate(0, 0); } 50% { transform: translate(-50%, -50%); } 100% { transform: translate(0, 0); } }
+        .hero .container { position: relative; z-index: 3; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.2; font-weight: 700; background: linear-gradient(90deg, #FFFFFF 0%, #A3FFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); margin-bottom: 20px; }
+        .hero p.subtitle { font-size: 1.2rem; max-width: 800px; margin: 0 auto 25px; opacity: 0.9; font-weight: 400; }
+        .hero-benefits { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 30px; color: var(--accent); font-weight: 600; }
         .hero-benefits span { display: flex; align-items: center; gap: 8px; }
-
-        .hero-search-container { display: flex; align-items: center; max-width: 650px; margin: 0 auto 30px; background-color: var(--white); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 5px; gap: 5px; position: relative; }
-        .hero-search-container .search-icon-wrapper { display: flex; align-items: center; padding-left: 15px; color: #aaa; }
-        .hero-search-container input { flex-grow: 1; border: none; outline: none; padding: 12px 10px; font-size: 1rem; font-family: 'Open Sans', sans-serif; color: var(--text); background: transparent; }
+        .hero-search-container { display: flex; align-items: center; max-width: 650px; margin: 0 auto 30px; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 5px; gap: 5px; position: relative; }
+        .hero-search-container .search-icon-wrapper { display: flex; align-items: center; padding-left: 15px; color: #ccc; }
+        .hero-search-container input { flex-grow: 1; border: none; outline: none; padding: 12px 10px; font-size: 1rem; font-family: 'Open Sans', sans-serif; color: var(--white); background: transparent; }
+        .hero-search-container input::placeholder { color: #a8b2d1; opacity: 1; }
         .hero-search-container .desktop-search-button { display: none; }
         
-        .search-suggestions-list {
-            display: none;
-            position: absolute;
-            top: calc(100% + 5px);
-            left: 0;
-            right: 0;
-            background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            max-height: 280px;
-            overflow-y: auto;
-            z-index: 1010;
-            text-align: left;
-            border: 1px solid #eee;
-        }
-        .suggestion-item {
-            display: block;
-            padding: 12px 20px;
-            color: var(--text);
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        .suggestion-item:hover {
-            background-color: var(--light-background);
-        }
-        .suggestion-item:not(:last-child) {
-            border-bottom: 1px solid #f0f0f0;
-        }
+        .search-suggestions-list { display: none; position: absolute; top: calc(100% + 5px); left: 0; right: 0; background-color: var(--white); border-radius: 8px; box-shadow: var(--shadow); max-height: 280px; overflow-y: auto; z-index: 1010; text-align: left; border: 1px solid #eee; }
+        .suggestion-item { display: block; padding: 12px 20px; color: var(--text); text-decoration: none; cursor: pointer; transition: background-color 0.2s ease; }
+        .suggestion-item:hover { background-color: var(--light-background); }
+        .suggestion-item:not(:last-child) { border-bottom: 1px solid #f0f0f0; }
         
         #hero-stats { padding-top: 0; }
         .stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; text-align: center; }
         a.stats-link { text-decoration: none; color: inherit; }
-        .stats-item { border: 2px solid rgba(255,255,255,0.3); padding: 15px; border-radius: 12px; transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; }
+        .stats-item { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.15); padding: 15px; border-radius: 12px; transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; }
         .stats-item:hover { border-color: var(--accent); transform: translateY(-5px); background-color: rgba(255,255,255,0.1); }
         .stats-item .stats-top-line { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px; }
         .stats-item .icon { font-size: 1.8rem; }
         .stats-item .number, .stats-item .label, .stats-item .icon { color: var(--white); }
-        .stats-item .number { font-size: 2.2rem; font-weight: 700; }
+        .stats-item .number { font-size: 2.2rem; font-weight: 700; color: var(--accent); }
         .stats-item .label { font-size: 0.95rem; opacity: 0.9; }
 
         #process { background-color: var(--light-background); }
-        .process-step { background-color: var(--white); padding: 20px 15px; text-align: center; border-radius: 15px; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 2px solid transparent; }
+        .process-step { background-color: var(--white); padding: 25px 20px; text-align: center; border-radius: 15px; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 2px solid transparent; }
         .process-step:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
-        .process-step .icon-wrapper { width: 50px; height: 50px; line-height: 50px; margin: 0 auto 15px; background-color: var(--accent); color: var(--primary); border-radius: 50%; font-size: 1.4rem; font-weight: 700; font-family: 'Poppins', sans-serif; }
-        .process-step h3 { font-size: 1.15rem; margin-bottom: 8px; }
+        .process-step .icon-wrapper { width: 50px; height: 50px; line-height: 50px; margin: 0 auto 15px; background: var(--accent-gradient); color: var(--white); border-radius: 50%; font-size: 1.4rem; font-weight: 700; font-family: 'Poppins', sans-serif; box-shadow: 0 4px 15px rgba(51, 212, 255, 0.4); }
+        .process-step h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--secondary); }
         .process-step p { font-size: 0.95rem; }
 
         #about { background-color: var(--white); }
@@ -179,53 +171,39 @@
         .about-image img { width: 100%; border-radius: 15px; box-shadow: var(--shadow); }
         .timeline { list-style: none; margin-top: 25px; border-left: 3px solid var(--accent); padding-left: 40px; position: relative; }
         .timeline li { position: relative; margin-bottom: 15px; }
-        .timeline li::before { font-family: "Font Awesome 6 Free"; font-weight: 900; content: attr(data-icon); position: absolute; left: -20px; top: 5px; width: 36px; height: 36px; line-height: 36px; text-align: center; font-size: 1.1rem; color: var(--accent); background-color: var(--white); border: 2px solid var(--accent); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(23, 209, 245, 0.5); }
-
+        .timeline li::before { font-family: "Font Awesome 6 Free"; font-weight: 900; content: attr(data-icon); position: absolute; left: -20px; top: 5px; width: 36px; height: 36px; line-height: 36px; text-align: center; font-size: 1.1rem; color: var(--secondary); background-color: var(--white); border: 2px solid var(--accent); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(51, 212, 255, 0.5); }
+        
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
         .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 25px; }
         .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 25px; }
-        
         .section-view-more { text-align: center; margin-top: 40px; }
-        .card { background-color: var(--white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; display: flex; flex-direction: column; border: 2px solid transparent; }
-        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
         
+        .card { background-color: var(--white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; position: relative; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(79, 70, 229, 0.15), transparent 40%); opacity: 0; transition: opacity 0.4s ease; z-index: 0; }
+        .card:hover::before { opacity: 1; }
+        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+        .card > * { position: relative; z-index: 1; }
         .card-image { position: relative; width: 100%; height: 160px; overflow: hidden; }
         .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
         .card:hover .card-image img { transform: scale(1.1); }
-        .card-image::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--accent); opacity: 0; transition: opacity 0.4s ease; mix-blend-mode: multiply; pointer-events: none; }
+        .card-image::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--accent-gradient); opacity: 0; transition: opacity 0.4s ease; mix-blend-mode: multiply; pointer-events: none; }
         .card:hover .card-image::after { opacity: 0.2; }
-
         .discount-badge { position: absolute; top: 15px; right: 15px; background-color: #ff4d4f; color: var(--white); padding: 5px 10px; border-radius: 5px; font-size: 0.9rem; font-weight: 700; z-index: 2; }
-        
-        .card-content { padding: 10px 15px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-content h3 { font-size: 1.1rem; margin-bottom: 8px; flex-grow: 1; line-height: 1.4; }
-        .card-content .icon { font-size: 2.8rem; color: var(--accent); margin-bottom: 15px; transition: transform 0.3s ease, color 0.3s ease; }
-        .card:hover .icon { transform: scale(1.1); color: var(--button-primary); }
-        
+        .card-content { padding: 15px 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-content h3 { font-size: 1.1rem; margin-bottom: 8px; flex-grow: 1; line-height: 1.4; color: var(--primary); }
+        .card-content .icon { font-size: 2.8rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; transition: transform 0.3s ease; }
+        .card:hover .icon { transform: scale(1.1); }
         .product-details { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 15px; }
         .product-meta { font-size: 0.9rem; color: #777; }
         .product-price { text-align: right; }
         .product-price .current-price { font-size: 1.5rem; font-weight: 700; color: var(--price-color); display: block; }
         .product-price .old-price { text-decoration: line-through; color: #999; font-size: 0.9rem; }
-        
-        .benefit-item {
-            background-color: var(--light-background); padding: 25px 15px; text-align: center; border-radius: 12px;
-            border: 2px solid transparent; transition: all 0.3s ease; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; min-height: 160px;
-        }
-        .benefit-item:hover {
-            transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--accent);
-            background-color: var(--white);
-        }
-        .benefit-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        .benefit-item { background-color: var(--background); padding: 25px 15px; text-align: center; border-radius: 12px; border: 1px solid #e0e6f0; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 160px; }
+        .benefit-item:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--secondary); background-color: var(--white); }
+        .benefit-item i { font-size: 2.5rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
         .benefit-item h4 { font-size: 1rem; color: var(--primary); margin: 0; font-weight: 600; line-height: 1.4; }
-        
-        .benefit-item-soft {
-            background-color: var(--white); padding: 25px 20px; text-align: center; border-radius: 12px;
-            border: 2px solid transparent; transition: all 0.3s ease; display: flex; flex-direction: column;
-            align-items: center; justify-content: flex-start; min-height: 160px;
-        }
+        .benefit-item-soft { background-color: var(--white); padding: 25px 20px; text-align: center; border-radius: 12px; border: 1px solid #e0e6f0; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 160px; }
         .benefit-item-soft:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--button-primary); }
         .benefit-item-soft i { font-size: 2.5rem; color: var(--button-primary); margin-bottom: 20px; }
         .benefit-item-soft h4 { font-size: 1rem; color: var(--primary); margin: 0; font-weight: 600; line-height: 1.4; }
@@ -234,13 +212,12 @@
         .partners-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 30px; align-items: center; }
         .partner-logo img { max-width: 130px; height: 50px; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease; margin: auto; }
         .partner-logo img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
-
         #testimonials { background-color: var(--light-background); }
-        .testimonial-card { background-color: var(--white); border-radius: 12px; padding: 20px; position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 2px solid transparent; }
+        .testimonial-card { background-color: var(--white); border-radius: 12px; padding: 25px; position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 1px solid #e0e6f0; }
         .testimonial-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
         .testimonial-card .quote-icon { font-size: 2.5rem; color: var(--accent); opacity: 0.3; position: absolute; top: 15px; left: 20px; }
         .testimonial-author { display: flex; align-items: center; gap: 15px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
-        .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+        .testimonial-author img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
         
         #faq { background-color: var(--white); }
         .faq-item { border-bottom: 1px solid #e0e0e0; }
@@ -248,90 +225,33 @@
         .faq-question i { transition: transform 0.3s ease; }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background-color: var(--white);}
         .faq-answer p { padding: 0 15px 18px; margin: 0; }
-        
-        .faq-item.active .faq-question { background-color: var(--primary); color: var(--white); }
+        .faq-item.active .faq-question { background-color: var(--secondary); color: var(--white); }
         .faq-item.active .faq-question i { transform: rotate(45deg); color: var(--accent) !important; }
         .faq-item.active .faq-answer p { padding-top: 18px; }
-
         #register-cta { background-color: var(--primary); }
-        #register-cta .section-title { color: var(--white); }
+        #register-cta .section-title { color: var(--white); background: none; -webkit-text-fill-color: unset; }
         .register-item { display: flex; flex-direction: column; align-items: center; background-color: rgba(255,255,255,0.05); padding: 25px 15px; border-radius: 12px; color: var(--white); border: 1px solid rgba(255,255,255,0.1); text-align: center; }
-        .register-item .icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        .register-item .icon { font-size: 2.5rem; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
         .register-item h3 { color: var(--white); }
         .register-item p { opacity: 0.8; flex-grow: 1; margin-bottom: 25px; }
         .register-item .btn { margin-top: auto; }
-        
         #contact { background-color: var(--light-background); }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 30px;
-            align-items: flex-start;
-        }
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px; align-items: flex-start; }
+        .contact-info { display: flex; flex-direction: column; gap: 20px; }
         .contact-item { background-color: var(--white); padding: 20px; border-radius: 12px; box-shadow: var(--shadow); text-align: left; }
         .contact-item-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
-        .contact-item-header i { font-size: 1.8rem; color: var(--accent); margin-bottom: 0; flex-shrink: 0; width: 30px; text-align: center; }
+        .contact-item-header i { font-size: 1.8rem; color: var(--secondary); margin-bottom: 0; flex-shrink: 0; width: 30px; text-align: center; }
         .contact-item-header h3 { font-size: 1.2rem; margin: 0; }
         .contact-item p { padding-left: 45px; opacity: 0.9; margin: 0; }
-        #contact .contact-item p a {
-            text-decoration: none;
-            color: var(--text);
-            transition: color 0.3s;
-        }
-        #contact .contact-item p a:hover {
-            color: var(--button-primary);
-            text-decoration: underline;
-        }
-
-        .contact-form-wrapper form {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .contact-form-wrapper h3 {
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .contact-form-wrapper input,
-        .contact-form-wrapper textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 0.95rem;
-            transition: border-color 0.3s;
-        }
-        .contact-form-wrapper input:focus,
-        .contact-form-wrapper textarea:focus {
-            outline: none;
-            border-color: var(--button-primary);
-        }
-        .contact-form-wrapper textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        .contact-form-wrapper .btn {
-            width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-        }
-
+        #contact .contact-item p a { text-decoration: none; color: var(--text); transition: color 0.3s; }
+        #contact .contact-item p a:hover { color: var(--button-primary); text-decoration: underline; }
+        .contact-form-wrapper form { background-color: var(--white); padding: 30px; border-radius: 12px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 15px; }
+        .contact-form-wrapper h3 { text-align: center; margin-top: 0; margin-bottom: 15px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .contact-form-wrapper input, .contact-form-wrapper textarea { width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid #ddd; font-family: 'Open Sans', sans-serif; font-size: 0.95rem; transition: border-color 0.3s, box-shadow 0.3s; }
+        .contact-form-wrapper input:focus, .contact-form-wrapper textarea:focus { outline: none; border-color: var(--button-primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); }
+        .contact-form-wrapper textarea { resize: vertical; min-height: 120px; }
+        .contact-form-wrapper .btn { width: 100%; padding: 12px; font-size: 1rem; }
         .main-footer { background-color: var(--primary); color: var(--white); padding: 60px 0 20px 0; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
         .footer-col.footer-logo { flex-shrink: 0; }
@@ -347,322 +267,149 @@
         .footer-socials a:hover { opacity: 1; color: var(--accent); transform: translateY(-3px); }
         .zalo-icon { height: 1.6rem; width: 1.6rem; vertical-align: middle; border-radius: 50%; object-fit: cover; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; text-align: center; opacity: 0.8; }
-        
         .fade-in-element, .slide-in-from-left, .slide-in-from-right, .zoom-in-element { opacity: 0; transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .slide-in-from-left { transform: translateX(-30px); }
         .slide-in-from-right { transform: translateX(30px); }
         .zoom-in-element { transform: scale(0.95); }
         .is-visible { opacity: 1; transform: none; }
-        
-        #back-to-top { position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px; background-color: var(--button-primary); color: var(--white); border: none; border-radius: 50%; text-align: center; font-size: 1.2rem; line-height: 45px; cursor: pointer; z-index: 998; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        #back-to-top { position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px; background: var(--accent-gradient); color: var(--white); border: none; border-radius: 50%; text-align: center; font-size: 1.2rem; line-height: 45px; cursor: pointer; z-index: 998; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         #back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-        #back-to-top:hover { background-color: var(--button-primary-hover); transform: translateY(-3px); }
-
+        #back-to-top:hover { transform: translateY(-3px) scale(1.1); box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4); }
         .page-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
         .page-overlay.is-visible { opacity: 1; visibility: visible; }
-        
         .zalo-chat-widget { position: fixed; bottom: 80px; right: 20px; width: 50px; height: 50px; background-color: #0068ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0, 104, 255, 0.4); z-index: 999; animation: pulse 2s infinite; }
         .zalo-chat-widget svg { width: 30px; height: 30px; fill: white; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0, 104, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); } }
-
         .mobile-only { display: none; }
         .desktop-only { display: block; }
 
-        @media (max-width: 1200px) { 
-            .grid-4, .grid-6 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } 
-            .grid-5 { grid-template-columns: repeat(3, 1fr); }
-        }
-        
-        @media (min-width: 992px) {
-            .nav-home-link { display: none; }
-        }
+        @media (max-width: 1200px) { .grid-4, .grid-6 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } .grid-5 { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 992px) { .nav-home-link { display: none; } }
 
         @media (max-width: 991px) { 
-            .main-header .container { 
-                justify-content: flex-start; 
-                gap: 15px; 
-            }
-            #mobile-menu-toggle {
-                display: block;
-                order: 1;
-                z-index: 1002;
-                background: none;
-                border: none;
-                color: var(--white);
-                font-size: 1.5rem;
-            }
-            .logo {
-                order: 2;
-            }
-            .header-actions { 
-                margin-left: auto; 
-                order: 3;
-            }
+            .main-header .container { justify-content: flex-start; gap: 15px; }
+            #mobile-menu-toggle { display: block; order: 1; z-index: 1002; background: none; border: none; color: var(--white); font-size: 1.5rem; }
+            .logo { order: 2; }
+            .header-actions { margin-left: auto; order: 3; }
             .main-nav { flex-grow: 0; }
-
             .main-nav { position: fixed; top: 0; left: -100%; width: 80%; max-width: 300px; height: 100vh; background-color: var(--primary); display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; transition: left 0.4s ease-in-out; z-index: 1001; padding: 80px 20px; }
             .main-nav.is-open { left: 0; box-shadow: 5px 0 15px rgba(0,0,0,0.2); }
             .main-nav ul { flex-direction: column; gap: 20px; width: 100%; align-items: flex-start; }
             .main-nav a { font-size: 1.2rem; }
-            
             .header-actions .login-btn span { display: none; }
             .about-grid, .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-socials { justify-content: center; }
             .footer-col.footer-logo img { margin-left: auto; margin-right: auto; }
-
             .main-nav li.has-dropdown.submenu-open > a .fa-chevron-down { transform: rotate(180deg); }
-            .main-nav .submenu { position: static; background-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; border-radius: 0; min-width: auto; padding: 10px 0 10px 15px; transform: none; display: none; opacity: 1; visibility: visible; width: 100%; text-align: left; }
-            .main-nav li.has-dropdown.submenu-open > .submenu { display: block; }
+            
+            /* === MOBILE SUBMENU FIX STARTS HERE === */
+            .main-nav .submenu {
+                position: static !important;
+                transform: none !important; /* CRUCIAL: Resets the translateX from desktop */
+                opacity: 1 !important;
+                visibility: visible !important;
+                width: 100%;
+                min-width: 100%;
+                background-color: transparent;
+                backdrop-filter: none;
+                box-shadow: none;
+                border: none;
+                padding: 10px 0 5px 20px; /* Indent sub-items */
+                display: none; /* Initially hidden, controlled by JS */
+            }
             .main-nav li.has-dropdown:hover > .submenu { display: none; }
-            .main-nav li.has-dropdown.submenu-open:hover > .submenu { display: block; }
+            .main-nav li.has-dropdown.submenu-open > .submenu { display: block; }
             .main-nav .submenu li a { padding: 8px 0; }
             .main-nav .submenu li a:hover { background-color: transparent; color: var(--accent); }
-            
+            /* === MOBILE SUBMENU FIX ENDS HERE === */
+
             .partners-grid, .grid-6 { grid-template-columns: repeat(3, 1fr); gap: 20px; }
             .grid-5 { grid-template-columns: repeat(2, 1fr); }
             .stats-grid { grid-template-columns: repeat(3, 1fr); }
             .contact-grid { grid-template-columns: 1fr; }
         }
-
-        /* ====== START: MOBILE OPTIMIZATION (More Aggressive) ====== */
+        
         @media (max-width: 767px) { 
-            /* General Layout */
             .container, .container-wide { padding: 0 15px; }
-            section { padding: 25px 0; }
-            #courses, #software, #student-benefits, #software-benefits { padding: 25px 0; }
-            .section-title { font-size: 1.6rem; margin-bottom: 25px; }
-            .section-title::after { width: 50px; height: 3px; bottom: -8px; }
-
-            .grid-3, .grid-4, .grid-5, .grid-6, 
-            #solutions .grid-4, #team .grid-4, #courses .grid-4, #blog .grid-4, #testimonials .grid-4 { 
-                grid-template-columns: 1fr; 
-                gap: 12px; 
-            }
-
-            /* Hero Section */
-            .hero { padding-top: 65px; padding-bottom: 15px; }
-            .hero h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 10px;}
-            .hero p { font-size: 0.95rem; margin-bottom: 15px; }
-            .hero-benefits { gap: 10px; margin-bottom: 15px; font-size: 0.9rem;}
-            .hero-search-container { margin-bottom: 20px; }
-
+            section { padding: 30px 0; }
+            #courses, #software, #student-benefits, #software-benefits { padding: 30px 0; }
+            .section-title { font-size: 1.8rem; margin-bottom: 30px; }
+            .section-title::after { width: 60px; height: 3px; bottom: -8px; }
+            .grid-3, .grid-4, .grid-5, .grid-6, #solutions .grid-4, #team .grid-4, #courses .grid-4, #blog .grid-4, #testimonials .grid-4 { grid-template-columns: 1fr; gap: 15px; }
+            .hero { padding-top: 80px; padding-bottom: 30px; }
+            .hero h1 { font-size: 2.2rem; line-height: 1.3; margin-bottom: 15px;}
+            .hero p.subtitle { font-size: 1rem; margin-bottom: 20px; }
+            .hero-benefits { gap: 10px 15px; margin-bottom: 20px; font-size: 0.9rem;}
+            .hero-search-container { margin-bottom: 25px; }
             .mobile-only { display: block; }
             .desktop-only { display: none; }
-
-            .hero-search-container {
-                flex-direction: row; border-radius: 50px; background: rgba(255, 255, 255, 0.1);
-                border: 1px solid rgba(255, 255, 255, 0.25); padding: 5px; max-width: 90%;
-                box-shadow: none; overflow: visible; gap: 0; position: relative;
-            }
+            .hero-search-container { flex-direction: row; border-radius: 50px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); padding: 5px; max-width: 95%; box-shadow: none; overflow: visible; gap: 0; position: relative; backdrop-filter: blur(5px); }
             .hero-search-container .search-icon-wrapper { display: none; }
             .hero-search-container input { padding: 12px 50px 12px 20px; font-size: 1rem; text-align: left; background: transparent; color: var(--white); flex-grow: 1; }
             .hero-search-container input::placeholder { color: var(--white); opacity: 0.7; }
-            
-            .hero-search-container .mobile-search-button {
-                display: flex; align-items: center; justify-content: center;
-                position: absolute; right: 5px; top: 5px;
-                flex-shrink: 0; border: none; background-color: var(--button-primary);
-                color: var(--white); width: 40px; height: 40px; border-radius: 50%;
-                cursor: pointer;
-            }
-            
+            .hero-search-container .mobile-search-button { display: flex; align-items: center; justify-content: center; position: absolute; right: 5px; top: 5px; flex-shrink: 0; border: none; background: var(--accent-gradient); color: var(--white); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
             .search-suggestions-list { top: calc(100% + 8px); left: 0; right: 0; width: 100%; background-color: var(--primary); border: 1px solid var(--accent); }
             .suggestion-item { color: var(--white); }
             .suggestion-item:hover { background-color: var(--button-primary-hover); }
-
-            /* Stats Section */
             .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .stats-item { padding: 10px 8px; }
-            .stats-item .number { font-size: 1.6rem; }
-            .stats-item .label { font-size: 0.75rem; line-height: 1.2;}
-            .stats-item .icon { font-size: 1.4rem; }
-
-            /* Grid Layouts for specific sections */
-            #student-benefits .grid-6,
-            #software-benefits .grid-4,
-            #process .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .stats-item .number { font-size: 1.8rem; }
+            .stats-item .label { font-size: 0.8rem; line-height: 1.2;}
+            .stats-item .icon { font-size: 1.5rem; }
+            #student-benefits .grid-6, #software-benefits .grid-4, #process .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
             .partners-grid { grid-template-columns: repeat(3, 1fr); gap: 15px; }
             .form-row { grid-template-columns: 1fr; }
-
-            /* Card Elements Optimization */
             .card:hover { transform: translateY(-5px); }
             .card-image { height: 140px; }
-            .card-content { padding: 10px; }
-            .card-content h3 { font-size: 1rem; margin-bottom: 6px; }
-            #blog .card-content p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 10px; }
-            .product-details { margin-bottom: 10px; gap: 8px; }
-            .product-meta span { font-size: 0.85rem;}
-            .product-price .current-price { font-size: 1.2rem; }
-            .product-price .old-price { font-size: 0.8rem; }
-            .card .btn { padding: 8px 12px; font-size: 0.85rem; }
-            
-            /* Other Sections */
+            .card-content { padding: 15px; }
+            .card-content h3 { font-size: 1.05rem; margin-bottom: 8px; }
+            .product-details { margin-bottom: 12px; gap: 8px; }
+            .product-price .current-price { font-size: 1.3rem; }
+            .card .btn { padding: 10px 14px; font-size: 0.9rem; }
             .about-image { order: -1; margin-bottom: 25px; }
-            .faq-question { font-size: 1rem; padding: 12px 15px; }
-            .faq-answer p { padding: 12px 15px; font-size: 0.9rem; }
-            
-            .testimonial-card { padding: 12px; }
-            .testimonial-card:hover { transform: translateY(-5px); }
-            .testimonial-card p { font-size: 0.9rem; }
-            .testimonial-author { margin-top: 10px; padding-top: 10px; gap: 10px;}
-            .testimonial-author img { width: 40px; height: 40px; }
-            .testimonial-author h4 {font-size: 0.9rem;}
-            .testimonial-author span {font-size: 0.8rem;}
-
-            .benefit-item, .benefit-item-soft {
-                padding: 15px 10px;
-                min-height: 0; /* Remove min-height to allow shrinking */
-            }
-            .benefit-item i, .benefit-item-soft i {
-                font-size: 2rem;
-                margin-bottom: 10px;
-            }
-            .benefit-item h4, .benefit-item-soft h4 {
-                font-size: 0.9rem;
-            }
-            .contact-item { padding: 12px; }
+            .faq-question { font-size: 1rem; padding: 15px; }
+            .faq-answer p { padding: 15px; font-size: 0.9rem; }
+            .testimonial-card { padding: 15px; }
+            .testimonial-card p { font-size: 0.95rem; }
+            .testimonial-author { margin-top: 12px; padding-top: 12px; gap: 12px;}
+            .benefit-item, .benefit-item-soft { padding: 15px 10px; min-height: 0; }
+            .benefit-item i, .benefit-item-soft i { font-size: 2.2rem; margin-bottom: 12px; }
+            .benefit-item h4, .benefit-item-soft h4 { font-size: 0.95rem; }
+            .contact-item { padding: 15px; }
             .contact-item-header h3 { font-size: 1.1rem; }
+            .contact-item-header i { font-size: 1.4rem; } /* Fix for large contact icon on mobile */
             .contact-item p { font-size: 0.9rem; }
-            .contact-form-wrapper form { padding: 15px; }
+            .contact-form-wrapper form { padding: 20px; }
         }
-        /* ====== END: MOBILE OPTIMIZATION ====== */
-
-        @media (max-width: 380px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        
+        @media (max-width: 380px) { .stats-grid { grid-template-columns: 1fr; } }
     </style>
 <style>
-        /* --- START: SEARCH MODAL STYLES --- */
-        .search-modal-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(1, 22, 39, 0.9);
-            z-index: 1050;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding-top: 15vh;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .search-modal-container.is-visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        .search-modal-content {
-            position: relative;
-            background-color: var(--white);
-            border-radius: 12px;
-            padding: 30px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-        .search-modal-content h3 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        .search-modal-input-wrapper {
-            position: relative;
-            margin-bottom: 10px;
-        }
-        .search-modal-input-wrapper input {
-            width: 100%;
-            padding: 15px 50px 15px 20px;
-            font-size: 1.1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-        .search-modal-input-wrapper input:focus {
-            border-color: var(--button-primary);
-        }
-        .search-modal-input-wrapper .fa-search {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            color: #aaa;
-        }
-        .search-modal-content .search-suggestions-list {
-            position: static; /* Override absolute positioning */
-            border: 1px solid #eee;
-            box-shadow: none;
-            max-height: 250px;
-        }
-        .search-modal-container .close-btn {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--white);
-            border: none;
-            border-radius: 50%;
-            font-size: 2rem;
-            color: var(--primary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .search-modal-container .close-btn:hover {
-            transform: scale(1.1) rotate(90deg);
-        }
-        /* --- END: SEARCH MODAL STYLES --- */
+        .search-modal-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(10, 25, 47, 0.9); backdrop-filter: blur(5px); z-index: 1050; display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .search-modal-container.is-visible { opacity: 1; visibility: visible; }
+        .search-modal-content { position: relative; background-color: var(--white); border-radius: 12px; padding: 30px; width: 90%; max-width: 600px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+        .search-modal-content h3 { text-align: center; margin-bottom: 20px; font-size: 1.5rem; color: var(--secondary); }
+        .search-modal-input-wrapper { position: relative; margin-bottom: 10px; }
+        .search-modal-input-wrapper input { width: 100%; padding: 15px 50px 15px 20px; font-size: 1.1rem; border: 2px solid #ddd; border-radius: 8px; outline: none; transition: border-color 0.3s ease; }
+        .search-modal-input-wrapper input:focus { border-color: var(--button-primary); }
+        .search-modal-input-wrapper .fa-search { position: absolute; top: 50%; right: 20px; transform: translateY(-50%); color: #aaa; }
+        .search-modal-content .search-suggestions-list { position: static; border: 1px solid #eee; box-shadow: none; max-height: 250px; }
+        .search-modal-container .close-btn { position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; background-color: var(--white); border: none; border-radius: 50%; font-size: 2rem; color: var(--primary); cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s, background-color 0.3s; }
+        .search-modal-container .close-btn:hover { transform: scale(1.1) rotate(90deg); }
     </style>
-</link><style>
-    .user-avatar-dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    .avatar-icon {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .dropdown-menu {
-        position: absolute;
-        top: 45px;
-        right: 0;
-        background: white;
-        color: black;
-        list-style: none;
-        padding: 10px 0;
-        margin: 0;
-        display: none;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        border-radius: 8px;
-        min-width: 180px;
-        z-index: 1000;
-    }
-    .dropdown-menu li {
-        padding: 8px 20px;
-    }
-    .dropdown-menu li a {
-        color: var(--text);
-        text-decoration: none;
-        display: block;
-    }
-    .dropdown-menu li:hover {
-        background-color: #f0f0f0;
-    }
-    .user-avatar-dropdown.is-open .dropdown-menu {
-        display: block;
-    }
-    </style></head>
+<style>
+    .user-avatar-dropdown { position: relative; display: inline-block; }
+    .avatar-icon { width: 32px; height: 32px; border-radius: 50%; cursor: pointer; }
+    .dropdown-menu { position: absolute; top: 45px; right: 0; background: white; color: black; list-style: none; padding: 10px 0; margin: 0; display: none; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border-radius: 8px; min-width: 180px; z-index: 1000; }
+    .dropdown-menu li { padding: 8px 20px; }
+    .dropdown-menu li a { color: var(--text); text-decoration: none; display: block; }
+    .dropdown-menu li:hover { background-color: #f0f0f0; }
+    .user-avatar-dropdown.is-open .dropdown-menu { display: block; }
+    </style>
+</head>
 <body>
+<!-- The rest of the HTML body remains the same -->
 <div class="page-overlay"></div>
 <header class="main-header">
 <div class="container">
@@ -670,7 +417,7 @@
 <div class="burger-icon"><span></span><span></span><span></span></div>
 </button>
 <a class="logo" href="#home">
-<img alt="EMS Logo Icon" src="https://gpems.net/_next/image?url=%2Flogo-ico.png&w=64&q=75"/>
+<img alt="EMS Logo Icon" src="https://gpems.net/_next/image?url=%2Flogo-ico.png&amp;w=64&amp;q=75"/>
 <span>GPEMS</span>
 </a>
 <nav class="main-nav">
@@ -711,16 +458,14 @@
 <li><a href="https://www.linkedin.com/company/107340505/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
 </ul>
 </li>
-<!-- ====== START: UPDATED CODE ====== -->
 <li class="has-dropdown">
-    <a href="#contact">Hỗ trợ <i class="fas fa-chevron-down"></i></a>
-    <ul class="submenu">
-        <li><a href="#register-cta">Đăng ký CTV</a></li>
-        <li><a href="#register-cta">Đăng ký Giảng Viên</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-    </ul>
+<a href="#contact">Hỗ trợ <i class="fas fa-chevron-down"></i></a>
+<ul class="submenu">
+<li><a href="#register-cta">Đăng ký CTV</a></li>
+<li><a href="#register-cta">Đăng ký Giảng Viên</a></li>
+<li><a href="#contact">Liên hệ</a></li>
+</ul>
 </li>
-<!-- ====== END: UPDATED CODE ====== -->
 </ul>
 </nav>
 <div class="header-actions">
@@ -731,7 +476,7 @@
 <span class="cart-badge">1</span>
 </div>
 <div class="user-avatar-dropdown" style="display: none;">
-<img alt="User Avatar" class="avatar-icon" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2FdwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png&w=3840&q=75"/>
+<img alt="User Avatar" class="avatar-icon" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2FdwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png&amp;w=3840&amp;q=75"/>
 <ul class="dropdown-menu">
 <li><a href="dashboard.html">Khóa học của tôi</a></li>
 <li><a href="#">Hồ sơ</a></li>
@@ -744,8 +489,8 @@
 <main>
 <section class="hero" id="home">
 <div class="container">
-<h1 class="zoom-in-element">SỐ HÓA QUY TRÌNH<br class="mobile-only"/> KHÔNG CẦN CODE</h1>
-<p class="fade-in-element">Tư vấn, đào tạo, thiết kế ứng dụng Số hóa quy trình quản lý doanh nghiệp dựa trên nền tảng Google Workspace và AI Agent.</p>
+<h1 class="zoom-in-element">KIẾN TẠO TƯƠNG LAI DOANH NGHIỆP<br class="mobile-only"/> VỚI SỨC MẠNH CỦA AI</h1>
+<p class="subtitle fade-in-element">Tư vấn, đào tạo và xây dựng giải pháp số hóa thông minh. Tự động hóa quy trình, không cần một dòng code.</p>
 <div class="hero-benefits fade-in-element">
 <span><i class="fas fa-check-circle"></i> Tiết kiệm thời gian</span>
 <span><i class="fas fa-check-circle"></i> Giảm thiểu sai sót</span>
@@ -753,7 +498,7 @@
 </div>
 <div class="hero-search-container fade-in-element" id="main-search-container">
 <span class="search-icon-wrapper desktop-only"><i class="fas fa-search"></i></span>
-<input autocomplete="off" id="hero-search-input" placeholder="Tìm kiếm khóa học, phần mềm, bài viết..." type="text"/>
+<input autocomplete="off" id="hero-search-input" placeholder="Tìm kiếm giải pháp, khóa học, chuyên gia..." type="text"/>
 <div class="search-suggestions-list" id="hero-search-suggestions"></div>
 <button aria-label="Tìm kiếm" class="desktop-search-button"><i class="fas fa-search"></i></button>
 <button aria-label="Tìm kiếm" class="mobile-search-button"><i class="fas fa-search"></i></button>
@@ -762,7 +507,7 @@
 <div class="stats-grid">
 <a class="stats-link slide-in-from-left" href="#testimonials"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-users icon"></i><div class="number" data-target="200">0</div></div><div class="label">Khách Hàng</div></div></a>
 <a class="stats-link slide-in-from-right" href="#software"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-briefcase icon"></i><div class="number" data-target="250">0</div></div><div class="label">Dự Án</div></div></a>
-<a class="stats-link slide-in-from-left" href="#software"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-layer-group icon"></i><div class="number" data-target="300">0</div></div><div class="label">Phần Mềm</div></div></a>
+<a class="stats-link slide-in-from-left" href="#software"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-layer-group icon"></i><div class="number" data-target="300">0</div></div><div class="label">Giải Pháp</div></div></a>
 <a class="stats-link slide-in-from-right" href="#courses"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-book icon"></i><div class="number" data-target="120">0</div></div><div class="label">Khóa Học</div></div></a>
 <a class="stats-link slide-in-from-left" href="#testimonials"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-graduation-cap icon"></i><div class="number" data-target="10000">0</div></div><div class="label">Học Viên</div></div></a>
 <a class="stats-link slide-in-from-right" href="#register-cta"><div class="stats-item"><div class="stats-top-line"><i class="fas fa-user-friends icon"></i><div class="number" data-target="35000">0</div></div><div class="label">Thành Viên</div></div></a>
@@ -770,29 +515,28 @@
 </div>
 </div>
 </section>
-<!-- The rest of the main content remains the same -->
 <section id="process">
 <div class="container">
-<h2 class="section-title zoom-in-element">QUY TRÌNH TƯ VẤN & PHÁT TRIỂN ỨNG DỤNG</h2>
+<h2 class="section-title gradient-text zoom-in-element">QUY TRÌNH TRIỂN KHAI VƯỢT TRỘI</h2>
 <div class="grid-4">
 <div class="process-step slide-in-from-left">
 <div class="icon-wrapper">1</div>
-<h3>Tư vấn & Khảo sát</h3>
+<h3>Tư vấn &amp; Khảo sát</h3>
 <p>Lắng nghe, phân tích nhu cầu và các vấn đề doanh nghiệp đang gặp phải.</p>
 </div>
 <div class="process-step slide-in-from-right">
 <div class="icon-wrapper">2</div>
-<h3>Thiết kế & Báo giá</h3>
+<h3>Thiết kế &amp; Báo giá</h3>
 <p>Đề xuất giải pháp, lộ trình triển khai và chi phí tối ưu nhất cho bạn.</p>
 </div>
 <div class="process-step slide-in-from-left">
 <div class="icon-wrapper">3</div>
-<h3>Phát triển & Triển khai</h3>
+<h3>Phát triển &amp; Triển khai</h3>
 <p>Xây dựng, kiểm thử và bàn giao sản phẩm theo đúng cam kết.</p>
 </div>
 <div class="process-step slide-in-from-right">
 <div class="icon-wrapper">4</div>
-<h3>Hỗ trợ & Bảo trì</h3>
+<h3>Hỗ trợ &amp; Bảo trì</h3>
 <p>Đồng hành cùng doanh nghiệp trong suốt quá trình vận hành và sử dụng.</p>
 </div>
 </div>
@@ -801,9 +545,9 @@
 <section id="about" style="background-color: var(--white);">
 <div class="container">
 <div class="about-grid">
-<div class="about-image slide-in-from-left"><img alt="Infographic về giải pháp của EMS Solution" loading="lazy" src="https://gpems.net/metaImage.png?q=80&w=1770&auto=format&fit=crop"/></div>
+<div class="about-image slide-in-from-left"><img alt="Infographic về giải pháp của EMS Solution" loading="lazy" src="https://gpems.net/metaImage.png?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div>
 <div class="about-content slide-in-from-right">
-<h2 class="section-title" style="text-align: left; margin-bottom: 25px;">Về EMS Solution</h2>
+<h2 class="section-title gradient-text" style="text-align: left; margin-bottom: 25px;">Về EMS Solution</h2>
 <h3>Đối tác tin cậy trên hành trình chuyển đổi số của doanh nghiệp</h3>
 <p>Được thành lập từ năm 2021, EMS Solution ra đời với sứ mệnh giúp các doanh nghiệp Việt Nam tối ưu hóa vận hành, tăng hiệu suất làm việc thông qua việc số hóa quy trình mà không yêu cầu kiến thức lập trình phức tạp.</p>
 <ul class="timeline">
@@ -818,7 +562,7 @@
 </section>
 <section id="solutions" style="background-color: var(--light-background);">
 <div class="container-wide">
-<h2 class="section-title zoom-in-element">Giải Pháp Tích Hợp</h2>
+<h2 class="section-title gradient-text zoom-in-element">Hệ Sinh Thái Giải Pháp Toàn Diện</h2>
 <div class="grid-4">
 <div class="card fade-in-element">
 <div class="card-content" style="text-align:center;">
@@ -853,35 +597,35 @@
 </section>
 <section id="team">
 <div class="container">
-<h2 class="section-title zoom-in-element">Đội Ngũ Chuyên Gia</h2>
+<h2 class="section-title gradient-text zoom-in-element">Đội Ngũ Chuyên Gia</h2>
 <div class="grid-4">
-<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Tấn Hiền" loading="lazy" src="https://admin.gpems.net/storage/uploads/courses/lecturers/dwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png"/></div><div class="card-content"><h3>Nguyễn Tấn Hiền</h3><p>Founder & CEO</p></div></div>
-<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Hòa" loading="lazy" src="https://admin.gpems.net/storage/uploads/courses/lecturers/mlXRjIPyPsdcucphnW5fNbCrq9IRoH-metaMTkwMjE3NjgyNzE2NzE1MzM0MzAuanBn-.jpg"/></div><div class="card-content"><h3>Nguyễn Văn Hòa</h3><p>Co-Founder & CTO</p></div></div>
-<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Tráng" loading="lazy" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2FvvOGk1ZcVjmDQHINibww4X7qdCxPwT-metac2NyZWVuc2hvdF8xNzI5MjQyMTI4LnBuZw%3D%3D-.png&w=1920&q=75"/></div><div class="card-content"><h3>Nguyễn Văn Tráng</h3><p>Google Sheets Expert</p></div></div>
-<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Lê Anh Tuấn" loading="lazy" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2Fyi9klBFRfQeqdwI02cMJ3SNWMM9Qcx-metaNjcwMTg1ODkxNjgyMDg2OTExLmpwZw%3D%3D-.jpg&w=1920&q=75"/></div><div class="card-content"><h3>Lê Anh Tuấn</h3><p>Analytics Expert</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Tấn Hiền" loading="lazy" src="https://admin.gpems.net/storage/uploads/courses/lecturers/dwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Tấn Hiền</h3><p>Founder &amp; CEO</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Hòa" loading="lazy" src="https://admin.gpems.net/storage/uploads/courses/lecturers/mlXRjIPyPsdcucphnW5fNbCrq9IRoH-metaMTkwMjE3NjgyNzE2NzE1MzM0MzAuanBn-.jpg"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Hòa</h3><p>Co-Founder &amp; CTO</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Nguyễn Văn Tráng" loading="lazy" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2FvvOGk1ZcVjmDQHINibww4X7qdCxPwT-metac2NyZWVuc2hvdF8xNzI5MjQyMTI4LnBuZw%3D%3D-.png&amp;w=1920&amp;q=75"/></div><div class="card-content" style="text-align:center;"><h3>Nguyễn Văn Tráng</h3><p>Google Sheets Expert</p></div></div>
+<div class="card fade-in-element"><div class="card-image"><img alt="Chuyên gia Lê Anh Tuấn" loading="lazy" src="https://gpems.net/_next/image?url=https%3A%2F%2Fadmin.gpems.net%2Fstorage%2Fuploads%2Fcourses%2Flecturers%2Fyi9klBFRfQeqdwI02cMJ3SNWMM9Qcx-metaNjcwMTg1ODkxNjgyMDg2OTExLmpwZw%3D%3D-.jpg&amp;w=1920&amp;q=75"/></div><div class="card-content" style="text-align:center;"><h3>Lê Anh Tuấn</h3><p>Analytics Expert</p></div></div>
 </div>
 <div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#register-cta">Gia nhập đội ngũ</a></div>
 </div>
 </section>
 <section id="courses" style="background-color: var(--light-background);">
 <div class="container-wide">
-<h2 class="section-title zoom-in-element">Khóa Học Nổi Bật</h2>
+<h2 class="section-title gradient-text zoom-in-element">Khóa Học Dành Cho Bạn</h2>
 <div class="grid-4">
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học Google Sheets" loading="lazy" src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=1769&auto=format&fit=crop"/><span class="discount-badge">-47%</span></div><div class="card-content"><h3>Làm chủ Google Sheets A-Z</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 15,320+</span></div><div class="product-price"><span class="old-price">1.500.000đ</span><span class="current-price">799.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học AppSheet" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720551256879-92e5b13285be?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-48%</span></div><div class="card-content"><h3>Xây dựng App với AppSheet</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 9,850+</span></div><div class="product-price"><span class="old-price">2.500.000đ</span><span class="current-price">1.299.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học AI" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720503242835-b537741c9736?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>AI Agent & ChatGPT cho công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 21,100+</span></div><div class="product-price"><span class="old-price">2.000.000đ</span><span class="current-price">999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học BI" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>Dashboard Reporting & BI</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 5,500+</span></div><div class="product-price"><span class="old-price">3.000.000đ</span><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Google Workspace" loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1771&auto=format&fit=crop"/></div><div class="card-content"><h3>Quản trị & Tối ưu Google Workspace</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 4,100+</span></div><div class="product-price"><span class="current-price">899.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Excel nâng cao" loading="lazy" src="https://images.unsplash.com/photo-1649433391420-542fcd3835ea?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-42%</span></div><div class="card-content"><h3>Excel Nâng cao cho Chuyên gia</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 8,250+</span></div><div class="product-price"><span class="old-price">1.200.000đ</span><span class="current-price">699.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Tự động hóa Marketing" loading="lazy" src="https://plus.unsplash.com/premium_photo-1684179641331-e89c6320b6a9?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Tự động hóa Marketing (Zalo & Messenger)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 3,500+</span></div><div class="product-price"><span class="current-price">1.199.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Lập trình Apps Script" loading="lazy" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1806&auto=format&fit=crop"/><span class="discount-badge">-43%</span></div><div class="card-content"><h3>Lập trình Google Apps Script từ Zero</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 2,900+</span></div><div class="product-price"><span class="old-price">3.500.000đ</span><span class="current-price">1.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="course.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Mua ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học Google Sheets" loading="lazy" src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&amp;w=1769&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-47%</span></div><div class="card-content"><h3>Làm chủ Google Sheets A-Z</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 15,320+</span></div><div class="product-price"><span class="old-price">1.500.000đ</span><span class="current-price">799.000đ</span></div></div><a class="btn btn-accent" href="course.html" onclick="event.stopPropagation();"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học AppSheet" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720551256879-92e5b13285be?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-48%</span></div><div class="card-content"><h3>Xây dựng App với AppSheet</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 9,850+</span></div><div class="product-price"><span class="old-price">2.500.000đ</span><span class="current-price">1.299.000đ</span></div></div><a class="btn btn-accent" href="course.html" onclick="event.stopPropagation();"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học AI" loading="lazy" src="https://plus.unsplash.com/premium_photo-1720503242835-b537741c9736?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>AI Agent &amp; ChatGPT cho công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 21,100+</span></div><div class="product-price"><span class="old-price">2.000.000đ</span><span class="current-price">999.000đ</span></div></div><a class="btn btn-accent" href="course.html" onclick="event.stopPropagation();"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Khóa học BI" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-50%</span></div><div class="card-content"><h3>Dashboard Reporting &amp; BI</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 5,500+</span></div><div class="product-price"><span class="old-price">3.000.000đ</span><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent" href="course.html" onclick="event.stopPropagation();"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Google Workspace" loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&amp;w=1771&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Quản trị &amp; Tối ưu Google Workspace</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 4,100+</span></div><div class="product-price"><span class="current-price">899.000đ</span></div></div><a class="btn btn-accent" href="course.html" onclick="event.stopPropagation();"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Excel nâng cao" loading="lazy" src="https://images.unsplash.com/photo-1649433391420-542fcd3835ea?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-42%</span></div><div class="card-content"><h3>Excel Nâng cao cho Chuyên gia</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 8,250+</span></div><div class="product-price"><span class="old-price">1.200.000đ</span><span class="current-price">699.000đ</span></div></div><a class="btn btn-accent" href="course.html" onclick="event.stopPropagation();"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Tự động hóa Marketing" loading="lazy" src="https://plus.unsplash.com/premium_photo-1684179641331-e89c6320b6a9?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Tự động hóa Marketing (Zalo &amp; Messenger)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 3,500+</span></div><div class="product-price"><span class="current-price">1.199.000đ</span></div></div><a class="btn btn-accent" href="course.html" onclick="event.stopPropagation();"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='course.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Lập trình Apps Script" loading="lazy" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&amp;w=1806&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-43%</span></div><div class="card-content"><h3>Lập trình Google Apps Script từ Zero</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-users"></i> 2,900+</span></div><div class="product-price"><span class="old-price">3.500.000đ</span><span class="current-price">1.999.000đ</span></div></div><a class="btn btn-accent" href="course.html" onclick="event.stopPropagation();"><i class="fas fa-rocket"></i><span>Bắt đầu học</span></a></div></div>
 </div>
 <div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Xem tất cả khóa học</a></div>
 </div>
 </section>
 <section id="student-benefits" style="background-color: var(--white);">
 <div class="container">
-<h2 class="section-title zoom-in-element">Quyền Lợi Của Học Viên</h2>
+<h2 class="section-title gradient-text zoom-in-element">Đặc Quyền Dành Riêng Cho Học Viên</h2>
 <div class="grid-6">
 <div class="benefit-item fade-in-element">
 <i class="fas fa-tasks"></i>
@@ -893,7 +637,7 @@
 </div>
 <div class="benefit-item fade-in-element">
 <i class="fas fa-book-open"></i>
-<h4>Tài liệu & video hướng dẫn chi tiết, dễ hiểu</h4>
+<h4>Tài liệu &amp; video hướng dẫn chi tiết, dễ hiểu</h4>
 </div>
 <div class="benefit-item fade-in-element">
 <i class="fas fa-sync-alt"></i>
@@ -905,76 +649,76 @@
 </div>
 <div class="benefit-item fade-in-element">
 <i class="fas fa-users-cog"></i>
-<h4>Tham gia cộng đồng học viên đông đảo & nhiệt huyết</h4>
+<h4>Tham gia cộng đồng học viên đông đảo &amp; nhiệt huyết</h4>
 </div>
 </div>
 </div>
 </section>
 <section id="software">
 <div class="container-wide">
-<h2 class="section-title zoom-in-element">Phần Mềm & Công Cụ</h2>
+<h2 class="section-title gradient-text zoom-in-element">Giải Pháp &amp; Công Cụ Sẵn Sàng</h2>
 <div class="grid-4">
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Tool Excel tính giá xây dựng" loading="lazy" src="https://images.unsplash.com/photo-1707902665498-a202981fb5ac?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content"><h3>Tool Excel tính giá xây dựng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 1,200+</span></div><div class="product-price"><span class="current-price">499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Mini ERP" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661400407813-c21af2b2c111?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Mini ERP Sản xuất (AppSheet)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 350+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Web App quản lý tài liệu" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661313626999-90d230cabf8d??q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Web App quản lý tài liệu</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 500+</span></div><div class="product-price"><span class="current-price">2.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Google Sheets tài chính" loading="lazy" src="https://plus.unsplash.com/premium_photo-1681487803114-637de228039c?q=80&w=1770&auto=format&fit=crop"/><span class="discount-badge">-33%</span></div><div class="card-content"><h3>Google Sheets quản lý tài chính</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 2,500+</span></div><div class="product-price"><span class="old-price">600.000đ</span><span class="current-price">399.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="App Quản lý nhân sự" loading="lazy" src="https://plus.unsplash.com/premium_photo-1663100794696-6b7afa02016c?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>App Quản lý Nhân sự & KPI (HRM)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 320+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Hệ thống CRM" loading="lazy" src="https://plus.unsplash.com/premium_photo-1733306696471-807493ff845b?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Hệ thống CRM Chăm sóc Khách hàng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 480+</span></div><div class="product-price"><span class="current-price">4.999.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="AI Chatbot" loading="lazy" src="https://plus.unsplash.com/premium_photo-1725985758251-b49c6b581d17?q=80&w=1887&auto=format&fit=crop"/></div><div class="card-content"><h3>AI Chatbot Tích hợp Website/Fanpage</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 180+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i><span>Xem chi tiết</span></a></div></div>
-<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="App Quản lý dự án" loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>App Quản lý Dự án & Công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 950+</span></div><div class="product-price"><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent btn btn-accent" href="products.html" onclick="event.stopPropagation();" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-shopping-cart"></i><span>Đặt hàng</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Tool Excel tính giá xây dựng" loading="lazy" src="https://images.unsplash.com/photo-1707902665498-a202981fb5ac?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Tool Excel tính giá xây dựng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 1,200+</span></div><div class="product-price"><span class="current-price">499.000đ</span></div></div><a class="btn btn-accent" href="products.html" onclick="event.stopPropagation();"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Mini ERP" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661400407813-c21af2b2c111?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Mini ERP Sản xuất (AppSheet)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 350+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent" href="products.html" onclick="event.stopPropagation();"><i class="fas fa-info-circle"></i><span>Khám phá giải pháp</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Web App quản lý tài liệu" loading="lazy" src="https://plus.unsplash.com/premium_photo-1661313626999-90d230cabf8d??q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Web App quản lý tài liệu</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 500+</span></div><div class="product-price"><span class="current-price">2.999.000đ</span></div></div><a class="btn btn-accent" href="products.html" onclick="event.stopPropagation();"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Google Sheets tài chính" loading="lazy" src="https://plus.unsplash.com/premium_photo-1681487803114-637de228039c?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/><span class="discount-badge">-33%</span></div><div class="card-content"><h3>Google Sheets quản lý tài chính</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 2,500+</span></div><div class="product-price"><span class="old-price">600.000đ</span><span class="current-price">399.000đ</span></div></div><a class="btn btn-accent" href="products.html" onclick="event.stopPropagation();"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="App Quản lý nhân sự" loading="lazy" src="https://plus.unsplash.com/premium_photo-1663100794696-6b7afa02016c?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>App Quản lý Nhân sự &amp; KPI (HRM)</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 320+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent" href="products.html" onclick="event.stopPropagation();"><i class="fas fa-info-circle"></i><span>Khám phá giải pháp</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="Hệ thống CRM" loading="lazy" src="https://plus.unsplash.com/premium_photo-1733306696471-807493ff845b?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Hệ thống CRM Chăm sóc Khách hàng</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 480+</span></div><div class="product-price"><span class="current-price">4.999.000đ</span></div></div><a class="btn btn-accent" href="products.html" onclick="event.stopPropagation();"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="AI Chatbot" loading="lazy" src="https://plus.unsplash.com/premium_photo-1725985758251-b49c6b581d17?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>AI Chatbot Tích hợp Website/Fanpage</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 180+</span></div><div class="product-price"><span class="current-price">Liên hệ</span></div></div><a class="btn btn-accent" href="products.html" onclick="event.stopPropagation();"><i class="fas fa-info-circle"></i><span>Khám phá giải pháp</span></a></div></div>
+<div class="card fade-in-element" onclick="window.location='products.html';" style=" cursor: pointer;"><div class="card-image"><img alt="App Quản lý dự án" loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>App Quản lý Dự án &amp; Công việc</h3><div class="product-details"><div class="product-meta"><span><i class="fas fa-shopping-cart"></i> 950+</span></div><div class="product-price"><span class="current-price">1.499.000đ</span></div></div><a class="btn btn-accent" href="products.html" onclick="event.stopPropagation();"><i class="fas fa-download"></i><span>Sở hữu ngay</span></a></div></div>
 </div>
 <div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Xem tất cả phần mềm</a></div>
 </div>
 </section>
 <section id="software-benefits" style="background-color: var(--light-background);">
 <div class="container">
-<h2 class="section-title zoom-in-element">Quyền Lợi Của Khách Hàng</h2>
+<h2 class="section-title gradient-text zoom-in-element">Cam Kết Vàng Cho Khách Hàng</h2>
 <div class="grid-4">
 <div class="benefit-item-soft fade-in-element">
 <i class="fas fa-rocket"></i>
-<h4>Ứng dụng thực chiến sử dụng ngay</h4>
+<h4>Ứng dụng thực chiến, dùng được ngay</h4>
 </div>
 <div class="benefit-item-soft fade-in-element">
 <i class="fas fa-chalkboard-teacher"></i>
-<h4>Hỗ trợ tùy chỉnh & hướng dẫn trực tiếp</h4>
+<h4>Hỗ trợ tùy chỉnh &amp; hướng dẫn trực tiếp</h4>
 </div>
 <div class="benefit-item-soft fade-in-element">
 <i class="fas fa-headset"></i>
-<h4>Miễn phí tùy biến & hỗ trợ 24/7</h4>
+<h4>Miễn phí tùy biến &amp; hỗ trợ 24/7</h4>
 </div>
 <div class="benefit-item-soft fade-in-element">
 <i class="fas fa-sync-alt"></i>
-<h4>Update phiên bản mới miễn phí</h4>
+<h4>Update phiên bản mới miễn phí trọn đời</h4>
 </div>
 </div>
 </div>
 </section>
 <section id="blog" style="background-color: var(--white);">
 <div class="container-wide">
-<h2 class="section-title zoom-in-element">Blog Chia Sẻ Kiến Thức</h2>
+<h2 class="section-title gradient-text zoom-in-element">Blog Chia Sẻ Kiến Thức</h2>
 <div class="grid-4">
-<div class="card slide-in-from-left"><div class="card-image"><img alt="AI Automation" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>5 bước tự động hóa công việc với AI</h3><p>Khám phá cách sử dụng các công cụ AI để giảm thiểu công việc lặp đi lặp lại và tăng hiệu suất đột phá.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
-<div class="card slide-in-from-right"><div class="card-image"><img alt="Dashboard" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Bí quyết xây dựng Dashboard hiệu quả</h3><p>Học cách trực quan hóa dữ liệu kinh doanh một cách hiệu quả để đưa ra quyết định nhanh chóng và chính xác.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
-<div class="card slide-in-from-left"><div class="card-image"><img alt="AppSheet vs PowerApps" loading="lazy" src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>AppSheet vs PowerApps: Cái nào cho bạn?</h3><p>Một bài so sánh chi tiết giữa hai nền tảng no-code hàng đầu để giúp bạn lựa chọn công cụ phù hợp nhất.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
-<div class="card slide-in-from-right"><div class="card-image"><img alt="Content Creation" loading="lazy" src="https://phala.network/illustrations/ai-agents/features.png?q=80&w=1770&auto=format&fit=crop"/></div><div class="card-content"><h3>Sáng tạo nội dung hàng loạt với AI</h3><p>Làm thế nào để tạo ra hàng trăm bài viết, email marketing chỉ với vài cú nhấp chuột nhờ sức mạnh của AI.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
+<div class="card slide-in-from-left"><div class="card-image"><img alt="AI Automation" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>5 bước tự động hóa công việc với AI</h3><p>Khám phá cách sử dụng các công cụ AI để giảm thiểu công việc lặp đi lặp lại và tăng hiệu suất đột phá.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
+<div class="card slide-in-from-right"><div class="card-image"><img alt="Dashboard" loading="lazy" src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Bí quyết xây dựng Dashboard hiệu quả</h3><p>Học cách trực quan hóa dữ liệu kinh doanh một cách hiệu quả để đưa ra quyết định nhanh chóng và chính xác.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
+<div class="card slide-in-from-left"><div class="card-image"><img alt="AppSheet vs PowerApps" loading="lazy" src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>AppSheet vs PowerApps: Cái nào cho bạn?</h3><p>Một bài so sánh chi tiết giữa hai nền tảng no-code hàng đầu để giúp bạn lựa chọn công cụ phù hợp nhất.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
+<div class="card slide-in-from-right"><div class="card-image"><img alt="Content Creation" loading="lazy" src="https://phala.network/illustrations/ai-agents/features.png?q=80&amp;w=1770&amp;auto=format&amp;fit=crop"/></div><div class="card-content"><h3>Sáng tạo nội dung hàng loạt với AI</h3><p>Làm thế nào để tạo ra hàng trăm bài viết, email marketing chỉ với vài cú nhấp chuột nhờ sức mạnh của AI.</p><a class="btn btn-outline" href="#" style="margin-top: auto;">Đọc thêm</a></div></div>
 </div>
 <div class="section-view-more fade-in-element"><a class="btn btn-outline" href="#">Truy cập Blog</a></div>
 </div>
 </section>
 <section id="partners">
 <div class="container">
-<h2 class="section-title zoom-in-element">Khách Hàng & Đối Tác Tiêu Biểu</h2>
+<h2 class="section-title gradient-text zoom-in-element">Khách Hàng &amp; Đối Tác Tiêu Biểu</h2>
 <div class="partners-grid fade-in-element">
 <div class="partner-logo"><img alt="Logo Vietnam Airlines" loading="lazy" src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/vietnam-airlines-logo-2.png"/></div>
 <div class="partner-logo"><img alt="Logo EVN" loading="lazy" src="https://www.evn.com.vn//userfile/User/tcdl/images/2023/4/14042023_LogoEVN_Ngang_FULL.jpg"/></div>
 <div class="partner-logo"><img alt="Logo Jollibee" loading="lazy" src="https://brandlogos.net/wp-content/uploads/2025/05/jollibee_horizontal-logo_brandlogos.net_lrab6.png"/></div>
-<div class="partner-logo"><img alt="Logo Bảo Việt" loading="lazy" src="https://i0.wp.com/www.globalsafe.vn/noidung/uploads/2017/10/thiet-ke-logo-baoviet.png?fit=438%2C388&ssl=1"/></div>
+<div class="partner-logo"><img alt="Logo Bảo Việt" loading="lazy" src="https://i0.wp.com/www.globalsafe.vn/noidung/uploads/2017/10/thiet-ke-logo-baoviet.png?fit=438%2C388&amp;ssl=1"/></div>
 <div class="partner-logo"><img alt="Logo Vingroup" loading="lazy" src="https://upload.wikimedia.org/wikipedia/vi/thumb/9/98/Vingroup_logo.svg/1200px-Vingroup_logo.svg.png"/></div>
 <div class="partner-logo"><img alt="HCDC" loading="lazy" src="https://hcdc.vn/public/img/images/news/2019/11/news-1569819039115.png"/></div>
 <div class="partner-logo"><img alt="Logo Tiki" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Logo_Tiki.png/1200px-Logo_Tiki.png"/></div>
 <div class="partner-logo"><img alt="Logo Vietcombank" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Vietcombank_logo_fixed.svg/2560px-Vietcombank_logo_fixed.svg.png"/></div>
 <div class="partner-logo"><img alt="Logo Bizbooks" loading="lazy" src="https://bizbooks.vn/uploads/images/2022/thang-9/logo-biz-moi.png"/></div>
-<div class="partner-logo"><img alt="Logo Grab" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAY1NIiI_FKkp6GaIXj1_pYNgJfb0n4AU0Ug&s"/></div>
+<div class="partner-logo"><img alt="Logo Grab" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAY1NIiI_FKkp6GaIXj1_pYNgJfb0n4AU0Ug&amp;s"/></div>
 <div class="partner-logo"><img alt="Logo Viettel" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Viettel_Telecom_banner.jpg/1200px-Viettel_Telecom_banner.jpg"/></div>
 <div class="partner-logo"><img alt="Logo Shopee" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg"/></div>
 </div>
@@ -982,18 +726,18 @@
 </section>
 <section id="testimonials" style="background-color: var(--light-background);">
 <div class="container">
-<h2 class="section-title zoom-in-element">Phản Hồi Từ Khách Hàng & Học Viên</h2>
+<h2 class="section-title gradient-text zoom-in-element">Phản Hồi Từ Khách Hàng &amp; Học Viên</h2>
 <div class="grid-4">
-<div class="testimonial-card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><p>"Giải pháp của EMS đã giúp chúng tôi tiết kiệm 30% thời gian báo cáo. Rất chuyên nghiệp và hiệu quả!"</p><div class="testimonial-author"><img alt="Anh Trần Văn A" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"/><div><h4>Anh Trần Văn A</h4><span>Giám đốc, Công ty ABC</span></div></div></div>
-<div class="testimonial-card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><p>"Khóa học AppSheet rất dễ hiểu và thực tế. Tôi đã tự xây dựng được ứng dụng quản lý kho chỉ sau 2 tuần."</p><div class="testimonial-author"><img alt="Chị Nguyễn Thị B" loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop"/><div><h4>Chị Nguyễn Thị B</h4><span>Trưởng phòng, Doanh nghiệp XYZ</span></div></div></div>
-<div class="testimonial-card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><p>"Đội ngũ hỗ trợ rất nhiệt tình. Mọi thắc mắc của tôi đều được giải đáp nhanh chóng. Hoàn toàn tin tưởng."</p><div class="testimonial-author"><img alt="Anh Lê Văn C" loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto=format&fit=crop"/><div><h4>Anh Lê Văn C</h4><span>Chủ cửa hàng</span></div></div></div>
-<div class="testimonial-card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><p>"Các giải pháp AI Agent đã giúp chúng tôi tự động hóa quy trình chăm sóc khách hàng một cách bất ngờ."</p><div class="testimonial-author"><img alt="Chị Phạm Thu D" loading="lazy" src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1923&auto=format&fit=crop"/><div><h4>Chị Phạm Thu D</h4><span>CEO, Startup Công nghệ</span></div></div></div>
+<div class="testimonial-card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><p>"Giải pháp của EMS đã giúp chúng tôi tiết kiệm 30% thời gian báo cáo. Rất chuyên nghiệp và hiệu quả!"</p><div class="testimonial-author"><img alt="Anh Trần Văn A" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/><div><h4>Anh Trần Văn A</h4><span>Giám đốc, Công ty ABC</span></div></div></div>
+<div class="testimonial-card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><p>"Khóa học AppSheet rất dễ hiểu và thực tế. Tôi đã tự xây dựng được ứng dụng quản lý kho chỉ sau 2 tuần."</p><div class="testimonial-author"><img alt="Chị Nguyễn Thị B" loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/><div><h4>Chị Nguyễn Thị B</h4><span>Trưởng phòng, Doanh nghiệp XYZ</span></div></div></div>
+<div class="testimonial-card slide-in-from-left"><i class="fas fa-quote-left quote-icon"></i><p>"Đội ngũ hỗ trợ rất nhiệt tình. Mọi thắc mắc của tôi đều được giải đáp nhanh chóng. Hoàn toàn tin tưởng."</p><div class="testimonial-author"><img alt="Anh Lê Văn C" loading="lazy" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&amp;w=1887&amp;auto=format&amp;fit=crop"/><div><h4>Anh Lê Văn C</h4><span>Chủ cửa hàng</span></div></div></div>
+<div class="testimonial-card slide-in-from-right"><i class="fas fa-quote-left quote-icon"></i><p>"Các giải pháp AI Agent đã giúp chúng tôi tự động hóa quy trình chăm sóc khách hàng một cách bất ngờ."</p><div class="testimonial-author"><img alt="Chị Phạm Thu D" loading="lazy" src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&amp;w=1923&amp;auto=format&amp;fit=crop"/><div><h4>Chị Phạm Thu D</h4><span>CEO, Startup Công nghệ</span></div></div></div>
 </div>
 </div>
 </section>
 <section id="faq">
 <div class="container fade-in-element">
-<h2 class="section-title">Câu Hỏi Thường Gặp (FAQ)</h2>
+<h2 class="section-title gradient-text">Câu Hỏi Thường Gặp (FAQ)</h2>
 <div class="faq-item">
 <div class="faq-question">Chi phí để xây dựng một giải pháp là bao nhiêu?<i class="fas fa-plus"></i></div>
 <div class="faq-answer">
@@ -1046,17 +790,17 @@
 </section>
 <section id="register-cta">
 <div class="container">
-<h2 class="section-title zoom-in-element">Đồng hành cùng EMS Solution trong hành trình Chuyển Đổi Số?</h2>
+<h2 class="section-title zoom-in-element">Sẵn sàng Đồng hành cùng EMS Solution?</h2>
 <div class="grid-3">
 <div class="register-item fade-in-element"><div class="icon"><i class="fas fa-building"></i></div><h3>Tư vấn Doanh nghiệp</h3><p>Tìm kiếm giải pháp số hóa riêng biệt cho doanh nghiệp của bạn? Hãy để chuyên gia của chúng tôi tư vấn.</p><a class="btn btn-accent" href="#contact">Yêu cầu tư vấn</a></div>
-<div class="register-item fade-in-element"><div class="icon"><i class="fas fa-microphone-alt"></i></div><h3>Trở thành Giảng viên</h3><p>Bạn là chuyên gia và muốn chia sẻ kiến thức? Hãy hợp tác xây dựng các khóa học chất lượng cùng chúng tôi.</p><a class="btn btn-accent" href="#contact">Đăng ký giảng dạy</a></div>
+<div class="register-item fade-in-element"><div class="icon"><i class="fas fa-microphone-alt"></i></div><h3>Trở thành Giảng viên</h3><p>Bạn là chuyên gia và muốn chia sẻ kiến thức? Hãy hợp tác xây dựng các khóa học chất lượng cùng chúng tôi.</p><a class="btn btn-accent" href="#contact">Đăng ký ngay</a></div>
 <div class="register-item fade-in-element"><div class="icon"><i class="fas fa-handshake"></i></div><h3>Làm Cộng tác viên</h3><p>Tham gia mạng lưới cộng tác viên của EMS để lan tỏa các giải pháp số và nhận mức hoa hồng hấp dẫn.</p><a class="btn btn-accent" href="#contact">Tham gia ngay</a></div>
 </div>
 </div>
 </section>
 <section id="contact" style="background-color: var(--light-background);">
 <div class="container">
-<h2 class="section-title zoom-in-element">Liên Hệ Với Chúng Tôi</h2>
+<h2 class="section-title gradient-text zoom-in-element">Liên Hệ Với Chúng Tôi</h2>
 <div class="contact-grid">
 <div class="contact-info">
 <div class="contact-item fade-in-element">
@@ -1107,7 +851,7 @@
 <div class="footer-socials">
 <a aria-label="Facebook" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-f"></i></a>
 <a aria-label="Youtube" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-youtube"></i></a>
-<a aria-label="Zalo" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-zalo-in"></i></a>
+<a aria-label="Zalo" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-zalo"></i></a>
 <a aria-label="LinkedIn" href="#" rel="noopener noreferrer" target="_blank"><i class="fab fa-linkedin-in"></i></a>
 </div>
 </div>
@@ -1127,7 +871,6 @@
 <svg viewbox="0 0 24 24"><path d="M16.6,15.2l-1.4-0.3c-0.4-0.1-0.7,0-1,0.2l-0.8,0.7c-1.3-0.6-2.5-1.4-3.6-2.5C9.1,12.7,8.3,11.5,7.6,10.2l0.8-0.7 c0.2-0.2,0.3-0.6,0.2-1l-0.3-1.4c-0.1-0.4-0.4-0.7-0.8-0.7H6c-0.4,0-0.7,0.3-0.8,0.6C5.1,7.2,5,7.5,5.1,7.8C5.2,8.8,5.5,10,6.2,11.1 c1.4,2.4,3.5,4.4,6.1,5.6c1,0.5,2,0.8,3,1c0.3,0.1,0.6,0,0.8-0.1c0.3-0.1,0.5-0.4,0.6-0.8V16C17.3,15.6,17,15.2,16.6,15.2z M12,0 C5.4,0,0,5.4,0,12s5.4,12,12,12s12-5.4,12-12S18.6,0,12,0z M12,21.6c-5.3,0-9.6-4.3-9.6-9.6S6.7,2.4,12,2.4s9.6,4.3,9.6,9.6 S17.3,21.6,12,21.6z"></path></svg>
 </a>
 <a aria-label="Lên đầu trang" href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
-<!-- NEW: Search Modal HTML -->
 <div class="search-modal-container" id="search-modal">
 <div class="search-modal-content">
 <button aria-label="Đóng tìm kiếm" class="close-btn" id="close-search-modal">×</button>
@@ -1149,35 +892,24 @@
             const sections = document.querySelectorAll('main section[id]');
             const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
             const userAvatarDropdown = document.querySelector('.user-avatar-dropdown');
-
-
-            // --- START: UNIFIED SEARCH LOGIC ---
-            
-            // Search Data
-            const searchData = [
-                'AppSheet', 'Google Sheets', 'Excel', 'Looker Studio', 'Apps Script', 'AI Agent', 
-                'Zalo', 'Facebook', 'Dashboard', 'Mini-ERP', 'Tự động hóa', 'Số hóa', 'Báo cáo', 'ChatGPT',
-                'Làm chủ Google Sheets A-Z', 'Xây dựng App với AppSheet', 'AI Agent & ChatGPT cho công việc', 
-                'Dashboard Reporting & BI', 'Quản trị & Tối ưu Google Workspace', 'Excel Nâng cao cho Chuyên gia',
-                'Tự động hóa Marketing (Zalo & Messenger)', 'Lập trình Google Apps Script từ Zero',
-                'Tool Excel tính giá xây dựng', 'Mini ERP Sản xuất (AppSheet)', 'Web App quản lý tài liệu',
-                'Google Sheets quản lý tài chính', 'App Quản lý Nhân sự & KPI (HRM)', 'Hệ thống CRM Chăm sóc Khách hàng',
-                'AI Chatbot Tích hợp Website/Fanpage', 'App Quản lý Dự án & Công việc'
-            ];
-
-            // DOM Elements for Search
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+            const searchData = ['AppSheet', 'Google Sheets', 'Excel', 'Looker Studio', 'Apps Script', 'AI Agent', 'Zalo', 'Facebook', 'Dashboard', 'Mini-ERP', 'Tự động hóa', 'Số hóa', 'Báo cáo', 'ChatGPT', 'Làm chủ Google Sheets A-Z', 'Xây dựng App với AppSheet', 'AI Agent & ChatGPT cho công việc', 'Dashboard Reporting & BI', 'Quản trị & Tối ưu Google Workspace', 'Excel Nâng cao cho Chuyên gia', 'Tự động hóa Marketing (Zalo & Messenger)', 'Lập trình Google Apps Script từ Zero', 'Tool Excel tính giá xây dựng', 'Mini ERP Sản xuất (AppSheet)', 'Web App quản lý tài liệu', 'Google Sheets quản lý tài chính', 'App Quản lý Nhân sự & KPI (HRM)', 'Hệ thống CRM Chăm sóc Khách hàng', 'AI Chatbot Tích hợp Website/Fanpage', 'App Quản lý Dự án & Công việc'];
             const heroSearchInput = document.getElementById('hero-search-input');
             const heroSuggestionsContainer = document.getElementById('hero-search-suggestions');
             const searchModal = document.getElementById('search-modal');
             const modalSearchInput = document.getElementById('modal-search-input');
             const modalSuggestionsContainer = document.getElementById('modal-search-suggestions');
-            const openSearchTriggers = [
-                document.getElementById('sticky-search-icon'),
-                document.querySelector('.mobile-search-button')
-            ];
+            const openSearchTriggers = [document.getElementById('sticky-search-icon'), document.querySelector('.mobile-search-button')];
             const closeSearchModalBtn = document.getElementById('close-search-modal');
-            
-            // Reusable function to initialize suggestion logic for an input
             function initSearchSuggestions(inputElement, suggestionsContainer) {
                 if (!inputElement) return;
                 inputElement.addEventListener('input', () => {
@@ -1190,7 +922,6 @@
                     displaySuggestions(filtered, inputElement, suggestionsContainer);
                 });
             }
-
             function displaySuggestions(suggestions, inputElement, suggestionsContainer) {
                 suggestionsContainer.innerHTML = '';
                 if (suggestions.length === 0) {
@@ -1212,20 +943,15 @@
                 });
                 suggestionsContainer.style.display = 'block';
             }
-
-            // Initialize for both search inputs
             initSearchSuggestions(heroSearchInput, heroSuggestionsContainer);
             initSearchSuggestions(modalSearchInput, modalSuggestionsContainer);
-            
-            // Handlers for modal visibility
             function openSearchModal() {
                 if (searchModal) {
                     searchModal.classList.add('is-visible');
                     document.body.style.overflow = 'hidden';
-                    setTimeout(() => modalSearchInput.focus(), 300); // Focus after transition
+                    setTimeout(() => modalSearchInput.focus(), 300);
                 }
             }
-
             function closeSearchModal() {
                 if (searchModal) {
                     searchModal.classList.remove('is-visible');
@@ -1234,31 +960,15 @@
                     if (modalSuggestionsContainer) modalSuggestionsContainer.style.display = 'none';
                 }
             }
-
-            // Attach event listeners to open/close triggers
-            openSearchTriggers.forEach(trigger => {
-                if(trigger) trigger.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openSearchModal();
-                });
-            });
-
+            openSearchTriggers.forEach(trigger => { if(trigger) trigger.addEventListener('click', (e) => { e.preventDefault(); openSearchModal(); }); });
             if(closeSearchModalBtn) closeSearchModalBtn.addEventListener('click', closeSearchModal);
-            if(searchModal) searchModal.addEventListener('click', (e) => {
-                if (e.target === searchModal) { // Close if clicking on the overlay itself
-                    closeSearchModal();
-                }
-            });
-
-            // Hide hero suggestions when clicking outside
+            if(searchModal) searchModal.addEventListener('click', (e) => { if (e.target === searchModal) { closeSearchModal(); } });
             document.addEventListener('click', (e) => {
                 const heroSearchContainer = document.getElementById('main-search-container');
                 if (heroSearchContainer && !heroSearchContainer.contains(e.target)) {
                    if(heroSuggestionsContainer) heroSuggestionsContainer.style.display = 'none';
                 }
             });
-            // --- END: UNIFIED SEARCH LOGIC ---
-
             const counters = document.querySelectorAll('.stats-item .number');
             if (counters.length > 0) {
                 const counterObserver = new IntersectionObserver((entries, observer) => {
@@ -1271,7 +981,6 @@
                 }, { threshold: 0.5 });
                 counters.forEach(counter => counterObserver.observe(counter));
             }
-
             function animateCounter(counter) {
                 const target = +counter.getAttribute('data-target');
                 let count = 0;
@@ -1288,7 +997,6 @@
                 };
                 updateCount();
             }
-
             const mainSearchContainer = document.querySelector('#main-search-container');
             const stickySearchIcon = document.querySelector('#sticky-search-icon');
             if (header && mainSearchContainer && stickySearchIcon) {
@@ -1299,7 +1007,6 @@
                 }, { rootMargin: `-${header.offsetHeight}px 0px 0px 0px` });
                 searchObserver.observe(mainSearchContainer);
             }
-
             function handleScroll() {
                 if (header) header.classList.toggle('scrolled', window.scrollY > 50);
                 if (backToTopButton) {
@@ -1307,14 +1014,12 @@
                 }
             }
             window.addEventListener('scroll', handleScroll);
-
             function closeMobileMenu() {
                 if (mainNav) mainNav.classList.remove('is-open');
                 if (pageOverlay) pageOverlay.classList.remove('is-visible');
                 if (menuToggle) menuToggle.classList.remove('is-active');
                 document.body.style.overflow = '';
             }
-            
             if (menuToggle && mainNav && pageOverlay) {
                 menuToggle.addEventListener('click', () => {
                     menuToggle.classList.toggle('is-active');
@@ -1329,7 +1034,6 @@
                     }
                 });
             }
-
             const dropdownToggles = document.querySelectorAll('.main-nav .has-dropdown > a');
             dropdownToggles.forEach(toggle => {
                 toggle.addEventListener('click', function(e) {
@@ -1340,21 +1044,18 @@
                     }
                 });
             });
-
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 question.addEventListener('click', () => {
                     const answer = item.querySelector('.faq-answer');
                     const isOpen = item.classList.contains('active');
-                    
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item) {
                             otherItem.classList.remove('active');
                             otherItem.querySelector('.faq-answer').style.maxHeight = null;
                         }
                     });
-                    
                     if (isOpen) {
                         item.classList.remove('active');
                         answer.style.maxHeight = null;
@@ -1364,7 +1065,6 @@
                     }
                 });
             });
-
             const animationObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1373,11 +1073,9 @@
                     }
                 });
             }, { threshold: 0.1 });
-
             document.querySelectorAll('.fade-in-element, .slide-in-from-left, .slide-in-from-right, .zoom-in-element').forEach(el => {
                 animationObserver.observe(el);
             });
-
             const navObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1392,26 +1090,16 @@
                     }
                 });
             }, { rootMargin: '-30% 0px -70% 0px' });
-
-            sections.forEach(section => {
-                if(section.id) {
-                   navObserver.observe(section);
-                }
-            });
-
-            // --- START: AVATAR DROPDOWN CLICK LOGIC ---
+            sections.forEach(section => { if(section.id) { navObserver.observe(section); } });
             if (userAvatarDropdown) {
                 const avatarIcon = userAvatarDropdown.querySelector('.avatar-icon');
-                
                 if (avatarIcon) {
                     avatarIcon.addEventListener('click', (event) => {
-                        event.stopPropagation(); // Prevent document click listener from closing it immediately
+                        event.stopPropagation();
                         userAvatarDropdown.classList.toggle('is-open');
                     });
                 }
             }
-            
-            // Close avatar dropdown when clicking anywhere else on the page
             document.addEventListener('click', (event) => {
                 if (userAvatarDropdown && userAvatarDropdown.classList.contains('is-open')) {
                     if (!userAvatarDropdown.contains(event.target)) {
@@ -1419,16 +1107,13 @@
                     }
                 }
             });
-            // --- END: AVATAR DROPDOWN CLICK LOGIC ---
         });
     </script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const loginBtn = document.querySelector(".login-btn");
         const avatar = document.querySelector(".user-avatar-dropdown");
-
         let loggedIn = false;
-
         window.toggleLoginState = function() {
             loggedIn = !loggedIn;
             if (loggedIn) {
@@ -1438,29 +1123,20 @@
                 if (loginBtn) loginBtn.style.display = "flex";
                 if (avatar) {
                     avatar.style.display = "none";
-                     // Also close the dropdown menu if it's open when logging out
                     if (avatar.classList.contains('is-open')) {
                         avatar.classList.remove('is-open');
                     }
                 }
             }
         };
-
-        // Create test button to simulate login/logout
         const testBtn = document.createElement("button");
         testBtn.innerHTML = '<i class="fas fa-sync-alt" title="Chuyển trạng thái đăng nhập"></i>';
-        testBtn.style.position = "fixed";
-        testBtn.style.bottom = "20px";
-        testBtn.style.left = "20px";
-        testBtn.style.zIndex = "9999";
-        testBtn.style.padding = "10px 15px";
-        testBtn.style.background = "#007BFF";
-        testBtn.style.color = "#fff";
-        testBtn.style.border = "none";
-        testBtn.style.borderRadius = "8px";
+        testBtn.style.position = "fixed"; testBtn.style.bottom = "20px"; testBtn.style.left = "20px";
+        testBtn.style.zIndex = "9999"; testBtn.style.padding = "10px 15px";
+        testBtn.style.background = "#007BFF"; testBtn.style.color = "#fff";
+        testBtn.style.border = "none"; testBtn.style.borderRadius = "8px";
         testBtn.style.cursor = "pointer";
         testBtn.onclick = () => toggleLoginState();
-
         document.body.appendChild(testBtn);
     });
     </script>
